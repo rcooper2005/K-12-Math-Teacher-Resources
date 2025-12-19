@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7th Grade Math Resources - Complete Teacher Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #11998e 0%, #38ef7d 50%, #00d9ff 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 30px; padding: 40px; box-shadow: 0 25px 80px rgba(0,0,0,0.2); }
+        h1 { color: #11998e; font-size: 2.8em; margin-bottom: 10px; text-align: center; }
+        .subtitle { text-align: center; color: #666; font-size: 1.3em; margin-bottom: 30px; }
+        .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; justify-content: center; border-bottom: 4px solid #11998e; padding-bottom: 15px; }
+        .tab-btn { background: linear-gradient(135deg, #f5f5f5, #e0e0e0); border: none; padding: 14px 28px; border-radius: 12px 12px 0 0; cursor: pointer; font-size: 1em; font-weight: 700; transition: all 0.3s; color: #555; }
+        .tab-btn:hover { background: linear-gradient(135deg, #11998e, #38ef7d); color: white; transform: translateY(-3px); }
+        .tab-btn.active { background: linear-gradient(135deg, #11998e, #38ef7d); color: white; }
+        .tab-content { display: none; animation: fadeIn 0.5s ease-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .standard-box { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); padding: 25px; border-radius: 20px; margin-bottom: 25px; color: white; }
+        .standard-item { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 15px; color: #333; }
+        .standard-code { background: #11998e; color: white; padding: 5px 12px; border-radius: 8px; font-weight: 700; display: inline-block; margin-bottom: 10px; }
+        
+        .content-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: white; }
+        .inner-content { background: white; padding: 25px; border-radius: 15px; margin-top: 20px; color: #333; }
+        .highlight-section { background: #e0f7fa; padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid #11998e; }
+        .highlight-section h5 { color: #11998e; margin-bottom: 8px; }
+        
+        .manipulative-card { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: white; }
+        .manipulative-item { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 15px; color: #333; }
+        .manipulative-item h4 { color: #f5576c; margin-bottom: 10px; }
+        
+        .lesson-card { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: white; }
+        .lesson-section { background: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; color: #333; }
+        .lesson-section h4 { color: #4facfe; margin-bottom: 12px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #11998e, #38ef7d); color: white; padding: 8px 20px; border-radius: 25px; font-weight: 700; margin: 10px 0; }
+        
+        .lab-card { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: #2d3436; }
+        .lab-info { background: rgba(255,255,255,0.4); padding: 10px 15px; border-radius: 10px; margin-bottom: 15px; }
+        
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 25px; }
+        .vocab-card { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: 22px; border-radius: 15px; }
+        .vocab-card h4 { color: #2d3436; margin-bottom: 10px; }
+        .vocab-example { background: rgba(255,255,255,0.6); padding: 10px; border-radius: 8px; font-style: italic; }
+        
+        .game-card { background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%); color: #2d3436; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .online-resources { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); padding: 25px; border-radius: 15px; margin-top: 30px; color: white; }
+        .resource-link { background: white; padding: 15px; border-radius: 10px; margin-bottom: 10px; display: block; text-decoration: none; color: #333; transition: transform 0.3s; }
+        .resource-link:hover { transform: translateX(10px); }
+        
+        .differentiation-box { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .misconception-box { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: #2d3436; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .misconception-content { background: rgba(255,255,255,0.9); color: #333; padding: 15px; border-radius: 10px; margin-top: 10px; }
+        .cultural-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        
+        .video-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        .video-card a { color: #fff; text-decoration: underline; }
+        .article-card { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        .assessment-card { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .assessment-item { background: rgba(255,255,255,0.95); color: #333; padding: 15px; border-radius: 10px; margin-bottom: 10px; }
+        .printable-card { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #2d3436; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        
+        ul { margin-left: 20px; margin-top: 10px; }
+        li { margin-bottom: 10px; }
+        @media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 2em; } .tab-btn { padding: 10px 15px; font-size: 0.9em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📐 7th Grade Math Resources</h1>
+        <p class="subtitle">Proportional Relationships • Rational Number Operations • Expressions & Equations • Geometry & Probability</p>
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('standards')">📋 Standards</button>
+            <button class="tab-btn" onclick="showTab('background')">👩‍🏫 Teacher Background</button>
+            <button class="tab-btn" onclick="showTab('manipulatives')">🧮 Manipulatives</button>
+            <button class="tab-btn" onclick="showTab('lessons')">📚 Lessons</button>
+            <button class="tab-btn" onclick="showTab('labs')">🔬 Investigations</button>
+            <button class="tab-btn" onclick="showTab('videos')">🎬 Videos</button>
+            <button class="tab-btn" onclick="showTab('articles')">📖 Articles</button>
+            <button class="tab-btn" onclick="showTab('assessments')">📝 Assessments</button>
+            <button class="tab-btn" onclick="showTab('printables')">🖨️ Printables</button>
+            <button class="tab-btn" onclick="showTab('vocabulary')">📖 Vocabulary</button>
+            <button class="tab-btn" onclick="showTab('games')">🎮 Games</button>
+            <button class="tab-btn" onclick="showTab('differentiation')">🌟 Differentiation</button>
+            <button class="tab-btn" onclick="showTab('misconceptions')">❓ Misconceptions</button>
+            <button class="tab-btn" onclick="showTab('cultural')">🌍 Cultural Connections</button>
+        </div>
+        
+        <!-- Standards Tab -->
+        <div id="standards" class="tab-content active">
+            <div class="standard-box">
+                <h3>📐 NCTM Content Standards for Seventh Grade</h3>
+                <div class="standard-item">
+                    <span class="standard-code">Ratios & Proportional Relationships</span>
+                    <p><strong>Unit rates:</strong> Compute unit rates with fractions. Recognize proportional relationships.</p>
+                    <p><strong>Constant of proportionality:</strong> Identify in tables, graphs, equations, diagrams.</p>
+                    <p><strong>Percent problems:</strong> Use proportional relationships to solve percent problems (tax, tip, markup, discount, commission, interest).</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">The Number System</span>
+                    <p><strong>Rational number operations:</strong> Add, subtract, multiply, divide rational numbers (integers, fractions, decimals).</p>
+                    <p><strong>Properties:</strong> Understand operations extend the properties from whole numbers.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Expressions & Equations</span>
+                    <p><strong>Expressions:</strong> Add, subtract, factor, expand linear expressions with rational coefficients.</p>
+                    <p><strong>Equations:</strong> Solve two-step equations. Write and solve inequalities.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Geometry</span>
+                    <p><strong>Scale drawings:</strong> Compute actual lengths and areas from scale drawings.</p>
+                    <p><strong>Constructions:</strong> Draw geometric shapes with given conditions.</p>
+                    <p><strong>Angle relationships:</strong> Supplementary, complementary, vertical, adjacent angles.</p>
+                    <p><strong>Circles:</strong> Area and circumference formulas.</p>
+                    <p><strong>3D figures:</strong> Surface area and volume of prisms, pyramids.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Statistics & Probability</span>
+                    <p><strong>Sampling:</strong> Understand random sampling and representative samples.</p>
+                    <p><strong>Comparing populations:</strong> Draw inferences about two populations.</p>
+                    <p><strong>Probability:</strong> Understand probability as long-run relative frequency. Find probabilities of compound events.</p>
+                </div>
+            </div>
+            
+            <div class="standard-box">
+                <h3>🍑 Georgia Standards of Excellence (GSE) - 7th Grade Math</h3>
+                <div class="standard-item">
+                    <span class="standard-code">MGSE7.RP</span>
+                    <p><strong>Ratios & Proportional Relationships:</strong></p>
+                    <ul>
+                        <li>MGSE7.RP.1 - Unit rates with fractions</li>
+                        <li>MGSE7.RP.2 - Recognize and represent proportional relationships</li>
+                        <li>MGSE7.RP.3 - Multi-step ratio and percent problems</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">MGSE7.NS</span>
+                    <p><strong>The Number System:</strong></p>
+                    <ul>
+                        <li>MGSE7.NS.1 - Add and subtract rational numbers</li>
+                        <li>MGSE7.NS.2 - Multiply and divide rational numbers</li>
+                        <li>MGSE7.NS.3 - Solve real-world problems with four operations</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">MGSE7.EE</span>
+                    <p><strong>Expressions & Equations:</strong></p>
+                    <ul>
+                        <li>MGSE7.EE.1-2 - Rewrite expressions; understand equivalence</li>
+                        <li>MGSE7.EE.3-4 - Solve two-step equations and inequalities</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">MGSE7.G</span>
+                    <p><strong>Geometry:</strong></p>
+                    <ul>
+                        <li>MGSE7.G.1 - Scale drawings</li>
+                        <li>MGSE7.G.2 - Draw shapes with conditions (triangles)</li>
+                        <li>MGSE7.G.3 - 2D cross-sections of 3D figures</li>
+                        <li>MGSE7.G.4 - Circles: area and circumference</li>
+                        <li>MGSE7.G.5 - Angle relationships</li>
+                        <li>MGSE7.G.6 - Area, surface area, volume</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">MGSE7.SP</span>
+                    <p><strong>Statistics & Probability:</strong></p>
+                    <ul>
+                        <li>MGSE7.SP.1-2 - Random sampling; draw inferences</li>
+                        <li>MGSE7.SP.3-4 - Compare two populations</li>
+                        <li>MGSE7.SP.5-8 - Probability models and compound events</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Teacher Background Tab -->
+        <div id="background" class="tab-content">
+            <div class="content-card">
+                <h3>👩‍🏫 Proportional Relationships</h3>
+                <div class="inner-content">
+                    <h4>Deepening Understanding</h4>
+                    <div class="highlight-section">
+                        <h5>What Makes a Relationship Proportional?</h5>
+                        <ul>
+                            <li>Two quantities have a constant ratio</li>
+                            <li>Graph passes through the origin (0, 0)</li>
+                            <li>Can be expressed as y = kx where k is constant of proportionality</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Representations</h5>
+                        <ul>
+                            <li><strong>Table:</strong> Ratios are equivalent across rows</li>
+                            <li><strong>Graph:</strong> Straight line through origin</li>
+                            <li><strong>Equation:</strong> y = kx</li>
+                            <li><strong>Verbal:</strong> "y is k times x"</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Percent Applications</h5>
+                        <p>All percent problems are proportional relationships!</p>
+                        <ul>
+                            <li>Tax: total = price + (price × rate)</li>
+                            <li>Discount: sale = original - (original × rate)</li>
+                            <li>Simple Interest: I = Prt</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                <h3>➕➖✖️➗ Rational Number Operations</h3>
+                <div class="inner-content">
+                    <h4>Extending to All Rationals</h4>
+                    <div class="highlight-section">
+                        <h5>Adding/Subtracting Integers</h5>
+                        <p>Same sign: Add absolute values, keep sign. (-5) + (-3) = -8</p>
+                        <p>Different signs: Subtract absolute values, keep sign of larger. (-7) + 4 = -3</p>
+                        <p>Subtracting: Add the opposite. 5 - (-3) = 5 + 3 = 8</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Multiplying/Dividing Integers</h5>
+                        <p>Same sign: Positive result. (-4)(-3) = 12</p>
+                        <p>Different signs: Negative result. (-4)(3) = -12</p>
+                        <p>Division follows same rules.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <h3>🔵 Circles</h3>
+                <div class="inner-content">
+                    <h4>Area and Circumference</h4>
+                    <div class="highlight-section">
+                        <h5>Key Formulas</h5>
+                        <p><strong>Circumference:</strong> C = πd = 2πr (distance around)</p>
+                        <p><strong>Area:</strong> A = πr² (space inside)</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Understanding π</h5>
+                        <p>π ≈ 3.14159... is the ratio of circumference to diameter for ANY circle.</p>
+                        <p>π is irrational - it never ends or repeats!</p>
+                        <p>Use π button or 3.14 for calculations.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: #2d3436;">
+                <h3>🎲 Probability</h3>
+                <div class="inner-content">
+                    <h4>Foundations of Probability</h4>
+                    <div class="highlight-section">
+                        <h5>Key Concepts</h5>
+                        <p><strong>Probability range:</strong> 0 ≤ P(event) ≤ 1</p>
+                        <p><strong>Theoretical:</strong> Based on possible outcomes</p>
+                        <p><strong>Experimental:</strong> Based on actual trials</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Compound Events</h5>
+                        <ul>
+                            <li><strong>Independent:</strong> P(A and B) = P(A) × P(B)</li>
+                            <li><strong>Dependent:</strong> Must adjust for first event</li>
+                            <li>Use tree diagrams, tables, organized lists</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Manipulatives Tab -->
+        <div id="manipulatives" class="tab-content">
+            <div class="manipulative-card">
+                <h3>📊 Proportions & Percent</h3>
+                <div class="manipulative-item">
+                    <h4>Percent Bars/Grids</h4>
+                    <p><strong>Uses:</strong> Visual percent models, finding percent of a number</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Double Number Lines</h4>
+                    <p><strong>Uses:</strong> Proportional relationships, finding unknown values</p>
+                </div>
+            </div>
+            
+            <div class="manipulative-card" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <h3>➕➖ Integer Operations</h3>
+                <div class="manipulative-item">
+                    <h4>Integer Chips (two-color)</h4>
+                    <p><strong>Uses:</strong> All four operations with integers</p>
+                    <p><strong>Concept:</strong> Zero pairs cancel; multiplication as repeated addition/groups</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Number Lines</h4>
+                    <p><strong>Uses:</strong> Adding (move right), subtracting (move left), comparing</p>
+                </div>
+            </div>
+            
+            <div class="manipulative-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <h3>📐 Geometry Tools</h3>
+                <div class="manipulative-item">
+                    <h4>Compass & Straightedge</h4>
+                    <p><strong>Uses:</strong> Geometric constructions, drawing circles</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Protractors</h4>
+                    <p><strong>Uses:</strong> Angle measurement, angle relationships</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>3D Model Nets</h4>
+                    <p><strong>Uses:</strong> Surface area, visualizing 3D shapes</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Lessons Tab -->
+        <div id="lessons" class="tab-content">
+            <div class="lesson-card">
+                <h3>📚 Lesson 1: Constant of Proportionality</h3>
+                <span class="time-badge">⏱️ 55 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will identify the constant of proportionality in tables, graphs, and equations</li>
+                        <li>Students will write equations for proportional relationships</li>
+                        <li>Students will explain what k represents in context</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (12 min):</strong> Present table: Hours worked (2, 4, 6) → Money earned ($24, $48, $72). "What's the relationship?" Every hour = $12. This constant rate is k.</p>
+                    <p><strong>Guided Practice (18 min):</strong> Write equation: y = 12x. Graph points - line through origin! Find k from graphs (slope), tables (y ÷ x), equations (coefficient of x).</p>
+                    <p><strong>Independent Practice (20 min):</strong> Identify k in various representations. Write equations. Interpret k in context.</p>
+                    <p><strong>Closure (5 min):</strong> "How do you know a relationship is proportional?"</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                <h3>📚 Lesson 2: Multiplying and Dividing Integers</h3>
+                <span class="time-badge">⏱️ 55 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will multiply integers using rules for signs</li>
+                        <li>Students will divide integers</li>
+                        <li>Students will explain why negative × negative = positive</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (12 min):</strong> Explore patterns: 3×2=6, 3×1=3, 3×0=0, 3×(-1)=?, 3×(-2)=? Pattern shows 3×(-1)=-3. Continue for negative × negative.</p>
+                    <p><strong>Guided Practice (18 min):</strong> Develop rules: Same signs → positive. Different signs → negative. Apply to division. Practice with chips for conceptual understanding.</p>
+                    <p><strong>Independent Practice (20 min):</strong> Mixed practice with all integer operations.</p>
+                    <p><strong>Closure (5 min):</strong> "(-4)(-5) = ? Explain the sign of your answer."</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white;">
+                <h3>📚 Lesson 3: Area and Circumference of Circles</h3>
+                <span class="time-badge">⏱️ 55 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will calculate circumference using C = πd or C = 2πr</li>
+                        <li>Students will calculate area using A = πr²</li>
+                        <li>Students will solve real-world problems involving circles</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (12 min):</strong> Measure circumference and diameter of various circular objects. Calculate C÷d for each. What do you notice? Always about 3.14! This ratio is π.</p>
+                    <p><strong>Guided Practice (18 min):</strong> Use C = πd. Derive C = 2πr (since d = 2r). Introduce A = πr². Practice calculations.</p>
+                    <p><strong>Independent Practice (20 min):</strong> Find circumference and area. Real-world applications (wheel distance, pizza area, garden planning).</p>
+                    <p><strong>Closure (5 min):</strong> "A circle has radius 5. Find both circumference and area."</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: #2d3436;">
+                <h3>📚 Lesson 4: Solving Two-Step Equations</h3>
+                <span class="time-badge">⏱️ 50 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will solve equations requiring two operations</li>
+                        <li>Students will write equations from word problems</li>
+                        <li>Students will check solutions</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (10 min):</strong> "I think of a number, multiply by 3, and add 5. The result is 17. What's my number?" Model: 3x + 5 = 17. Work backwards: Subtract 5, then divide by 3.</p>
+                    <p><strong>Guided Practice (15 min):</strong> Solve systematically: undo addition/subtraction first, then multiplication/division. Check by substituting.</p>
+                    <p><strong>Independent Practice (20 min):</strong> Solve equations; write and solve equations from contexts.</p>
+                    <p><strong>Closure (5 min):</strong> "Solve: 2x - 7 = 15. What steps did you take?"</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <h3>📚 Lesson 5: Compound Probability</h3>
+                <span class="time-badge">⏱️ 55 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will find probability of compound events</li>
+                        <li>Students will use tree diagrams and organized lists</li>
+                        <li>Students will distinguish independent from dependent events</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (12 min):</strong> "Flip a coin and roll a die. What's the probability of heads AND a 6?" Create tree diagram. Count outcomes: 12 total, 1 favorable. P = 1/12.</p>
+                    <p><strong>Guided Practice (18 min):</strong> For independent events: P(A and B) = P(A) × P(B). Verify: 1/2 × 1/6 = 1/12. Explore dependent events (drawing without replacement).</p>
+                    <p><strong>Independent Practice (20 min):</strong> Calculate compound probabilities using multiple methods.</p>
+                    <p><strong>Closure (5 min):</strong> "When would events NOT be independent?"</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Investigations Tab -->
+        <div id="labs" class="tab-content">
+            <div class="lab-card">
+                <h3>🔬 Investigation 1: Discovering π</h3>
+                <div class="lab-info"><strong>Focus:</strong> Circle relationships | <strong>Duration:</strong> 50 minutes</div>
+                <div class="inner-content">
+                    <h4>Procedure</h4>
+                    <ol>
+                        <li>Collect circular objects of various sizes</li>
+                        <li>Measure circumference (string method) and diameter</li>
+                        <li>Calculate C ÷ d for each object</li>
+                        <li>Record data; find mean of all ratios</li>
+                        <li>Compare class results to π ≈ 3.14159...</li>
+                        <li>Discussion: Why is this ratio always the same?</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="lab-card" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white;">
+                <h3>🔬 Investigation 2: Scale Drawing Design</h3>
+                <div class="lab-info"><strong>Focus:</strong> Scale factors and proportions | <strong>Duration:</strong> 2 class periods</div>
+                <div class="inner-content">
+                    <h4>Procedure</h4>
+                    <ol>
+                        <li>Design your dream room (bedroom, game room, etc.)</li>
+                        <li>Choose a scale (e.g., 1 inch = 2 feet)</li>
+                        <li>Draw room and furniture to scale</li>
+                        <li>Calculate actual dimensions from drawing</li>
+                        <li>Find area of room and furniture</li>
+                        <li>Present designs with calculations</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="lab-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <h3>🔬 Investigation 3: Probability Simulation</h3>
+                <div class="lab-info"><strong>Focus:</strong> Theoretical vs. experimental probability | <strong>Duration:</strong> 45 minutes</div>
+                <div class="inner-content">
+                    <h4>Procedure</h4>
+                    <ol>
+                        <li>Choose compound event (two dice, coin and spinner, etc.)</li>
+                        <li>Calculate theoretical probability</li>
+                        <li>Conduct 50 trials and record results</li>
+                        <li>Calculate experimental probability</li>
+                        <li>Compare theoretical vs. experimental</li>
+                        <li>Discuss: Why might they differ? What happens with more trials?</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Videos Tab -->
+        <div id="videos" class="tab-content">
+            <h2 style="color: #11998e; margin-bottom: 20px;">🎬 Recommended Videos</h2>
+            
+            <div class="video-card">
+                <h4>📹 Proportions & Percent</h4>
+                <ul>
+                    <li><strong>Math Antics - Proportions:</strong> Cross multiplication - <a href="https://www.youtube.com/watch?v=USmit5zUGas" target="_blank">YouTube</a></li>
+                    <li><strong>Khan Academy - Percent:</strong> Tax, tip, discount - <a href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-fractions-decimals" target="_blank">Khan Academy</a></li>
+                </ul>
+            </div>
+            
+            <div class="video-card" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <h4>📹 Integer Operations</h4>
+                <ul>
+                    <li><strong>Math Antics - Integer Multiplication:</strong> Sign rules - <a href="https://www.youtube.com/watch?v=47wjId9k2Hs" target="_blank">YouTube</a></li>
+                    <li><strong>Math Antics - Integer Division:</strong> Same rules apply - <a href="https://www.youtube.com/watch?v=2PRciDpqpBo" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+            
+            <div class="video-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <h4>📹 Geometry & Probability</h4>
+                <ul>
+                    <li><strong>Math Antics - Circles:</strong> Area and circumference - <a href="https://www.youtube.com/watch?v=O-cawByg2aA" target="_blank">YouTube</a></li>
+                    <li><strong>Khan Academy - Probability:</strong> Compound events - <a href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-probability-statistics" target="_blank">Khan Academy</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Articles Tab -->
+        <div id="articles" class="tab-content">
+            <h2 style="color: #11998e; margin-bottom: 20px;">📖 Student Reading Passages</h2>
+            
+            <div class="article-card">
+                <h4>📚 The Magic Number: π</h4>
+                <div style="background: white; color: #333; padding: 15px; border-radius: 10px; margin-top: 10px;">
+                    <p>Every circle, no matter how big or small, shares a magical property. If you divide the distance around any circle (circumference) by the distance across it (diameter), you always get the same number: π (pi), approximately 3.14159...</p>
+                    <p>π never ends and never repeats! Mathematicians have calculated trillions of digits, but it goes on forever. This makes π irrational - it can't be written as a simple fraction.</p>
+                    <p>We celebrate Pi Day on March 14 (3/14) - can you see why?</p>
+                </div>
+            </div>
+            
+            <div class="article-card" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <h4>📚 Why Negative × Negative = Positive</h4>
+                <div style="background: white; color: #333; padding: 15px; border-radius: 10px; margin-top: 10px;">
+                    <p>This rule seems strange, but patterns prove it! Start with 3 × 2 = 6. Now decrease the second number: 3 × 1 = 3, 3 × 0 = 0, 3 × (-1) = -3. Each time, we subtract 3.</p>
+                    <p>Now do the same starting with -3 × 2 = -6. Then -3 × 1 = -3, -3 × 0 = 0. Following the pattern, -3 × (-1) = 3! Each time we add 3.</p>
+                    <p>The pattern forces negative × negative to be positive!</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Assessments Tab -->
+        <div id="assessments" class="tab-content">
+            <h2 style="color: #11998e; margin-bottom: 20px;">📝 Assessment Tools</h2>
+            
+            <div class="assessment-card">
+                <h4>🎯 Proportions & Percent</h4>
+                <div class="assessment-item">
+                    <p><strong>Constant of proportionality:</strong> Identify k from tables, graphs, equations</p>
+                    <p><strong>Percent problems:</strong> Tax, tip, discount, markup calculations</p>
+                    <p><strong>Multi-step:</strong> Complex proportion word problems</p>
+                </div>
+            </div>
+            
+            <div class="assessment-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <h4>🎯 Operations & Equations</h4>
+                <div class="assessment-item">
+                    <p><strong>Rational operations:</strong> All four operations with integers, fractions, decimals</p>
+                    <p><strong>Two-step equations:</strong> Solve and write equations from context</p>
+                    <p><strong>Inequalities:</strong> Solve and graph simple inequalities</p>
+                </div>
+            </div>
+            
+            <div class="assessment-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <h4>🎯 Geometry & Probability</h4>
+                <div class="assessment-item">
+                    <p><strong>Circles:</strong> Calculate area and circumference</p>
+                    <p><strong>Angles:</strong> Find missing angles using relationships</p>
+                    <p><strong>Probability:</strong> Simple and compound event calculations</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Printables Tab -->
+        <div id="printables" class="tab-content">
+            <h2 style="color: #11998e; margin-bottom: 20px;">🖨️ Printable Resources</h2>
+            
+            <div class="printable-card">
+                <h4>📊 Proportions</h4>
+                <ul>
+                    <li>Constant of proportionality practice</li>
+                    <li>Percent problem worksheets</li>
+                    <li>Scale drawing activities</li>
+                </ul>
+            </div>
+            
+            <div class="printable-card" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white;">
+                <h4>➕ Operations & Equations</h4>
+                <ul>
+                    <li>Integer operations practice</li>
+                    <li>Two-step equation solving</li>
+                    <li>Inequality graphing</li>
+                </ul>
+            </div>
+            
+            <div class="printable-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <h4>📐 Geometry & Probability</h4>
+                <ul>
+                    <li>Circle calculations</li>
+                    <li>Angle relationship problems</li>
+                    <li>Probability tree diagrams</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Vocabulary Tab -->
+        <div id="vocabulary" class="tab-content">
+            <h2 style="color: #11998e; margin-bottom: 20px;">📖 Math Vocabulary</h2>
+            
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <h4>Constant of Proportionality</h4>
+                    <p><strong>Definition:</strong> The constant ratio k in y = kx</p>
+                    <div class="vocab-example">"If y = 3x, the constant of proportionality is 3."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Circumference</h4>
+                    <p><strong>Definition:</strong> The distance around a circle</p>
+                    <div class="vocab-example">"C = πd or C = 2πr"</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Supplementary Angles</h4>
+                    <p><strong>Definition:</strong> Two angles that add to 180°</p>
+                    <div class="vocab-example">"120° and 60° are supplementary."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Complementary Angles</h4>
+                    <p><strong>Definition:</strong> Two angles that add to 90°</p>
+                    <div class="vocab-example">"25° and 65° are complementary."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Simple Interest</h4>
+                    <p><strong>Definition:</strong> Interest calculated as I = Prt</p>
+                    <div class="vocab-example">"$100 at 5% for 2 years = $10 interest."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Independent Events</h4>
+                    <p><strong>Definition:</strong> Events where one doesn't affect the other</p>
+                    <div class="vocab-example">"Flipping a coin twice - first flip doesn't affect second."</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Games Tab -->
+        <div id="games" class="tab-content">
+            <h2 style="color: #11998e; margin-bottom: 20px;">🎮 Math Games</h2>
+            
+            <div class="game-card">
+                <h4>🎲 Integer Operations Race</h4>
+                <p><strong>Players:</strong> 2-4 | <strong>Materials:</strong> Integer cards, game board</p>
+                <ul>
+                    <li>Draw two cards, perform operation shown on board</li>
+                    <li>Correct answer = move forward</li>
+                    <li>First to finish wins!</li>
+                </ul>
+            </div>
+            
+            <div class="game-card" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white;">
+                <h4>🎯 Percent Shopping</h4>
+                <p><strong>Players:</strong> Groups | <strong>Materials:</strong> Product cards with prices, discount cards</p>
+                <ul>
+                    <li>Draw products and calculate sale prices</li>
+                    <li>Budget $100 - who can get the most items?</li>
+                    <li>Real-world percent practice!</li>
+                </ul>
+            </div>
+            
+            <div class="online-resources">
+                <h3>💻 Online Math Games</h3>
+                <a href="https://www.khanacademy.org/math/cc-seventh-grade-math" class="resource-link" target="_blank">
+                    <strong>Khan Academy Grade 7</strong> - Complete practice with mastery
+                </a>
+                <a href="https://www.mathplayground.com/grade_7_games.html" class="resource-link" target="_blank">
+                    <strong>Math Playground Grade 7</strong> - Games and problem solving
+                </a>
+            </div>
+        </div>
+        
+        <!-- Differentiation Tab -->
+        <div id="differentiation" class="tab-content">
+            <h2 style="color: #11998e; margin-bottom: 20px;">🌟 Differentiation Strategies</h2>
+            
+            <div class="differentiation-box">
+                <h4>📈 For Advanced Learners</h4>
+                <ul>
+                    <li>Compound interest problems</li>
+                    <li>Multi-step equations with variables on both sides</li>
+                    <li>Complex probability scenarios</li>
+                    <li>Connections to linear functions</li>
+                </ul>
+            </div>
+            
+            <div class="differentiation-box" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: #2d3436;">
+                <h4>📉 For Struggling Learners</h4>
+                <ul>
+                    <li>Integer chip models for all operations</li>
+                    <li>Calculator support for complex calculations</li>
+                    <li>Visual models for percent</li>
+                    <li>Step-by-step equation solving guides</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Misconceptions Tab -->
+        <div id="misconceptions" class="tab-content">
+            <h2 style="color: #11998e; margin-bottom: 20px;">❓ Common Misconceptions</h2>
+            
+            <div class="misconception-box">
+                <h4>❌ Subtracting a negative makes smaller</h4>
+                <div class="misconception-content">
+                    <p><strong>Error:</strong> 5 - (-3) = 2</p>
+                    <p><strong>Correction:</strong> Subtracting negative = adding. 5 - (-3) = 5 + 3 = 8</p>
+                </div>
+            </div>
+            
+            <div class="misconception-box">
+                <h4>❌ Using diameter in A = πr²</h4>
+                <div class="misconception-content">
+                    <p><strong>Error:</strong> For circle with d=10, calculating A = π(10)² = 100π</p>
+                    <p><strong>Correction:</strong> Area uses RADIUS. r = 5, so A = π(5)² = 25π</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cultural Connections Tab -->
+        <div id="cultural" class="tab-content">
+            <h2 style="color: #11998e; margin-bottom: 20px;">🌍 Cultural Connections</h2>
+            
+            <div class="cultural-box">
+                <h4>🔵 π Across Cultures</h4>
+                <ul>
+                    <li><strong>Ancient Babylon:</strong> Used π ≈ 3 1/8</li>
+                    <li><strong>Ancient Egypt:</strong> Used π ≈ (16/9)² ≈ 3.16</li>
+                    <li><strong>Archimedes (Greece):</strong> Calculated π between 3 10/71 and 3 1/7</li>
+                    <li><strong>Zu Chongzhi (China):</strong> Found π ≈ 355/113 (accurate to 6 decimals!)</li>
+                </ul>
+            </div>
+            
+            <div class="cultural-box" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <h4>👨‍👩‍👧‍👦 Diverse Mathematicians</h4>
+                <ul>
+                    <li><strong>Emmy Noether:</strong> German mathematician - abstract algebra</li>
+                    <li><strong>Srinivasa Ramanujan:</strong> Indian genius - infinite series for π</li>
+                    <li><strong>Katherine Johnson:</strong> NASA mathematician - orbital calculations</li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function showTab(tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) tabContents[i].classList.remove('active');
+            const tabButtons = document.getElementsByClassName('tab-btn');
+            for (let i = 0; i < tabButtons.length; i++) tabButtons[i].classList.remove('active');
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+            window.scrollTo({top: 200, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>

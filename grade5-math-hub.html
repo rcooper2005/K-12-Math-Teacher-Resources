@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5th Grade Math Resources - Complete Teacher Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #00b894 0%, #00cec9 50%, #0984e3 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 30px; padding: 40px; box-shadow: 0 25px 80px rgba(0,0,0,0.2); }
+        h1 { color: #00b894; font-size: 2.8em; margin-bottom: 10px; text-align: center; }
+        .subtitle { text-align: center; color: #666; font-size: 1.3em; margin-bottom: 30px; }
+        .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; justify-content: center; border-bottom: 4px solid #00b894; padding-bottom: 15px; }
+        .tab-btn { background: linear-gradient(135deg, #f5f5f5, #e0e0e0); border: none; padding: 14px 28px; border-radius: 12px 12px 0 0; cursor: pointer; font-size: 1em; font-weight: 700; transition: all 0.3s; color: #555; }
+        .tab-btn:hover { background: linear-gradient(135deg, #00b894, #00a085); color: white; transform: translateY(-3px); }
+        .tab-btn.active { background: linear-gradient(135deg, #00b894, #00a085); color: white; }
+        .tab-content { display: none; animation: fadeIn 0.5s ease-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .standard-box { background: linear-gradient(135deg, #00b894 0%, #00a085 100%); padding: 25px; border-radius: 20px; margin-bottom: 25px; color: white; }
+        .standard-item { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 15px; color: #333; }
+        .standard-code { background: #00b894; color: white; padding: 5px 12px; border-radius: 8px; font-weight: 700; display: inline-block; margin-bottom: 10px; }
+        
+        .content-card { background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: white; }
+        .inner-content { background: white; padding: 25px; border-radius: 15px; margin-top: 20px; color: #333; }
+        .highlight-section { background: #e8f5e9; padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid #00b894; }
+        .highlight-section h5 { color: #00b894; margin-bottom: 8px; }
+        
+        .manipulative-card { background: linear-gradient(135deg, #e17055 0%, #d63031 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: white; }
+        .manipulative-item { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 15px; color: #333; }
+        .manipulative-item h4 { color: #e17055; margin-bottom: 10px; }
+        
+        .lesson-card { background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: white; }
+        .lesson-section { background: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; color: #333; }
+        .lesson-section h4 { color: #0984e3; margin-bottom: 12px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #fdcb6e, #f39c12); color: #2d3436; padding: 8px 20px; border-radius: 25px; font-weight: 700; margin: 10px 0; }
+        
+        .lab-card { background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: white; }
+        .lab-info { background: rgba(255,255,255,0.2); padding: 10px 15px; border-radius: 10px; margin-bottom: 15px; }
+        
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 25px; }
+        .vocab-card { background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%); padding: 22px; border-radius: 15px; }
+        .vocab-card h4 { color: #2d3436; margin-bottom: 10px; }
+        .vocab-example { background: rgba(255,255,255,0.5); padding: 10px; border-radius: 8px; font-style: italic; }
+        
+        .game-card { background: linear-gradient(135deg, #00cec9 0%, #81ecec 100%); color: #2d3436; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .online-resources { background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%); padding: 25px; border-radius: 15px; margin-top: 30px; color: white; }
+        .resource-link { background: white; padding: 15px; border-radius: 10px; margin-bottom: 10px; display: block; text-decoration: none; color: #333; transition: transform 0.3s; }
+        .resource-link:hover { transform: translateX(10px); }
+        
+        .differentiation-box { background: linear-gradient(135deg, #00b894 0%, #55efc4 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .misconception-box { background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .misconception-content { background: rgba(255,255,255,0.95); color: #333; padding: 15px; border-radius: 10px; margin-top: 10px; }
+        .cultural-box { background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        
+        .video-card { background: linear-gradient(135deg, #e84393 0%, #fd79a8 100%); color: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        .video-card a { color: #fff; text-decoration: underline; }
+        .article-card { background: linear-gradient(135deg, #00b894 0%, #55efc4 100%); color: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        .assessment-card { background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .assessment-item { background: rgba(255,255,255,0.95); color: #333; padding: 15px; border-radius: 10px; margin-bottom: 10px; }
+        .printable-card { background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%); color: #2d3436; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        
+        ul { margin-left: 20px; margin-top: 10px; }
+        li { margin-bottom: 10px; }
+        @media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 2em; } .tab-btn { padding: 10px 15px; font-size: 0.9em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔢 5th Grade Math Resources</h1>
+        <p class="subtitle">Fraction Operations • Decimals • Volume • Coordinate Graphing • Order of Operations</p>
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('standards')">📋 Standards</button>
+            <button class="tab-btn" onclick="showTab('background')">👩‍🏫 Teacher Background</button>
+            <button class="tab-btn" onclick="showTab('manipulatives')">🧮 Manipulatives</button>
+            <button class="tab-btn" onclick="showTab('lessons')">📚 Lessons</button>
+            <button class="tab-btn" onclick="showTab('labs')">🔬 Investigations</button>
+            <button class="tab-btn" onclick="showTab('videos')">🎬 Videos</button>
+            <button class="tab-btn" onclick="showTab('articles')">📖 Articles</button>
+            <button class="tab-btn" onclick="showTab('assessments')">📝 Assessments</button>
+            <button class="tab-btn" onclick="showTab('printables')">🖨️ Printables</button>
+            <button class="tab-btn" onclick="showTab('vocabulary')">📖 Vocabulary</button>
+            <button class="tab-btn" onclick="showTab('games')">🎮 Games</button>
+            <button class="tab-btn" onclick="showTab('differentiation')">🌟 Differentiation</button>
+            <button class="tab-btn" onclick="showTab('misconceptions')">❓ Misconceptions</button>
+            <button class="tab-btn" onclick="showTab('cultural')">🌍 Cultural Connections</button>
+        </div>
+        
+        <!-- Standards Tab -->
+        <div id="standards" class="tab-content active">
+            <div class="standard-box">
+                <h3>📐 NCTM Content Standards for Fifth Grade</h3>
+                <div class="standard-item">
+                    <span class="standard-code">Fractions</span>
+                    <p><strong>Add/Subtract Unlike Denominators:</strong> Add and subtract fractions with unlike denominators using equivalent fractions.</p>
+                    <p><strong>Multiply Fractions:</strong> Interpret fraction multiplication; multiply fractions and mixed numbers.</p>
+                    <p><strong>Divide Fractions:</strong> Divide unit fractions by whole numbers and whole numbers by unit fractions.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Decimals</span>
+                    <p><strong>Place Value:</strong> Understand place value system to thousandths.</p>
+                    <p><strong>Operations:</strong> Add, subtract, multiply, and divide decimals to hundredths.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Volume</span>
+                    <p><strong>Concept:</strong> Recognize volume as attribute of solid figures measured in cubic units.</p>
+                    <p><strong>Calculate:</strong> Find volumes of right rectangular prisms using formulas V = l×w×h and V = B×h.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Coordinate Graphing</span>
+                    <p><strong>First Quadrant:</strong> Graph points in the first quadrant of a coordinate plane. Interpret coordinate values in real-world contexts.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Algebraic Thinking</span>
+                    <p><strong>Expressions:</strong> Write and evaluate numerical expressions with parentheses, brackets, and braces.</p>
+                    <p><strong>Order of Operations:</strong> Use order of operations to evaluate expressions (PEMDAS/GEMDAS).</p>
+                </div>
+            </div>
+            
+            <div class="standard-box">
+                <h3>🍑 Georgia Standards of Excellence (GSE) - 5th Grade Math</h3>
+                <div class="standard-item">
+                    <span class="standard-code">MGSE5.OA</span>
+                    <p><strong>Operations & Algebraic Thinking:</strong></p>
+                    <ul>
+                        <li>MGSE5.OA.1 - Use parentheses, brackets, or braces; evaluate expressions</li>
+                        <li>MGSE5.OA.2 - Write expressions to record calculations</li>
+                        <li>MGSE5.OA.3 - Generate numerical patterns; identify relationships</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">MGSE5.NBT</span>
+                    <p><strong>Number & Operations in Base Ten:</strong></p>
+                    <ul>
+                        <li>MGSE5.NBT.1 - Place value patterns (10× relationship)</li>
+                        <li>MGSE5.NBT.2 - Powers of 10</li>
+                        <li>MGSE5.NBT.3 - Read, write, compare decimals to thousandths</li>
+                        <li>MGSE5.NBT.4 - Round decimals</li>
+                        <li>MGSE5.NBT.5 - Fluently multiply multi-digit whole numbers</li>
+                        <li>MGSE5.NBT.6 - Divide multi-digit numbers (up to 4-digit by 2-digit)</li>
+                        <li>MGSE5.NBT.7 - Decimal operations (add, subtract, multiply, divide)</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">MGSE5.NF</span>
+                    <p><strong>Number & Operations—Fractions:</strong></p>
+                    <ul>
+                        <li>MGSE5.NF.1 - Add/subtract fractions with unlike denominators</li>
+                        <li>MGSE5.NF.2 - Word problems with fraction addition/subtraction</li>
+                        <li>MGSE5.NF.3 - Interpret fractions as division</li>
+                        <li>MGSE5.NF.4 - Multiply fractions and whole numbers</li>
+                        <li>MGSE5.NF.5 - Interpret multiplication as scaling</li>
+                        <li>MGSE5.NF.6 - Real-world problems with fraction multiplication</li>
+                        <li>MGSE5.NF.7 - Divide unit fractions by whole numbers and vice versa</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">MGSE5.MD</span>
+                    <p><strong>Measurement & Data:</strong></p>
+                    <ul>
+                        <li>MGSE5.MD.1 - Convert measurement units within a system</li>
+                        <li>MGSE5.MD.2 - Line plots with fractions</li>
+                        <li>MGSE5.MD.3-5 - Volume concepts and calculation</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">MGSE5.G</span>
+                    <p><strong>Geometry:</strong></p>
+                    <ul>
+                        <li>MGSE5.G.1-2 - Coordinate graphing in first quadrant</li>
+                        <li>MGSE5.G.3-4 - Classify 2D figures by properties</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="standard-box">
+                <h3>📍 Gwinnett County AKS - 5th Grade</h3>
+                <div class="standard-item">
+                    <span class="standard-code">Key Skills</span>
+                    <ul>
+                        <li>Add and subtract fractions with unlike denominators</li>
+                        <li>Multiply fractions by fractions and mixed numbers</li>
+                        <li>Divide unit fractions and whole numbers</li>
+                        <li>Perform decimal operations to hundredths</li>
+                        <li>Understand and calculate volume of rectangular prisms</li>
+                        <li>Graph points on coordinate plane (first quadrant)</li>
+                        <li>Evaluate expressions using order of operations</li>
+                        <li>Divide multi-digit numbers by 2-digit divisors</li>
+                        <li>Convert measurement units within a system</li>
+                        <li>Classify 2D figures in a hierarchy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Teacher Background Tab -->
+        <div id="background" class="tab-content">
+            <div class="content-card">
+                <h3>👩‍🏫 Fraction Operations with Unlike Denominators</h3>
+                <div class="inner-content">
+                    <h4>Adding and Subtracting</h4>
+                    <div class="highlight-section">
+                        <h5>The Big Idea</h5>
+                        <p>You can only add/subtract like things. Adding 2/3 + 1/4 is like adding 2 apples + 1 orange - we need a common unit!</p>
+                        <p>Find equivalent fractions with the same denominator, then add/subtract numerators.</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Finding Common Denominators</h5>
+                        <ul>
+                            <li>List multiples of each denominator</li>
+                            <li>Find the Least Common Multiple (LCM)</li>
+                            <li>Convert both fractions to equivalents with that denominator</li>
+                        </ul>
+                        <p>Example: 2/3 + 1/4 → 8/12 + 3/12 = 11/12</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="background: linear-gradient(135deg, #e17055 0%, #d63031 100%);">
+                <h3>✖️ Multiplying Fractions</h3>
+                <div class="inner-content">
+                    <h4>Understanding Fraction Multiplication</h4>
+                    <div class="highlight-section">
+                        <h5>Fraction × Whole Number</h5>
+                        <p>3 × 2/5 means "3 groups of 2/5" = 6/5 = 1 1/5</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Fraction × Fraction</h5>
+                        <p>1/2 × 1/3 means "1/2 OF 1/3" - take 1/2 of a third</p>
+                        <p>Use area model: Draw 1/3, then shade 1/2 of it. Result: 1/6 of the whole.</p>
+                        <p>Algorithm: Multiply numerators, multiply denominators: (1×1)/(2×3) = 1/6</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Scaling Interpretation</h5>
+                        <p>Multiplying by fraction less than 1 makes smaller (2/3 × 6 < 6)</p>
+                        <p>Multiplying by fraction greater than 1 makes larger (5/4 × 6 > 6)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);">
+                <h3>📦 Volume</h3>
+                <div class="inner-content">
+                    <h4>Understanding Volume</h4>
+                    <div class="highlight-section">
+                        <h5>What is Volume?</h5>
+                        <p>Volume measures the space inside a 3D figure - how much it can hold.</p>
+                        <p>Measured in cubic units (unit cubes that fit inside)</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Volume of Rectangular Prisms</h5>
+                        <ul>
+                            <li><strong>Counting:</strong> Count unit cubes in layers</li>
+                            <li><strong>Formula:</strong> V = length × width × height</li>
+                            <li><strong>Alternative:</strong> V = Base area × height</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Connection to Multiplication</h5>
+                        <p>Volume extends area (2D) to 3D by adding height dimension.</p>
+                        <p>Can view as layers: V = (l × w) × h = area of base × number of layers</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%); color: #2d3436;">
+                <h3>📊 Coordinate Graphing</h3>
+                <div class="inner-content">
+                    <h4>First Quadrant Coordinates</h4>
+                    <div class="highlight-section">
+                        <h5>Key Vocabulary</h5>
+                        <ul>
+                            <li><strong>Coordinate plane:</strong> Grid formed by perpendicular number lines</li>
+                            <li><strong>Origin:</strong> Point (0,0) where axes meet</li>
+                            <li><strong>x-axis:</strong> Horizontal number line</li>
+                            <li><strong>y-axis:</strong> Vertical number line</li>
+                            <li><strong>Ordered pair:</strong> (x, y) - tells location</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Reading and Plotting</h5>
+                        <p>Always start at origin. Move right (x), then up (y).</p>
+                        <p>Memory tip: "Run before you jump" or "Walk before you climb"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Manipulatives Tab -->
+        <div id="manipulatives" class="tab-content">
+            <div class="manipulative-card">
+                <h3>🔢 Fraction Tools</h3>
+                <div class="manipulative-item">
+                    <h4>Fraction Strips/Bars</h4>
+                    <p><strong>Uses:</strong> Finding common denominators, adding/subtracting, comparing</p>
+                    <p><strong>Include:</strong> Halves through twelfths for finding equivalent fractions</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Fraction Tiles (Area Model)</h4>
+                    <p><strong>Uses:</strong> Multiplying fractions - show "fraction of a fraction"</p>
+                    <p><strong>Example:</strong> 1/2 × 1/3: Fold paper into thirds, shade 1/3, then fold into halves, shade 1/2 of the 1/3</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Pattern Blocks for Fractions</h4>
+                    <p><strong>Uses:</strong> If hexagon = 1, trapezoid = 1/2, rhombus = 1/3, triangle = 1/6</p>
+                </div>
+            </div>
+            
+            <div class="manipulative-card" style="background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);">
+                <h3>📦 Volume Tools</h3>
+                <div class="manipulative-item">
+                    <h4>Unit Cubes</h4>
+                    <p><strong>Uses:</strong> Build rectangular prisms, count to find volume, discover formula</p>
+                    <p><strong>Key insight:</strong> Volume = layers × cubes per layer</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Rectangular Prism Containers</h4>
+                    <p><strong>Uses:</strong> Fill with unit cubes, connect to formula</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>3D Models (nets)</h4>
+                    <p><strong>Uses:</strong> Visualize rectangular prisms, understand faces</p>
+                </div>
+            </div>
+            
+            <div class="manipulative-card" style="background: linear-gradient(135deg, #00b894 0%, #55efc4 100%);">
+                <h3>📊 Graphing & Decimals</h3>
+                <div class="manipulative-item">
+                    <h4>Coordinate Grid Paper</h4>
+                    <p><strong>Uses:</strong> Plotting points, making graphs</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Decimal Grids & Place Value Charts</h4>
+                    <p><strong>Uses:</strong> Decimals to thousandths, operations</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Base Ten Blocks (extended)</h4>
+                    <p><strong>Uses:</strong> If flat = 1, then rod = 0.1, unit = 0.01</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Lessons Tab -->
+        <div id="lessons" class="tab-content">
+            <div class="lesson-card">
+                <h3>📚 Lesson 1: Adding Fractions with Unlike Denominators</h3>
+                <span class="time-badge">⏱️ 55 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will find common denominators</li>
+                        <li>Students will add fractions with unlike denominators</li>
+                        <li>Students will explain why we need common denominators</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (12 min):</strong> "I walked 1/2 mile to school and 1/3 mile to the store. How far did I walk?" Try to add with fraction strips - they don't line up! We need same-sized pieces.</p>
+                    <p><strong>Guided Practice (18 min):</strong> Find equivalent fractions: 1/2 = 3/6, 1/3 = 2/6. Now add: 3/6 + 2/6 = 5/6 miles. Practice finding common denominators systematically.</p>
+                    <p><strong>Independent Practice (20 min):</strong> Solve problems finding common denominators and adding.</p>
+                    <p><strong>Closure (5 min):</strong> "Why can't we just add 1/2 + 1/3 = 2/5?"</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #e17055 0%, #d63031 100%);">
+                <h3>📚 Lesson 2: Multiplying Fractions</h3>
+                <span class="time-badge">⏱️ 55 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will multiply fractions using area models</li>
+                        <li>Students will understand "of" as multiplication</li>
+                        <li>Students will discover the algorithm: multiply numerators, multiply denominators</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (12 min):</strong> "I have 1/2 of a candy bar. I give you 1/3 of what I have. How much did you get?" Use paper folding: fold in half, shade 1/2. Fold in thirds, shade 1/3 of the shaded part.</p>
+                    <p><strong>Guided Practice (18 min):</strong> Count: 1 out of 6 total parts shaded. So 1/2 × 1/3 = 1/6. Notice: (1×1)/(2×3). Try more examples to confirm pattern.</p>
+                    <p><strong>Independent Practice (20 min):</strong> Use area models, then algorithm. Connect to meaning.</p>
+                    <p><strong>Closure (5 min):</strong> "Why does 1/2 × 1/3 give a smaller answer than either fraction?"</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);">
+                <h3>📚 Lesson 3: Understanding Volume</h3>
+                <span class="time-badge">⏱️ 55 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will understand volume as space inside a 3D shape</li>
+                        <li>Students will calculate volume by counting unit cubes</li>
+                        <li>Students will discover volume formula V = l × w × h</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (10 min):</strong> Compare area (space inside flat shape) to volume (space inside 3D shape). Show unit cube as measuring unit.</p>
+                    <p><strong>Guided Practice (18 min):</strong> Build rectangular prisms with cubes. Count: layers × cubes per layer. Notice: this is l × w × h!</p>
+                    <p><strong>Independent Practice (22 min):</strong> Build and calculate volumes. Move from counting to formula.</p>
+                    <p><strong>Closure (5 min):</strong> "A box is 4×3×2. How many unit cubes fit inside?"</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%); color: #2d3436;">
+                <h3>📚 Lesson 4: Coordinate Graphing</h3>
+                <span class="time-badge">⏱️ 50 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will plot and identify points in the first quadrant</li>
+                        <li>Students will understand ordered pairs (x, y)</li>
+                        <li>Students will connect coordinates to real-world contexts</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (10 min):</strong> Introduce coordinate plane: x-axis, y-axis, origin. Model reading point (3, 2): "Start at origin. Move right 3, up 2."</p>
+                    <p><strong>Guided Practice (15 min):</strong> Plot several points. Create a mystery picture by connecting plotted points.</p>
+                    <p><strong>Independent Practice (20 min):</strong> Plot given points; identify coordinates of plotted points; create own coordinate picture.</p>
+                    <p><strong>Closure (5 min):</strong> "What's the difference between (2, 5) and (5, 2)?"</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);">
+                <h3>📚 Lesson 5: Order of Operations</h3>
+                <span class="time-badge">⏱️ 50 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will evaluate expressions using order of operations</li>
+                        <li>Students will understand why order matters</li>
+                        <li>Students will use parentheses to indicate grouping</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (10 min):</strong> Present: 3 + 4 × 2. Is it 14 or 11? Without rules, we'd get different answers! Introduce order of operations: Parentheses, Exponents, Multiply/Divide (left to right), Add/Subtract (left to right).</p>
+                    <p><strong>Guided Practice (15 min):</strong> Practice evaluating step by step. Emphasize showing work.</p>
+                    <p><strong>Independent Practice (20 min):</strong> Evaluate expressions; write expressions with given values; find errors in incorrect solutions.</p>
+                    <p><strong>Closure (5 min):</strong> "Evaluate: 20 - 4 × 3 + 8 ÷ 2"</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Investigations Tab -->
+        <div id="labs" class="tab-content">
+            <div class="lab-card">
+                <h3>🔬 Investigation 1: Fraction Multiplication Models</h3>
+                <div class="lab-info"><strong>Focus:</strong> Understanding fraction × fraction | <strong>Duration:</strong> 45 minutes</div>
+                <div class="inner-content">
+                    <h4>Procedure</h4>
+                    <ol>
+                        <li>Use graph paper to create area models for fraction multiplication</li>
+                        <li>Start with 1/2 × 1/2: Draw 1×1 square, divide into halves horizontally, shade 1/2, divide into halves vertically, shade 1/2 of the 1/2</li>
+                        <li>Count total parts (4) and doubly-shaded parts (1). Result: 1/4</li>
+                        <li>Repeat for: 1/3 × 1/4, 2/3 × 1/2, 3/4 × 2/3</li>
+                        <li>Look for patterns: What happens to numerators? Denominators?</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="lab-card" style="background: linear-gradient(135deg, #00b894 0%, #55efc4 100%);">
+                <h3>🔬 Investigation 2: Volume Challenge</h3>
+                <div class="lab-info"><strong>Focus:</strong> Volume of composed figures | <strong>Duration:</strong> 50 minutes</div>
+                <div class="inner-content">
+                    <h4>Procedure</h4>
+                    <ol>
+                        <li>Challenge: Create an L-shaped building with unit cubes</li>
+                        <li>Find the volume two ways:
+                            <ul>
+                                <li>Method 1: Count all cubes</li>
+                                <li>Method 2: Split into two rectangular prisms, find each volume, add</li>
+                            </ul>
+                        </li>
+                        <li>Design your own composed figure and calculate volume</li>
+                        <li>Extension: Given volume 36, find all possible rectangular prism dimensions</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="lab-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);">
+                <h3>🔬 Investigation 3: Coordinate Graphing Pictures</h3>
+                <div class="lab-info"><strong>Focus:</strong> Plotting and connecting points | <strong>Duration:</strong> 45 minutes</div>
+                <div class="inner-content">
+                    <h4>Procedure</h4>
+                    <ol>
+                        <li>Follow coordinates to create a mystery picture</li>
+                        <li>Analyze: Which coordinates form horizontal lines? Vertical lines?</li>
+                        <li>Create your own coordinate picture</li>
+                        <li>Write the list of ordered pairs for a partner to draw</li>
+                        <li>Extension: What happens if you add 2 to every x-coordinate?</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="lab-card" style="background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%); color: #2d3436;">
+                <h3>🔬 Investigation 4: Decimal Operations Challenge</h3>
+                <div class="lab-info"><strong>Focus:</strong> All decimal operations | <strong>Duration:</strong> 45 minutes</div>
+                <div class="inner-content">
+                    <h4>Procedure</h4>
+                    <ol>
+                        <li>Shopping scenario: Given items with decimal prices</li>
+                        <li>Calculate total cost (addition)</li>
+                        <li>Calculate change from $20 (subtraction)</li>
+                        <li>Calculate cost of multiple items (multiplication)</li>
+                        <li>Split cost among friends (division)</li>
+                        <li>Create your own shopping problem for a partner</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Videos Tab -->
+        <div id="videos" class="tab-content">
+            <h2 style="color: #00b894; margin-bottom: 20px;">🎬 Recommended Videos</h2>
+            
+            <div class="video-card">
+                <h4>📹 Fraction Operations</h4>
+                <ul>
+                    <li><strong>Math Antics - Adding/Subtracting Fractions:</strong> Unlike denominators - <a href="https://www.youtube.com/watch?v=52ZlXsFJULI" target="_blank">YouTube</a></li>
+                    <li><strong>Math Antics - Multiplying Fractions:</strong> Clear explanation - <a href="https://www.youtube.com/watch?v=qmfXyR7Z6Lk" target="_blank">YouTube</a></li>
+                    <li><strong>Math Antics - Dividing Fractions:</strong> Why flip and multiply - <a href="https://www.youtube.com/watch?v=5juto2ze8Lg" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+            
+            <div class="video-card" style="background: linear-gradient(135deg, #00b894 0%, #55efc4 100%); color: #2d3436;">
+                <h4>📹 Decimals</h4>
+                <ul>
+                    <li><strong>Math Antics - Decimal Place Value:</strong> To thousandths - <a href="https://www.youtube.com/watch?v=U7hlGBXvek8" target="_blank">YouTube</a></li>
+                    <li><strong>Math Antics - Multiplying Decimals:</strong> Step by step - <a href="https://www.youtube.com/watch?v=JKe57u5McBA" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+            
+            <div class="video-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);">
+                <h4>📹 Volume & Coordinates</h4>
+                <ul>
+                    <li><strong>Math Antics - Volume:</strong> Cubic units and formulas - <a href="https://www.youtube.com/watch?v=qJwecTgce6c" target="_blank">YouTube</a></li>
+                    <li><strong>Khan Academy - Coordinate Plane:</strong> Plotting points - <a href="https://www.khanacademy.org/math/cc-fifth-grade-math/imp-geometry-3" target="_blank">Khan Academy</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Articles Tab -->
+        <div id="articles" class="tab-content">
+            <h2 style="color: #00b894; margin-bottom: 20px;">📖 Student Reading Passages</h2>
+            
+            <div class="article-card">
+                <h4>📚 Why Do We Need Common Denominators?</h4>
+                <div style="background: white; color: #333; padding: 15px; border-radius: 10px; margin-top: 10px;">
+                    <p>Imagine trying to add 2 inches plus 3 centimeters. You can't just say "5" - five of what? You need the same unit first!</p>
+                    <p>Fractions work the same way. 1/2 + 1/3 isn't 2/5. The "halves" and "thirds" are different-sized pieces!</p>
+                    <p>We find equivalent fractions with the same denominator (same-sized pieces). Then we can add the numerators (count the pieces). 1/2 = 3/6 and 1/3 = 2/6, so 1/2 + 1/3 = 5/6.</p>
+                </div>
+            </div>
+            
+            <div class="article-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);">
+                <h4>📚 What is Volume?</h4>
+                <div style="background: white; color: #333; padding: 15px; border-radius: 10px; margin-top: 10px;">
+                    <p>Area measures flat space. Volume measures 3D space - how much a container can hold!</p>
+                    <p>We measure volume in cubic units. Imagine filling a box with tiny cubes. Count them all - that's the volume!</p>
+                    <p>For rectangular boxes (prisms), there's a shortcut: Volume = length × width × height. A 3×4×2 box holds 24 cubic units.</p>
+                </div>
+            </div>
+            
+            <div class="article-card" style="background: linear-gradient(135deg, #e17055 0%, #d63031 100%);">
+                <h4>📚 Finding Your Way with Coordinates</h4>
+                <div style="background: white; color: #333; padding: 15px; border-radius: 10px; margin-top: 10px;">
+                    <p>How do you describe exactly where something is on a map? Use coordinates!</p>
+                    <p>A coordinate plane is like a city with numbered streets. The point (3, 5) means: start at the center, go right 3 blocks, then up 5 blocks.</p>
+                    <p>The first number (x) tells you how far right. The second number (y) tells you how far up. Order matters!</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Assessments Tab -->
+        <div id="assessments" class="tab-content">
+            <h2 style="color: #00b894; margin-bottom: 20px;">📝 Assessment Tools</h2>
+            
+            <div class="assessment-card">
+                <h4>🎯 Fraction Operations</h4>
+                <div class="assessment-item">
+                    <p><strong>Adding/Subtracting:</strong> 2/3 + 3/4, 5/6 - 1/4 (show work finding common denominators)</p>
+                    <p><strong>Multiplying:</strong> 3/4 × 2/5, 2 1/2 × 1/3 (use area model AND algorithm)</p>
+                    <p><strong>Dividing:</strong> 1/4 ÷ 3, 6 ÷ 1/2 (explain with context)</p>
+                    <p><strong>Word problems:</strong> Multi-step problems with fractions</p>
+                </div>
+            </div>
+            
+            <div class="assessment-card" style="background: linear-gradient(135deg, #00b894 0%, #55efc4 100%);">
+                <h4>🎯 Decimals & Volume</h4>
+                <div class="assessment-item">
+                    <p><strong>Decimal operations:</strong> 3.45 + 2.7, 5.2 × 0.4, 6.3 ÷ 0.7</p>
+                    <p><strong>Volume:</strong> Find volume given dimensions; find missing dimension given volume</p>
+                    <p><strong>Composed figures:</strong> Volume of L-shaped prisms</p>
+                </div>
+            </div>
+            
+            <div class="assessment-card" style="background: linear-gradient(135deg, #e17055 0%, #d63031 100%);">
+                <h4>🎯 Coordinates & Expressions</h4>
+                <div class="assessment-item">
+                    <p><strong>Coordinates:</strong> Plot points, identify coordinates, describe relationships</p>
+                    <p><strong>Order of operations:</strong> Evaluate 3 + 4 × (5 - 2)², insert parentheses to make equation true</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Printables Tab -->
+        <div id="printables" class="tab-content">
+            <h2 style="color: #00b894; margin-bottom: 20px;">🖨️ Printable Resources</h2>
+            
+            <div class="printable-card">
+                <h4>🔢 Fractions</h4>
+                <ul>
+                    <li>Adding/subtracting unlike denominators practice</li>
+                    <li>Fraction multiplication area models</li>
+                    <li>Division of fractions word problems</li>
+                    <li>Mixed numbers operations</li>
+                </ul>
+            </div>
+            
+            <div class="printable-card" style="background: linear-gradient(135deg, #00b894 0%, #55efc4 100%); color: #2d3436;">
+                <h4>📦 Volume & Coordinates</h4>
+                <ul>
+                    <li>Volume practice with diagrams</li>
+                    <li>Coordinate plane grids</li>
+                    <li>Mystery picture coordinates</li>
+                    <li>Composed figure volume</li>
+                </ul>
+            </div>
+            
+            <div class="printable-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%); color: white;">
+                <h4>🔢 Decimals & Expressions</h4>
+                <ul>
+                    <li>Decimal operations practice</li>
+                    <li>Order of operations worksheets</li>
+                    <li>Write expressions from word descriptions</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Vocabulary Tab -->
+        <div id="vocabulary" class="tab-content">
+            <h2 style="color: #00b894; margin-bottom: 20px;">📖 Math Vocabulary</h2>
+            
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <h4>Common Denominator</h4>
+                    <p><strong>Definition:</strong> A shared denominator for two or more fractions</p>
+                    <div class="vocab-example">"6 is a common denominator for 1/2 and 1/3."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Volume</h4>
+                    <p><strong>Definition:</strong> The amount of space inside a 3D shape</p>
+                    <div class="vocab-example">"The box has a volume of 24 cubic inches."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Coordinate Plane</h4>
+                    <p><strong>Definition:</strong> A grid formed by horizontal (x) and vertical (y) number lines</p>
+                    <div class="vocab-example">"Plot the point (3, 5) on the coordinate plane."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Ordered Pair</h4>
+                    <p><strong>Definition:</strong> Two numbers (x, y) that give a location on a coordinate plane</p>
+                    <div class="vocab-example">"The ordered pair (4, 2) means right 4, up 2."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Origin</h4>
+                    <p><strong>Definition:</strong> The point (0, 0) where the x-axis and y-axis meet</p>
+                    <div class="vocab-example">"Start at the origin to plot any point."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Order of Operations</h4>
+                    <p><strong>Definition:</strong> Rules for which operations to do first</p>
+                    <div class="vocab-example">"Using order of operations, 3 + 4 × 2 = 11, not 14."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Cubic Unit</h4>
+                    <p><strong>Definition:</strong> A cube with edges 1 unit long, used to measure volume</p>
+                    <div class="vocab-example">"The volume is 30 cubic centimeters."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Thousandths</h4>
+                    <p><strong>Definition:</strong> The third place to the right of the decimal point</p>
+                    <div class="vocab-example">"In 3.456, the 6 is in the thousandths place."</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Games Tab -->
+        <div id="games" class="tab-content">
+            <h2 style="color: #00b894; margin-bottom: 20px;">🎮 Math Games</h2>
+            
+            <div class="game-card">
+                <h4>🎲 Fraction War (Addition)</h4>
+                <p><strong>Players:</strong> 2 | <strong>Materials:</strong> Fraction cards</p>
+                <ul>
+                    <li>Each player draws 2 fraction cards</li>
+                    <li>Add your fractions (find common denominator!)</li>
+                    <li>Larger sum wins all 4 cards</li>
+                </ul>
+            </div>
+            
+            <div class="game-card" style="background: linear-gradient(135deg, #e17055 0%, #fd79a8 100%); color: white;">
+                <h4>🎯 Coordinate Battleship</h4>
+                <p><strong>Players:</strong> 2 | <strong>Materials:</strong> Coordinate grids</p>
+                <ul>
+                    <li>Each player places "ships" on their grid</li>
+                    <li>Call out coordinates to try to hit opponent's ships</li>
+                    <li>Practice plotting and identifying coordinates!</li>
+                </ul>
+            </div>
+            
+            <div class="game-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%); color: white;">
+                <h4>📦 Volume Builder</h4>
+                <p><strong>Players:</strong> 2-4 | <strong>Materials:</strong> Dice, unit cubes</p>
+                <ul>
+                    <li>Roll 3 dice for l, w, h dimensions</li>
+                    <li>Build the rectangular prism</li>
+                    <li>Calculate volume - first correct answer scores!</li>
+                </ul>
+            </div>
+            
+            <div class="online-resources">
+                <h3>💻 Online Math Games</h3>
+                <a href="https://www.splashlearn.com/math/fifth-grade" class="resource-link" target="_blank">
+                    <strong>SplashLearn Grade 5</strong> - Fractions, decimals, geometry games
+                </a>
+                <a href="https://www.mathplayground.com/grade_5_games.html" class="resource-link" target="_blank">
+                    <strong>Math Playground Grade 5</strong> - Logic and computation games
+                </a>
+            </div>
+        </div>
+        
+        <!-- Differentiation Tab -->
+        <div id="differentiation" class="tab-content">
+            <h2 style="color: #00b894; margin-bottom: 20px;">🌟 Differentiation Strategies</h2>
+            
+            <div class="differentiation-box">
+                <h4>📈 For Advanced Learners</h4>
+                <ul>
+                    <li>Operations with mixed numbers in complex problems</li>
+                    <li>All four quadrants (negative coordinates)</li>
+                    <li>Volume of complex composed figures</li>
+                    <li>Algebraic expressions with variables</li>
+                    <li>Division of fractions by fractions (6th grade preview)</li>
+                </ul>
+            </div>
+            
+            <div class="differentiation-box" style="background: linear-gradient(135deg, #e17055 0%, #d63031 100%);">
+                <h4>📉 For Struggling Learners</h4>
+                <ul>
+                    <li>Extended fraction strip/model work</li>
+                    <li>Focus on benchmark fractions (1/2, 1/4, 1/3)</li>
+                    <li>Concrete volume with unit cubes longer</li>
+                    <li>Simpler coordinate values</li>
+                    <li>Calculator support for computation</li>
+                </ul>
+            </div>
+            
+            <div class="differentiation-box" style="background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);">
+                <h4>🌐 For English Language Learners</h4>
+                <ul>
+                    <li>Visual vocabulary cards</li>
+                    <li>Step-by-step procedure charts</li>
+                    <li>Partner work for problem solving</li>
+                    <li>Real-world contexts with familiar items</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Misconceptions Tab -->
+        <div id="misconceptions" class="tab-content">
+            <h2 style="color: #00b894; margin-bottom: 20px;">❓ Common Misconceptions</h2>
+            
+            <div class="misconception-box">
+                <h4>❌ Add denominators when adding fractions</h4>
+                <div class="misconception-content">
+                    <p><strong>Error:</strong> 1/2 + 1/3 = 2/5</p>
+                    <p><strong>Correction:</strong> Find common denominator first! 1/2 + 1/3 = 3/6 + 2/6 = 5/6</p>
+                </div>
+            </div>
+            
+            <div class="misconception-box">
+                <h4>❌ Multiplying fractions makes bigger</h4>
+                <div class="misconception-content">
+                    <p><strong>Error:</strong> Expecting 1/2 × 1/3 to be larger than either fraction</p>
+                    <p><strong>Correction:</strong> When multiplying by less than 1, result is smaller! 1/2 × 1/3 = 1/6 (smaller)</p>
+                </div>
+            </div>
+            
+            <div class="misconception-box">
+                <h4>❌ Confusing (3, 5) and (5, 3)</h4>
+                <div class="misconception-content">
+                    <p><strong>Error:</strong> Plotting (3, 5) where (5, 3) should be</p>
+                    <p><strong>Correction:</strong> Order matters! First number is x (right), second is y (up). "Run before you jump!"</p>
+                </div>
+            </div>
+            
+            <div class="misconception-box">
+                <h4>❌ Volume formula confusion</h4>
+                <div class="misconception-content">
+                    <p><strong>Error:</strong> Adding l + w + h instead of multiplying</p>
+                    <p><strong>Correction:</strong> Volume = l × w × h. Connect to counting layers of unit cubes.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cultural Connections Tab -->
+        <div id="cultural" class="tab-content">
+            <h2 style="color: #00b894; margin-bottom: 20px;">🌍 Cultural Connections</h2>
+            
+            <div class="cultural-box">
+                <h4>🔢 Fractions in History</h4>
+                <ul>
+                    <li><strong>Egyptian Fractions:</strong> Ancient Egyptians only used unit fractions (1/n)</li>
+                    <li><strong>Babylonian Fractions:</strong> Used base-60 system (still seen in time: 60 minutes)</li>
+                    <li><strong>Activity:</strong> Express fractions Egyptian-style (e.g., 3/4 = 1/2 + 1/4)</li>
+                </ul>
+            </div>
+            
+            <div class="cultural-box" style="background: linear-gradient(135deg, #00b894 0%, #55efc4 100%);">
+                <h4>📊 Coordinates in Real Life</h4>
+                <ul>
+                    <li><strong>Navigation:</strong> Latitude and longitude as coordinate system</li>
+                    <li><strong>Maps:</strong> Street grids in cities worldwide</li>
+                    <li><strong>Art:</strong> Indigenous textile patterns use grid coordinates</li>
+                    <li><strong>Activity:</strong> Find latitude/longitude of cities around the world</li>
+                </ul>
+            </div>
+            
+            <div class="cultural-box" style="background: linear-gradient(135deg, #e17055 0%, #d63031 100%);">
+                <h4>👨‍👩‍👧‍👦 Diverse Mathematicians</h4>
+                <ul>
+                    <li><strong>René Descartes:</strong> French mathematician who invented coordinate system</li>
+                    <li><strong>Mary Cartwright:</strong> British mathematician studying complex patterns</li>
+                    <li><strong>Maryam Mirzakhani:</strong> Iranian Fields Medal winner (math's highest honor)</li>
+                </ul>
+            </div>
+            
+            <div class="cultural-box" style="background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%); color: #2d3436;">
+                <h4>📚 Diverse Books</h4>
+                <ul>
+                    <li><strong>"The Boy Who Loved Math"</strong> by Deborah Heiligman - Biography of Paul Erdős</li>
+                    <li><strong>"Infinity and Me"</strong> by Kate Hosford - Thinking about big numbers</li>
+                    <li><strong>"Math Curse"</strong> by Jon Scieszka - Math in everyday life</li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function showTab(tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) tabContents[i].classList.remove('active');
+            const tabButtons = document.getElementsByClassName('tab-btn');
+            for (let i = 0; i < tabButtons.length; i++) tabButtons[i].classList.remove('active');
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+            window.scrollTo({top: 200, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>

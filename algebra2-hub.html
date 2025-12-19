@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algebra 2 Resources - Complete Teacher Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #2d3436 0%, #636e72 50%, #b2bec3 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 30px; padding: 40px; box-shadow: 0 25px 80px rgba(0,0,0,0.4); }
+        h1 { color: #2d3436; font-size: 2.8em; margin-bottom: 10px; text-align: center; }
+        .subtitle { text-align: center; color: #666; font-size: 1.3em; margin-bottom: 30px; }
+        .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; justify-content: center; border-bottom: 4px solid #2d3436; padding-bottom: 15px; }
+        .tab-btn { background: linear-gradient(135deg, #f5f5f5, #e0e0e0); border: none; padding: 14px 28px; border-radius: 12px 12px 0 0; cursor: pointer; font-size: 1em; font-weight: 700; transition: all 0.3s; color: #555; }
+        .tab-btn:hover { background: linear-gradient(135deg, #6c5ce7, #a29bfe); color: white; transform: translateY(-3px); }
+        .tab-btn.active { background: linear-gradient(135deg, #6c5ce7, #a29bfe); color: white; }
+        .tab-content { display: none; animation: fadeIn 0.5s ease-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .standard-box { background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%); padding: 25px; border-radius: 20px; margin-bottom: 25px; color: white; }
+        .standard-item { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 15px; color: #333; }
+        .standard-code { background: #fd79a8; color: white; padding: 5px 12px; border-radius: 8px; font-weight: 700; display: inline-block; margin-bottom: 10px; }
+        
+        .content-card { background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: white; }
+        .inner-content { background: white; padding: 25px; border-radius: 15px; margin-top: 20px; color: #333; }
+        .highlight-section { background: #f5f0ff; padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid #6c5ce7; }
+        .highlight-section h5 { color: #6c5ce7; margin-bottom: 8px; }
+        
+        .manipulative-card { background: linear-gradient(135deg, #00cec9 0%, #81ecec 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: #2d3436; }
+        .manipulative-item { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 15px; color: #333; }
+        .manipulative-item h4 { color: #00b894; margin-bottom: 10px; }
+        
+        .lesson-card { background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: white; }
+        .lesson-section { background: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; color: #333; }
+        .lesson-section h4 { color: #0984e3; margin-bottom: 12px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #fd79a8, #e84393); color: white; padding: 8px 20px; border-radius: 25px; font-weight: 700; margin: 10px 0; }
+        
+        .lab-card { background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: #2d3436; }
+        .lab-info { background: rgba(255,255,255,0.5); padding: 10px 15px; border-radius: 10px; margin-bottom: 15px; }
+        
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 25px; }
+        .vocab-card { background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 100%); padding: 22px; border-radius: 15px; }
+        .vocab-card h4 { color: #2d3436; margin-bottom: 10px; }
+        .vocab-example { background: rgba(255,255,255,0.7); padding: 10px; border-radius: 8px; font-style: italic; }
+        
+        .game-card { background: linear-gradient(135deg, #00b894 0%, #55efc4 100%); color: #2d3436; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .online-resources { background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%); padding: 25px; border-radius: 15px; margin-top: 30px; color: white; }
+        .resource-link { background: white; padding: 15px; border-radius: 10px; margin-bottom: 10px; display: block; text-decoration: none; color: #333; transition: transform 0.3s; }
+        .resource-link:hover { transform: translateX(10px); }
+        
+        .differentiation-box { background: linear-gradient(135deg, #00cec9 0%, #81ecec 100%); color: #2d3436; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .misconception-box { background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%); color: #2d3436; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .misconception-content { background: rgba(255,255,255,0.95); color: #333; padding: 15px; border-radius: 10px; margin-top: 10px; }
+        .cultural-box { background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        
+        .video-card { background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%); color: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        .video-card a { color: #fff; text-decoration: underline; }
+        .article-card { background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%); color: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        .assessment-card { background: linear-gradient(135deg, #6c5ce7 0%, #fd79a8 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .assessment-item { background: rgba(255,255,255,0.95); color: #333; padding: 15px; border-radius: 10px; margin-bottom: 10px; }
+        .printable-card { background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 100%); color: #2d3436; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        
+        ul { margin-left: 20px; margin-top: 10px; }
+        li { margin-bottom: 10px; }
+        @media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 2em; } .tab-btn { padding: 10px 15px; font-size: 0.9em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📈 Algebra 2 Resources</h1>
+        <p class="subtitle">Polynomial • Rational • Radical • Exponential • Logarithmic • Trigonometric Functions</p>
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('standards')">📋 Standards</button>
+            <button class="tab-btn" onclick="showTab('background')">👩‍🏫 Teacher Background</button>
+            <button class="tab-btn" onclick="showTab('manipulatives')">🧮 Tools</button>
+            <button class="tab-btn" onclick="showTab('lessons')">📚 Lessons</button>
+            <button class="tab-btn" onclick="showTab('labs')">🔬 Investigations</button>
+            <button class="tab-btn" onclick="showTab('videos')">🎬 Videos</button>
+            <button class="tab-btn" onclick="showTab('articles')">📖 Articles</button>
+            <button class="tab-btn" onclick="showTab('assessments')">📝 Assessments</button>
+            <button class="tab-btn" onclick="showTab('printables')">🖨️ Printables</button>
+            <button class="tab-btn" onclick="showTab('vocabulary')">📖 Vocabulary</button>
+            <button class="tab-btn" onclick="showTab('games')">🎮 Games</button>
+            <button class="tab-btn" onclick="showTab('differentiation')">🌟 Differentiation</button>
+            <button class="tab-btn" onclick="showTab('misconceptions')">❓ Misconceptions</button>
+            <button class="tab-btn" onclick="showTab('cultural')">🌍 Cultural Connections</button>
+        </div>
+        
+        <!-- Standards Tab -->
+        <div id="standards" class="tab-content active">
+            <div class="standard-box">
+                <h3>📐 Algebra 2 Content Standards</h3>
+                <div class="standard-item">
+                    <span class="standard-code">Polynomial Functions</span>
+                    <p><strong>Operations:</strong> Perform arithmetic operations; understand relationship between zeros and factors.</p>
+                    <p><strong>Graphing:</strong> Identify zeros, multiplicity, end behavior; graph polynomial functions.</p>
+                    <p><strong>Theorems:</strong> Remainder theorem, factor theorem, rational root theorem.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Rational Functions</span>
+                    <p><strong>Simplify:</strong> Add, subtract, multiply, divide rational expressions.</p>
+                    <p><strong>Solve:</strong> Solve rational equations; identify extraneous solutions.</p>
+                    <p><strong>Graph:</strong> Identify asymptotes, holes, intercepts.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Radical Functions</span>
+                    <p><strong>Operations:</strong> Simplify radical expressions; rationalize denominators.</p>
+                    <p><strong>Solve:</strong> Solve radical equations; identify extraneous solutions.</p>
+                    <p><strong>Graph:</strong> Graph square root and cube root functions; transformations.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Exponential & Logarithmic Functions</span>
+                    <p><strong>Properties:</strong> Use properties of exponents and logarithms.</p>
+                    <p><strong>Relationship:</strong> Understand logarithms as inverses of exponentials.</p>
+                    <p><strong>Solve:</strong> Solve exponential and logarithmic equations.</p>
+                    <p><strong>Applications:</strong> Model growth/decay, compound interest.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Trigonometric Functions</span>
+                    <p><strong>Unit Circle:</strong> Extend to radian measure; define trig functions on unit circle.</p>
+                    <p><strong>Graph:</strong> Graph sine, cosine, tangent; identify amplitude, period, phase shift.</p>
+                    <p><strong>Identities:</strong> Prove and use trigonometric identities.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Statistics</span>
+                    <p><strong>Normal Distribution:</strong> Use mean and standard deviation; z-scores.</p>
+                    <p><strong>Inference:</strong> Make inferences from sample data.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Teacher Background Tab -->
+        <div id="background" class="tab-content">
+            <div class="content-card">
+                <h3>👩‍🏫 Polynomial Functions</h3>
+                <div class="inner-content">
+                    <h4>Beyond Quadratics</h4>
+                    <div class="highlight-section">
+                        <h5>Key Concepts</h5>
+                        <ul>
+                            <li><strong>Degree:</strong> Highest power determines end behavior and max zeros</li>
+                            <li><strong>Leading coefficient:</strong> Determines end behavior direction</li>
+                            <li><strong>Multiplicity:</strong> How many times factor appears; affects graph behavior at zero</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>End Behavior</h5>
+                        <ul>
+                            <li>Even degree + positive leading: both ends up (↗↖)</li>
+                            <li>Even degree + negative leading: both ends down (↘↙)</li>
+                            <li>Odd degree + positive leading: down-left, up-right (↙↗)</li>
+                            <li>Odd degree + negative leading: up-left, down-right (↖↘)</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Important Theorems</h5>
+                        <ul>
+                            <li><strong>Fundamental Theorem:</strong> Degree n polynomial has exactly n zeros (counting multiplicity, including complex)</li>
+                            <li><strong>Factor Theorem:</strong> (x - c) is factor iff f(c) = 0</li>
+                            <li><strong>Rational Root Theorem:</strong> Possible rational roots = ±(factors of constant)/(factors of leading coefficient)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="background: linear-gradient(135deg, #00cec9 0%, #81ecec 100%); color: #2d3436;">
+                <h3>📊 Logarithmic Functions</h3>
+                <div class="inner-content">
+                    <h4>The Inverse of Exponentials</h4>
+                    <div class="highlight-section">
+                        <h5>Definition</h5>
+                        <p>log_b(x) = y means b^y = x</p>
+                        <p>"log_b(x) is the exponent you put on b to get x"</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Properties of Logarithms</h5>
+                        <ul>
+                            <li>log_b(MN) = log_b(M) + log_b(N)</li>
+                            <li>log_b(M/N) = log_b(M) - log_b(N)</li>
+                            <li>log_b(M^p) = p · log_b(M)</li>
+                            <li>log_b(b) = 1 and log_b(1) = 0</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Change of Base</h5>
+                        <p>log_b(x) = ln(x)/ln(b) = log(x)/log(b)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);">
+                <h3>🔄 Trigonometric Functions</h3>
+                <div class="inner-content">
+                    <h4>Circular Functions</h4>
+                    <div class="highlight-section">
+                        <h5>Unit Circle</h5>
+                        <p>For angle θ on unit circle: cos θ = x-coordinate, sin θ = y-coordinate</p>
+                        <p>Key angles: 0°, 30°, 45°, 60°, 90° (and radian equivalents)</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Graphing Transformations</h5>
+                        <p>y = A sin(B(x - C)) + D</p>
+                        <ul>
+                            <li>A = amplitude (vertical stretch)</li>
+                            <li>B = affects period; period = 2π/B</li>
+                            <li>C = phase shift (horizontal)</li>
+                            <li>D = vertical shift (midline)</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Key Identities</h5>
+                        <ul>
+                            <li>Pythagorean: sin²θ + cos²θ = 1</li>
+                            <li>Reciprocal: csc θ = 1/sin θ, sec θ = 1/cos θ, cot θ = 1/tan θ</li>
+                            <li>Quotient: tan θ = sin θ/cos θ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tools Tab -->
+        <div id="manipulatives" class="tab-content">
+            <div class="manipulative-card">
+                <h3>📈 Graphing Technology</h3>
+                <div class="manipulative-item">
+                    <h4>Desmos</h4>
+                    <p><strong>Uses:</strong> Graph all function types, explore transformations with sliders, visualize asymptotes</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Graphing Calculator (TI-84/TI-Nspire)</h4>
+                    <p><strong>Uses:</strong> Function analysis, finding zeros, solving equations graphically</p>
+                </div>
+            </div>
+            
+            <div class="manipulative-card" style="background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%); color: white;">
+                <h3>🔵 Unit Circle Tools</h3>
+                <div class="manipulative-item">
+                    <h4>Unit Circle Reference</h4>
+                    <p><strong>Uses:</strong> Finding trig values, understanding periodicity</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Interactive Unit Circle (online)</h4>
+                    <p><strong>Uses:</strong> Visualize sine/cosine as coordinates; connect to graphs</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Lessons Tab -->
+        <div id="lessons" class="tab-content">
+            <div class="lesson-card">
+                <h3>📚 Lesson 1: Graphing Polynomial Functions</h3>
+                <span class="time-badge">⏱️ 55 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will determine end behavior from degree and leading coefficient</li>
+                        <li>Students will find zeros and their multiplicities</li>
+                        <li>Students will sketch polynomial graphs</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (12 min):</strong> Compare graphs of x², x³, x⁴, x⁵. What patterns emerge? End behavior depends on degree (even/odd) and sign of leading coefficient.</p>
+                    <p><strong>Guided Practice (18 min):</strong> Graph f(x) = (x+2)(x-1)²(x-3). Zeros: -2 (crosses), 1 (bounces - even multiplicity), 3 (crosses). Degree 4, positive leading → both ends up.</p>
+                    <p><strong>Independent Practice (20 min):</strong> Sketch graphs given factored form; find equation given graph.</p>
+                    <p><strong>Closure (5 min):</strong> "How does multiplicity affect the graph at a zero?"</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);">
+                <h3>📚 Lesson 2: Introduction to Logarithms</h3>
+                <span class="time-badge">⏱️ 55 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will understand logarithm as inverse of exponential</li>
+                        <li>Students will convert between log and exponential form</li>
+                        <li>Students will evaluate logarithms</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (12 min):</strong> "2^? = 8" We know it's 3. But what about 2^? = 10? We need logs! log₂(8) = 3 means "the power you put on 2 to get 8 is 3."</p>
+                    <p><strong>Guided Practice (18 min):</strong> Convert: 5³ = 125 ↔ log₅(125) = 3. Evaluate: log₃(81) = ? (3⁴ = 81, so answer is 4). Common log (base 10) and natural log (base e).</p>
+                    <p><strong>Independent Practice (20 min):</strong> Convert forms; evaluate logs; solve simple equations.</p>
+                    <p><strong>Closure (5 min):</strong> "What is log₁₀(1000)? Explain your reasoning."</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #00cec9 0%, #81ecec 100%); color: #2d3436;">
+                <h3>📚 Lesson 3: Graphing Sine and Cosine</h3>
+                <span class="time-badge">⏱️ 55 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will identify amplitude, period, phase shift, and vertical shift</li>
+                        <li>Students will graph transformed sine and cosine functions</li>
+                        <li>Students will write equations from graphs</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (12 min):</strong> Review parent functions y = sin x and y = cos x. Period = 2π, amplitude = 1, range [-1, 1].</p>
+                    <p><strong>Guided Practice (18 min):</strong> Graph y = 2sin(x) → amplitude 2. Graph y = sin(2x) → period π. Graph y = sin(x - π/2) → shift right π/2. Combine: y = 3sin(2(x - π/4)) + 1.</p>
+                    <p><strong>Independent Practice (20 min):</strong> Graph functions; identify parameters; write equations from graphs.</p>
+                    <p><strong>Closure (5 min):</strong> "What is the period of y = cos(3x)?"</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%); color: #2d3436;">
+                <h3>📚 Lesson 4: Solving Exponential Equations Using Logs</h3>
+                <span class="time-badge">⏱️ 50 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will solve exponential equations using logarithms</li>
+                        <li>Students will apply to real-world problems</li>
+                        <li>Students will use the change of base formula</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (10 min):</strong> Solve 2^x = 8 → easy! But 2^x = 10? Take log of both sides: x·log(2) = log(10), so x = log(10)/log(2) ≈ 3.32.</p>
+                    <p><strong>Guided Practice (18 min):</strong> Practice taking logs of both sides. Applications: "Population doubles every 5 years. When will it reach 1 million?"</p>
+                    <p><strong>Independent Practice (18 min):</strong> Solve equations; applications (half-life, compound interest).</p>
+                    <p><strong>Closure (4 min):</strong> "Solve: 3^x = 50"</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card">
+                <h3>📚 Lesson 5: Rational Functions</h3>
+                <span class="time-badge">⏱️ 55 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will identify vertical and horizontal asymptotes</li>
+                        <li>Students will find holes in rational functions</li>
+                        <li>Students will graph rational functions</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (12 min):</strong> Rational = polynomial/polynomial. Graph y = 1/x. What happens as x → 0? As x → ∞? Introduce asymptotes.</p>
+                    <p><strong>Guided Practice (18 min):</strong> Vertical asymptotes: where denominator = 0 (and doesn't cancel). Horizontal asymptotes: compare degrees. Holes: where factors cancel.</p>
+                    <p><strong>Independent Practice (20 min):</strong> Analyze and graph rational functions.</p>
+                    <p><strong>Closure (5 min):</strong> "How do you know if there's a hole or a vertical asymptote at x = 2?"</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Investigations Tab -->
+        <div id="labs" class="tab-content">
+            <div class="lab-card">
+                <h3>🔬 Investigation 1: Exploring Logarithmic Scales</h3>
+                <div class="lab-info"><strong>Focus:</strong> Real-world logarithms | <strong>Duration:</strong> 50 minutes</div>
+                <div class="inner-content">
+                    <h4>Procedure</h4>
+                    <ol>
+                        <li>Research logarithmic scales: Richter (earthquakes), decibels (sound), pH (chemistry)</li>
+                        <li>Calculate: How many times more intense is a magnitude 7 earthquake than magnitude 5?</li>
+                        <li>Explore: Why do we use logarithmic scales for these measurements?</li>
+                        <li>Create your own example of when a log scale would be useful</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="lab-card" style="background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%); color: white;">
+                <h3>🔬 Investigation 2: Modeling with Trigonometry</h3>
+                <div class="lab-info"><strong>Focus:</strong> Periodic phenomena | <strong>Duration:</strong> 55 minutes</div>
+                <div class="inner-content">
+                    <h4>Procedure</h4>
+                    <ol>
+                        <li>Collect data: Temperature over 24 hours, tides, or Ferris wheel height</li>
+                        <li>Plot data on coordinate plane</li>
+                        <li>Identify amplitude, period, midline</li>
+                        <li>Write equation: y = A sin(B(x - C)) + D</li>
+                        <li>Graph model over data; evaluate fit</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Videos Tab -->
+        <div id="videos" class="tab-content">
+            <h2 style="color: #6c5ce7; margin-bottom: 20px;">🎬 Recommended Videos</h2>
+            
+            <div class="video-card">
+                <h4>📹 Polynomials & Rationals</h4>
+                <ul>
+                    <li><strong>Khan Academy - Polynomials:</strong> Zeros and graphing - <a href="https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:poly-graphs" target="_blank">Khan Academy</a></li>
+                    <li><strong>Professor Leonard - Rational Functions:</strong> In-depth lectures - <a href="https://www.youtube.com/user/professorleonard57" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+            
+            <div class="video-card" style="background: linear-gradient(135deg, #00cec9 0%, #81ecec 100%); color: #2d3436;">
+                <h4>📹 Logarithms</h4>
+                <ul>
+                    <li><strong>3Blue1Brown - Logarithms:</strong> Visual explanation - <a href="https://www.youtube.com/watch?v=cEvgcoyZvB4" target="_blank">YouTube</a></li>
+                    <li><strong>Khan Academy - Log Properties:</strong> Comprehensive - <a href="https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:logs" target="_blank">Khan Academy</a></li>
+                </ul>
+            </div>
+            
+            <div class="video-card" style="background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);">
+                <h4>📹 Trigonometry</h4>
+                <ul>
+                    <li><strong>Khan Academy - Trig Functions:</strong> Unit circle and graphing - <a href="https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:trig" target="_blank">Khan Academy</a></li>
+                    <li><strong>Professor Dave - Trig Identities:</strong> Clear explanations - <a href="https://www.youtube.com/c/ProfessorDaveExplains" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Articles Tab -->
+        <div id="articles" class="tab-content">
+            <h2 style="color: #6c5ce7; margin-bottom: 20px;">📖 Student Reading Passages</h2>
+            
+            <div class="article-card">
+                <h4>📚 Logarithms: Taming Large Numbers</h4>
+                <div style="background: white; color: #333; padding: 15px; border-radius: 10px; margin-top: 10px;">
+                    <p>John Napier invented logarithms in 1614 to simplify astronomical calculations. Before calculators, multiplying large numbers took hours. With logs, multiplication becomes addition!</p>
+                    <p>Today, logarithms help us understand phenomena that span huge ranges: earthquake intensity varies by factors of millions, as does sound intensity. Logarithmic scales compress these ranges into manageable numbers.</p>
+                </div>
+            </div>
+            
+            <div class="article-card" style="background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);">
+                <h4>📚 Trigonometry: Mathematics of Waves</h4>
+                <div style="background: white; color: #333; padding: 15px; border-radius: 10px; margin-top: 10px;">
+                    <p>Sine and cosine aren't just about triangles - they describe any repeating phenomenon! Sound waves, light waves, ocean tides, and even your heartbeat can all be modeled with trigonometric functions.</p>
+                    <p>Fourier discovered that ANY periodic wave can be built from sine and cosine waves. This discovery revolutionized physics, engineering, and music - it's why we can compress MP3 files and analyze MRI scans!</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Assessments Tab -->
+        <div id="assessments" class="tab-content">
+            <h2 style="color: #6c5ce7; margin-bottom: 20px;">📝 Assessment Tools</h2>
+            
+            <div class="assessment-card">
+                <h4>🎯 Polynomial & Rational Functions</h4>
+                <div class="assessment-item">
+                    <p><strong>Graphing:</strong> Sketch from equation; identify key features</p>
+                    <p><strong>Solving:</strong> Find zeros using various methods</p>
+                    <p><strong>Analysis:</strong> End behavior, asymptotes, holes</p>
+                </div>
+            </div>
+            
+            <div class="assessment-card" style="background: linear-gradient(135deg, #00cec9 0%, #81ecec 100%); color: #2d3436;">
+                <h4>🎯 Exponential & Logarithmic</h4>
+                <div class="assessment-item">
+                    <p><strong>Properties:</strong> Apply log properties to simplify</p>
+                    <p><strong>Solving:</strong> Exponential and logarithmic equations</p>
+                    <p><strong>Applications:</strong> Growth, decay, compound interest</p>
+                </div>
+            </div>
+            
+            <div class="assessment-card" style="background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);">
+                <h4>🎯 Trigonometric Functions</h4>
+                <div class="assessment-item">
+                    <p><strong>Unit circle:</strong> Evaluate trig functions at key angles</p>
+                    <p><strong>Graphing:</strong> Transformations of sine and cosine</p>
+                    <p><strong>Identities:</strong> Verify and apply identities</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Vocabulary Tab -->
+        <div id="vocabulary" class="tab-content">
+            <h2 style="color: #6c5ce7; margin-bottom: 20px;">📖 Math Vocabulary</h2>
+            
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <h4>Asymptote</h4>
+                    <p><strong>Definition:</strong> Line that graph approaches but never reaches</p>
+                    <div class="vocab-example">"y = 1/x has vertical asymptote x = 0 and horizontal asymptote y = 0."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>End Behavior</h4>
+                    <p><strong>Definition:</strong> What happens to f(x) as x → ±∞</p>
+                    <div class="vocab-example">"For x³, as x → ∞, f(x) → ∞; as x → -∞, f(x) → -∞."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Multiplicity</h4>
+                    <p><strong>Definition:</strong> Number of times a factor appears</p>
+                    <div class="vocab-example">"In (x-2)³, the zero 2 has multiplicity 3."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Logarithm</h4>
+                    <p><strong>Definition:</strong> Inverse of exponential; log_b(x) = y means b^y = x</p>
+                    <div class="vocab-example">"log₂(8) = 3 because 2³ = 8."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Amplitude</h4>
+                    <p><strong>Definition:</strong> Half the distance from max to min of periodic function</p>
+                    <div class="vocab-example">"y = 3sin(x) has amplitude 3."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Period</h4>
+                    <p><strong>Definition:</strong> Horizontal length of one complete cycle</p>
+                    <div class="vocab-example">"y = sin(2x) has period π (half of standard 2π)."</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Games Tab -->
+        <div id="games" class="tab-content">
+            <h2 style="color: #6c5ce7; margin-bottom: 20px;">🎮 Math Games</h2>
+            
+            <div class="game-card">
+                <h4>🎲 Log Properties Race</h4>
+                <p><strong>Players:</strong> 2-4 | <strong>Materials:</strong> Expression cards</p>
+                <ul>
+                    <li>Draw an expression card</li>
+                    <li>First to correctly simplify using log properties wins</li>
+                </ul>
+            </div>
+            
+            <div class="online-resources">
+                <h3>💻 Online Resources</h3>
+                <a href="https://www.desmos.com/" class="resource-link" target="_blank">
+                    <strong>Desmos</strong> - Explore all functions dynamically
+                </a>
+                <a href="https://www.khanacademy.org/math/algebra2" class="resource-link" target="_blank">
+                    <strong>Khan Academy Algebra 2</strong> - Complete course
+                </a>
+            </div>
+        </div>
+        
+        <!-- Differentiation Tab -->
+        <div id="differentiation" class="tab-content">
+            <h2 style="color: #6c5ce7; margin-bottom: 20px;">🌟 Differentiation Strategies</h2>
+            
+            <div class="differentiation-box">
+                <h4>📈 For Advanced Learners</h4>
+                <ul>
+                    <li>Complex numbers and polynomial roots</li>
+                    <li>Sum and difference formulas for trig</li>
+                    <li>Partial fractions</li>
+                    <li>Mathematical induction proofs</li>
+                </ul>
+            </div>
+            
+            <div class="differentiation-box" style="background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);">
+                <h4>📉 For Struggling Learners</h4>
+                <ul>
+                    <li>Graphing technology for visualization</li>
+                    <li>Unit circle reference sheets</li>
+                    <li>Focus on key concepts before details</li>
+                    <li>Real-world context for motivation</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Misconceptions Tab -->
+        <div id="misconceptions" class="tab-content">
+            <h2 style="color: #6c5ce7; margin-bottom: 20px;">❓ Common Misconceptions</h2>
+            
+            <div class="misconception-box">
+                <h4>❌ log(a + b) = log(a) + log(b)</h4>
+                <div class="misconception-content">
+                    <p><strong>Error:</strong> Distributing log over addition</p>
+                    <p><strong>Correction:</strong> log(a) + log(b) = log(ab). There's no rule for log(a + b)!</p>
+                </div>
+            </div>
+            
+            <div class="misconception-box">
+                <h4>❌ The period of y = sin(2x) is 4π</h4>
+                <div class="misconception-content">
+                    <p><strong>Error:</strong> Multiplying instead of dividing</p>
+                    <p><strong>Correction:</strong> Period = 2π/B. For sin(2x), period = 2π/2 = π.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cultural Connections Tab -->
+        <div id="cultural" class="tab-content">
+            <h2 style="color: #6c5ce7; margin-bottom: 20px;">🌍 Cultural Connections</h2>
+            
+            <div class="cultural-box">
+                <h4>📜 History of Mathematics</h4>
+                <ul>
+                    <li><strong>John Napier (Scottish):</strong> Invented logarithms (1614)</li>
+                    <li><strong>Leonhard Euler (Swiss):</strong> Discovered e and many relationships</li>
+                    <li><strong>Indian mathematicians:</strong> Early work on trigonometry and infinite series</li>
+                </ul>
+            </div>
+            
+            <div class="cultural-box" style="background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);">
+                <h4>🌐 Applications Worldwide</h4>
+                <ul>
+                    <li><strong>Music:</strong> Sound waves are trigonometric functions</li>
+                    <li><strong>Earthquakes:</strong> Richter scale uses logarithms</li>
+                    <li><strong>Finance:</strong> Compound interest uses exponentials</li>
+                    <li><strong>Medicine:</strong> Drug half-life calculations</li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function showTab(tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) tabContents[i].classList.remove('active');
+            const tabButtons = document.getElementsByClassName('tab-btn');
+            for (let i = 0; i < tabButtons.length; i++) tabButtons[i].classList.remove('active');
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+            window.scrollTo({top: 200, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>

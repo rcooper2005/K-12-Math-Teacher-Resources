@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP Computer Science Principles - Complete Teacher Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 30px; padding: 40px; box-shadow: 0 25px 80px rgba(0,0,0,0.4); }
+        h1 { color: #302b63; font-size: 2.8em; margin-bottom: 10px; text-align: center; }
+        .subtitle { text-align: center; color: #666; font-size: 1.3em; margin-bottom: 30px; }
+        .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; justify-content: center; border-bottom: 4px solid #302b63; padding-bottom: 15px; }
+        .tab-btn { background: linear-gradient(135deg, #f5f5f5, #e0e0e0); border: none; padding: 14px 28px; border-radius: 12px 12px 0 0; cursor: pointer; font-size: 1em; font-weight: 700; transition: all 0.3s; color: #555; }
+        .tab-btn:hover { background: linear-gradient(135deg, #302b63, #24243e); color: white; transform: translateY(-3px); }
+        .tab-btn.active { background: linear-gradient(135deg, #302b63, #667eea); color: white; }
+        .tab-content { display: none; animation: fadeIn 0.5s ease-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .standard-box { background: linear-gradient(135deg, #302b63 0%, #667eea 100%); padding: 25px; border-radius: 20px; margin-bottom: 25px; color: white; }
+        .standard-item { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 15px; color: #333; }
+        .standard-code { background: #00d9ff; color: #0f0c29; padding: 5px 12px; border-radius: 8px; font-weight: 700; display: inline-block; margin-bottom: 10px; }
+        
+        .content-card { background: linear-gradient(135deg, #00d9ff 0%, #00b4d8 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: #0f0c29; }
+        .inner-content { background: white; padding: 25px; border-radius: 15px; margin-top: 20px; color: #333; }
+        .highlight-section { background: #e8f4fc; padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid #302b63; }
+        .highlight-section h5 { color: #302b63; margin-bottom: 8px; }
+        
+        .manipulative-card { background: linear-gradient(135deg, #00b894 0%, #00cec9 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: white; }
+        .manipulative-item { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 15px; color: #333; }
+        .manipulative-item h4 { color: #00b894; margin-bottom: 10px; }
+        
+        .lesson-card { background: linear-gradient(135deg, #e84393 0%, #fd79a8 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: white; }
+        .lesson-section { background: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; color: #333; }
+        .lesson-section h4 { color: #e84393; margin-bottom: 12px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #302b63, #667eea); color: white; padding: 8px 20px; border-radius: 25px; font-weight: 700; margin: 10px 0; }
+        
+        .lab-card { background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: #2d3436; }
+        .lab-info { background: rgba(255,255,255,0.5); padding: 10px 15px; border-radius: 10px; margin-bottom: 15px; }
+        
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 25px; }
+        .vocab-card { background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 100%); padding: 22px; border-radius: 15px; }
+        .vocab-card h4 { color: #2d3436; margin-bottom: 10px; }
+        .vocab-example { background: rgba(255,255,255,0.7); padding: 10px; border-radius: 8px; font-style: italic; }
+        
+        .game-card { background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .online-resources { background: linear-gradient(135deg, #302b63 0%, #667eea 100%); padding: 25px; border-radius: 15px; margin-top: 30px; color: white; }
+        .resource-link { background: white; padding: 15px; border-radius: 10px; margin-bottom: 10px; display: block; text-decoration: none; color: #333; transition: transform 0.3s; }
+        .resource-link:hover { transform: translateX(10px); }
+        
+        .differentiation-box { background: linear-gradient(135deg, #00b894 0%, #00cec9 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .misconception-box { background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%); color: #2d3436; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .misconception-content { background: rgba(255,255,255,0.95); color: #333; padding: 15px; border-radius: 10px; margin-top: 10px; }
+        .cultural-box { background: linear-gradient(135deg, #e84393 0%, #fd79a8 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        
+        .video-card { background: linear-gradient(135deg, #00d9ff 0%, #00b4d8 100%); color: #0f0c29; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        .video-card a { color: #302b63; text-decoration: underline; }
+        .article-card { background: linear-gradient(135deg, #302b63 0%, #667eea 100%); color: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        .assessment-card { background: linear-gradient(135deg, #302b63 0%, #00d9ff 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .assessment-item { background: rgba(255,255,255,0.95); color: #333; padding: 15px; border-radius: 10px; margin-bottom: 10px; }
+        .printable-card { background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 100%); color: #2d3436; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        
+        .code-block { background: #1e1e1e; color: #d4d4d4; padding: 15px; border-radius: 10px; font-family: monospace; margin: 10px 0; overflow-x: auto; }
+        .code-block .keyword { color: #569cd6; }
+        .code-block .string { color: #ce9178; }
+        .code-block .comment { color: #6a9955; }
+        
+        ul { margin-left: 20px; margin-top: 10px; }
+        li { margin-bottom: 10px; }
+        @media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 2em; } .tab-btn { padding: 10px 15px; font-size: 0.9em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💻 AP Computer Science Principles</h1>
+        <p class="subtitle">Creative Development • Data • Algorithms • Programming • Computing Systems • Networks • Impact</p>
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('standards')">📋 Big Ideas</button>
+            <button class="tab-btn" onclick="showTab('background')">👩‍🏫 Teacher Background</button>
+            <button class="tab-btn" onclick="showTab('manipulatives')">🧮 Tools</button>
+            <button class="tab-btn" onclick="showTab('lessons')">📚 Lessons</button>
+            <button class="tab-btn" onclick="showTab('labs')">🔬 Projects</button>
+            <button class="tab-btn" onclick="showTab('videos')">🎬 Videos</button>
+            <button class="tab-btn" onclick="showTab('articles')">📖 Articles</button>
+            <button class="tab-btn" onclick="showTab('assessments')">📝 Assessments</button>
+            <button class="tab-btn" onclick="showTab('printables')">🖨️ Printables</button>
+            <button class="tab-btn" onclick="showTab('vocabulary')">📖 Vocabulary</button>
+            <button class="tab-btn" onclick="showTab('games')">🎮 Activities</button>
+            <button class="tab-btn" onclick="showTab('differentiation')">🌟 Differentiation</button>
+            <button class="tab-btn" onclick="showTab('misconceptions')">❓ Misconceptions</button>
+            <button class="tab-btn" onclick="showTab('cultural')">🌍 Impact</button>
+        </div>
+        
+        <!-- Standards/Big Ideas Tab -->
+        <div id="standards" class="tab-content active">
+            <div class="standard-box">
+                <h3>📐 AP CSP Big Ideas & Computational Thinking Practices</h3>
+                <div class="standard-item">
+                    <span class="standard-code">Big Idea 1: Creative Development (CRD)</span>
+                    <p><strong>Collaboration:</strong> Work with others to develop computing innovations.</p>
+                    <p><strong>Design process:</strong> Incorporate investigation, reflection, and iteration.</p>
+                    <p><strong>Program development:</strong> Design, implement, and evaluate programs.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Big Idea 2: Data (DAT)</span>
+                    <p><strong>Binary representation:</strong> Understand how data is stored and manipulated.</p>
+                    <p><strong>Data compression:</strong> Lossy vs. lossless techniques.</p>
+                    <p><strong>Data analysis:</strong> Extract information using computational tools.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Big Idea 3: Algorithms & Programming (AAP)</span>
+                    <p><strong>Variables & data types:</strong> Store and manipulate data.</p>
+                    <p><strong>Control structures:</strong> Sequencing, selection (if/else), iteration (loops).</p>
+                    <p><strong>Procedures:</strong> Define and call procedures with parameters.</p>
+                    <p><strong>Lists:</strong> Store and process collections of data.</p>
+                    <p><strong>Algorithms:</strong> Search, sort, and efficiency analysis.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Big Idea 4: Computing Systems & Networks (CSN)</span>
+                    <p><strong>The Internet:</strong> How data is transmitted; protocols (TCP/IP, HTTP).</p>
+                    <p><strong>Fault tolerance:</strong> How networks handle failures.</p>
+                    <p><strong>Parallel & distributed computing:</strong> Multiple processors working together.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Big Idea 5: Impact of Computing (IOC)</span>
+                    <p><strong>Beneficial & harmful effects:</strong> Analyze dual impacts of innovations.</p>
+                    <p><strong>Digital divide:</strong> Unequal access to technology.</p>
+                    <p><strong>Bias in computing:</strong> How algorithms can perpetuate bias.</p>
+                    <p><strong>Crowdsourcing:</strong> Leveraging collective intelligence.</p>
+                    <p><strong>Legal & ethical concerns:</strong> Privacy, intellectual property, security.</p>
+                </div>
+            </div>
+            
+            <div class="standard-box">
+                <h3>🧠 Computational Thinking Practices</h3>
+                <div class="standard-item">
+                    <span class="standard-code">Practice 1</span>
+                    <p><strong>Computational Solution Design:</strong> Design and evaluate computational solutions for a purpose.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Practice 2</span>
+                    <p><strong>Algorithms & Program Development:</strong> Develop and implement algorithms.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Practice 3</span>
+                    <p><strong>Abstraction in Program Development:</strong> Use abstraction to manage complexity.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Practice 4</span>
+                    <p><strong>Code Analysis:</strong> Evaluate and test algorithms and programs.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Practice 5</span>
+                    <p><strong>Computing Innovations:</strong> Investigate computing innovations.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Practice 6</span>
+                    <p><strong>Responsible Computing:</strong> Contribute to inclusive, safe computing culture.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Teacher Background Tab -->
+        <div id="background" class="tab-content">
+            <div class="content-card">
+                <h3>👩‍🏫 Programming Fundamentals</h3>
+                <div class="inner-content">
+                    <h4>Core Concepts</h4>
+                    <div class="highlight-section">
+                        <h5>Variables and Data Types</h5>
+                        <ul>
+                            <li><strong>Numbers:</strong> Integers, floating-point</li>
+                            <li><strong>Strings:</strong> Text data</li>
+                            <li><strong>Booleans:</strong> True/False</li>
+                            <li><strong>Lists:</strong> Ordered collections</li>
+                        </ul>
+                        <div class="code-block">
+                            <span class="keyword">score</span> ← 0<br>
+                            <span class="keyword">name</span> ← <span class="string">"Alice"</span><br>
+                            <span class="keyword">isPlaying</span> ← <span class="keyword">true</span><br>
+                            <span class="keyword">grades</span> ← [85, 92, 78, 95]
+                        </div>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Control Structures</h5>
+                        <p><strong>Selection:</strong> IF/ELSE for decision making</p>
+                        <p><strong>Iteration:</strong> REPEAT for loops, REPEAT UNTIL for conditional loops</p>
+                        <div class="code-block">
+                            <span class="keyword">IF</span> (score > 90)<br>
+                            &nbsp;&nbsp;{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">DISPLAY</span>(<span class="string">"Excellent!"</span>)<br>
+                            &nbsp;&nbsp;}<br>
+                            <span class="keyword">ELSE</span><br>
+                            &nbsp;&nbsp;{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">DISPLAY</span>(<span class="string">"Keep trying!"</span>)<br>
+                            &nbsp;&nbsp;}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);">
+                <h3>🔢 Data & Binary</h3>
+                <div class="inner-content">
+                    <h4>How Computers Store Information</h4>
+                    <div class="highlight-section">
+                        <h5>Binary System</h5>
+                        <p>Everything is 0s and 1s (bits). 8 bits = 1 byte.</p>
+                        <p>13 in binary: 1101 (8 + 4 + 0 + 1 = 13)</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Data Representation</h5>
+                        <ul>
+                            <li><strong>Numbers:</strong> Binary encoding</li>
+                            <li><strong>Text:</strong> ASCII/Unicode (A = 65 = 01000001)</li>
+                            <li><strong>Images:</strong> Pixels with RGB values</li>
+                            <li><strong>Sound:</strong> Samples of amplitude over time</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Compression</h5>
+                        <p><strong>Lossless:</strong> Original recoverable (ZIP, PNG)</p>
+                        <p><strong>Lossy:</strong> Some data lost (JPEG, MP3)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="background: linear-gradient(135deg, #e84393 0%, #fd79a8 100%);">
+                <h3>🌐 The Internet</h3>
+                <div class="inner-content">
+                    <h4>How Data Travels</h4>
+                    <div class="highlight-section">
+                        <h5>Key Concepts</h5>
+                        <ul>
+                            <li><strong>Packets:</strong> Data broken into small pieces</li>
+                            <li><strong>IP addresses:</strong> Unique device identifiers</li>
+                            <li><strong>Routing:</strong> Finding path through network</li>
+                            <li><strong>TCP/IP:</strong> Protocols ensuring delivery</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Protocols</h5>
+                        <p><strong>HTTP/HTTPS:</strong> Web page transfer (S = secure)</p>
+                        <p><strong>DNS:</strong> Translates domain names to IP addresses</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Fault Tolerance</h5>
+                        <p>Multiple paths exist; if one fails, data takes another route.</p>
+                        <p>Redundancy ensures reliability.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%); color: #2d3436;">
+                <h3>🔍 Algorithms</h3>
+                <div class="inner-content">
+                    <h4>Step-by-Step Problem Solving</h4>
+                    <div class="highlight-section">
+                        <h5>Searching</h5>
+                        <p><strong>Linear Search:</strong> Check each element (slow for large lists)</p>
+                        <p><strong>Binary Search:</strong> Divide and conquer on sorted list (much faster!)</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Algorithm Efficiency</h5>
+                        <p>How does time grow as input size increases?</p>
+                        <ul>
+                            <li>Linear: Doubling input doubles time</li>
+                            <li>Quadratic: Doubling input quadruples time</li>
+                            <li>Logarithmic: Very efficient; grows slowly</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tools Tab -->
+        <div id="manipulatives" class="tab-content">
+            <div class="manipulative-card">
+                <h3>💻 Programming Environments</h3>
+                <div class="manipulative-item">
+                    <h4>App Lab (Code.org)</h4>
+                    <p><strong>Uses:</strong> AP CSP-aligned; block or text coding; mobile app creation</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Scratch</h4>
+                    <p><strong>Uses:</strong> Visual block-based programming; good for beginners</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Python</h4>
+                    <p><strong>Uses:</strong> Text-based; real-world language; many resources</p>
+                </div>
+            </div>
+            
+            <div class="manipulative-card" style="background: linear-gradient(135deg, #e84393 0%, #fd79a8 100%);">
+                <h3>📊 Data Tools</h3>
+                <div class="manipulative-item">
+                    <h4>Spreadsheets (Excel/Google Sheets)</h4>
+                    <p><strong>Uses:</strong> Data analysis, filtering, visualization</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Binary Conversion Tools</h4>
+                    <p><strong>Uses:</strong> Convert between number systems</p>
+                </div>
+            </div>
+            
+            <div class="manipulative-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);">
+                <h3>🔗 Simulation Tools</h3>
+                <div class="manipulative-item">
+                    <h4>Internet Simulator (Code.org)</h4>
+                    <p><strong>Uses:</strong> Explore how packets travel; understand protocols</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Pixelation Widget</h4>
+                    <p><strong>Uses:</strong> Explore image encoding and compression</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Lessons Tab -->
+        <div id="lessons" class="tab-content">
+            <div class="lesson-card">
+                <h3>📚 Lesson 1: Introduction to Algorithms</h3>
+                <span class="time-badge">⏱️ 50 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will define what an algorithm is</li>
+                        <li>Students will write step-by-step instructions</li>
+                        <li>Students will identify ambiguity in instructions</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (10 min):</strong> "Write instructions for making a peanut butter sandwich." Teacher follows instructions EXACTLY (often humorously wrong). Discuss why precision matters.</p>
+                    <p><strong>Activity (25 min):</strong> In pairs, write algorithm for a simple task. Partner tries to follow exactly. Iterate to fix problems.</p>
+                    <p><strong>Discussion (10 min):</strong> What makes a good algorithm? (Clear, unambiguous, complete, finite)</p>
+                    <p><strong>Closure (5 min):</strong> Algorithms are everywhere - recipes, directions, daily routines!</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);">
+                <h3>📚 Lesson 2: Binary Numbers</h3>
+                <span class="time-badge">⏱️ 55 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will convert between decimal and binary</li>
+                        <li>Students will understand why computers use binary</li>
+                        <li>Students will represent simple data in binary</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (12 min):</strong> "Computers only understand ON and OFF - 1 and 0." Place values: instead of 10s, use 2s: 1, 2, 4, 8, 16, 32...</p>
+                    <p><strong>Guided Practice (18 min):</strong> Convert 13 to binary: 13 = 8+4+1 = 1101. Use binary cards activity.</p>
+                    <p><strong>Independent Practice (20 min):</strong> Convert numbers both directions; explore ASCII encoding.</p>
+                    <p><strong>Closure (5 min):</strong> "How would you represent 20 in binary?"</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%); color: #2d3436;">
+                <h3>📚 Lesson 3: Variables and Conditionals</h3>
+                <span class="time-badge">⏱️ 55 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will create and use variables</li>
+                        <li>Students will write conditional statements</li>
+                        <li>Students will trace program execution</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (12 min):</strong> Variables are like labeled boxes that store values. Demonstrate creating, assigning, and updating variables.</p>
+                    <p><strong>Guided Practice (18 min):</strong> Add conditionals: IF score >= 60 THEN pass ELSE fail. Trace through examples.</p>
+                    <p><strong>Independent Practice (20 min):</strong> Create programs using variables and conditionals.</p>
+                    <p><strong>Closure (5 min):</strong> "What value does x have after: x ← 5; x ← x + 3"</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);">
+                <h3>📚 Lesson 4: Lists and Loops</h3>
+                <span class="time-badge">⏱️ 55 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will create and manipulate lists</li>
+                        <li>Students will use loops to iterate through lists</li>
+                        <li>Students will apply list algorithms</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (12 min):</strong> Lists store multiple values. Access by index (usually starting at 1 in AP CSP pseudocode). Operations: append, insert, remove.</p>
+                    <p><strong>Guided Practice (18 min):</strong> Loop through list to display each item, find sum, find maximum.</p>
+                    <p><strong>Independent Practice (20 min):</strong> Write programs that process lists.</p>
+                    <p><strong>Closure (5 min):</strong> "How would you find the average of a list?"</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card">
+                <h3>📚 Lesson 5: The Internet - How Data Travels</h3>
+                <span class="time-badge">⏱️ 50 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will explain how data is transmitted across the Internet</li>
+                        <li>Students will describe the purpose of protocols</li>
+                        <li>Students will understand fault tolerance</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (10 min):</strong> "When you visit a website, what actually happens?" Trace the journey of a data packet.</p>
+                    <p><strong>Activity (25 min):</strong> Internet Simulator - students send messages through simulated network, observe routing and packet loss.</p>
+                    <p><strong>Discussion (10 min):</strong> Why break data into packets? What happens if one path fails?</p>
+                    <p><strong>Closure (5 min):</strong> The Internet's redundancy makes it resilient!</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Projects Tab -->
+        <div id="labs" class="tab-content">
+            <div class="lab-card">
+                <h3>🔬 Create Performance Task Preparation</h3>
+                <div class="lab-info"><strong>Focus:</strong> Program development | <strong>Duration:</strong> 12+ hours (multi-week)</div>
+                <div class="inner-content">
+                    <h4>Requirements</h4>
+                    <ol>
+                        <li>Program must include: list, procedure with parameter, algorithm with sequencing/selection/iteration</li>
+                        <li>Written responses about program purpose, development process, and algorithm</li>
+                        <li>Video demonstrating program functionality</li>
+                    </ol>
+                    <h4>Project Ideas</h4>
+                    <ul>
+                        <li>Quiz app with score tracking</li>
+                        <li>Data visualization tool</li>
+                        <li>Simple game with multiple levels</li>
+                        <li>Organization/productivity app</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="lab-card" style="background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);">
+                <h3>🔬 Data Analysis Project</h3>
+                <div class="lab-info"><strong>Focus:</strong> Working with data | <strong>Duration:</strong> 3-4 class periods</div>
+                <div class="inner-content">
+                    <h4>Procedure</h4>
+                    <ol>
+                        <li>Find a dataset of interest (sports, music, population, etc.)</li>
+                        <li>Clean and filter data</li>
+                        <li>Ask questions that data can answer</li>
+                        <li>Create visualizations</li>
+                        <li>Draw conclusions and present findings</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="lab-card" style="background: linear-gradient(135deg, #e84393 0%, #fd79a8 100%);">
+                <h3>🔬 Computing Innovation Research</h3>
+                <div class="lab-info"><strong>Focus:</strong> Impact of computing | <strong>Duration:</strong> 2-3 class periods</div>
+                <div class="inner-content">
+                    <h4>Procedure</h4>
+                    <ol>
+                        <li>Select a computing innovation</li>
+                        <li>Research how it works (at a high level)</li>
+                        <li>Identify data used or produced</li>
+                        <li>Analyze beneficial and harmful effects</li>
+                        <li>Consider privacy, security, and bias implications</li>
+                        <li>Present findings</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Videos Tab -->
+        <div id="videos" class="tab-content">
+            <h2 style="color: #302b63; margin-bottom: 20px;">🎬 Recommended Videos</h2>
+            
+            <div class="video-card">
+                <h4>📹 Code.org AP CSP Videos</h4>
+                <ul>
+                    <li><strong>Internet Explained:</strong> How data travels - <a href="https://www.youtube.com/watch?v=Dxcc6ycZ73M" target="_blank">YouTube</a></li>
+                    <li><strong>Binary & Data:</strong> How computers store information - <a href="https://www.youtube.com/watch?v=USCBCmwMCDA" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+            
+            <div class="video-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%); color: white;">
+                <h4>📹 Crash Course Computer Science</h4>
+                <ul>
+                    <li><strong>Full Playlist:</strong> Comprehensive series - <a href="https://www.youtube.com/playlist?list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo" target="_blank" style="color: white;">YouTube</a></li>
+                    <li>Covers hardware, software, algorithms, AI, and more!</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Articles Tab -->
+        <div id="articles" class="tab-content">
+            <h2 style="color: #302b63; margin-bottom: 20px;">📖 Reading Resources</h2>
+            
+            <div class="article-card">
+                <h4>📚 Why Learn to Code?</h4>
+                <div style="background: white; color: #333; padding: 15px; border-radius: 10px; margin-top: 10px;">
+                    <p>Coding isn't just for future programmers - it teaches problem-solving, logical thinking, and creativity. These skills apply everywhere!</p>
+                    <p>Understanding how technology works makes you a more informed citizen and opens doors to countless careers.</p>
+                </div>
+            </div>
+            
+            <div class="article-card" style="background: linear-gradient(135deg, #e84393 0%, #fd79a8 100%);">
+                <h4>📚 The Ethics of Algorithms</h4>
+                <div style="background: white; color: #333; padding: 15px; border-radius: 10px; margin-top: 10px;">
+                    <p>Algorithms make decisions about loans, job applications, criminal justice, and more. But they can also perpetuate biases from their training data.</p>
+                    <p>As computing becomes more powerful, we must consider: Who is affected? Who benefits? Is it fair? These questions matter!</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Assessments Tab -->
+        <div id="assessments" class="tab-content">
+            <h2 style="color: #302b63; margin-bottom: 20px;">📝 Assessment Information</h2>
+            
+            <div class="assessment-card">
+                <h4>🎯 AP Exam Format</h4>
+                <div class="assessment-item">
+                    <p><strong>Multiple Choice (70%):</strong> 70 questions in 120 minutes</p>
+                    <p><strong>Create Performance Task (30%):</strong> Completed during the school year</p>
+                </div>
+            </div>
+            
+            <div class="assessment-card" style="background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);">
+                <h4>🎯 Topic Distribution</h4>
+                <div class="assessment-item">
+                    <p><strong>Creative Development:</strong> 10-13%</p>
+                    <p><strong>Data:</strong> 17-22%</p>
+                    <p><strong>Algorithms & Programming:</strong> 30-35%</p>
+                    <p><strong>Computing Systems & Networks:</strong> 11-15%</p>
+                    <p><strong>Impact of Computing:</strong> 21-26%</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Vocabulary Tab -->
+        <div id="vocabulary" class="tab-content">
+            <h2 style="color: #302b63; margin-bottom: 20px;">📖 Key Terms</h2>
+            
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <h4>Algorithm</h4>
+                    <p><strong>Definition:</strong> Step-by-step instructions to solve a problem</p>
+                    <div class="vocab-example">"A recipe is an algorithm for making food."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Abstraction</h4>
+                    <p><strong>Definition:</strong> Simplifying complexity by focusing on essential features</p>
+                    <div class="vocab-example">"A map is an abstraction of the real world."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Binary</h4>
+                    <p><strong>Definition:</strong> Base-2 number system using only 0 and 1</p>
+                    <div class="vocab-example">"13 in binary is 1101."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Protocol</h4>
+                    <p><strong>Definition:</strong> Agreed-upon rules for communication</p>
+                    <div class="vocab-example">"HTTP is a protocol for web communication."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Iteration</h4>
+                    <p><strong>Definition:</strong> Repeating a process; loops in programming</p>
+                    <div class="vocab-example">"A loop iterates through each item in a list."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Procedure</h4>
+                    <p><strong>Definition:</strong> Named group of instructions (function)</p>
+                    <div class="vocab-example">"PROCEDURE calculateAverage(list) returns the mean."</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Remaining tabs -->
+        <div id="printables" class="tab-content">
+            <h2 style="color: #302b63; margin-bottom: 20px;">🖨️ Printable Resources</h2>
+            <div class="printable-card">
+                <h4>📋 Reference Materials</h4>
+                <ul>
+                    <li>AP CSP Exam Reference Sheet</li>
+                    <li>Binary conversion chart</li>
+                    <li>Pseudocode syntax guide</li>
+                    <li>Algorithm efficiency cheat sheet</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="games" class="tab-content">
+            <h2 style="color: #302b63; margin-bottom: 20px;">🎮 Interactive Activities</h2>
+            <div class="game-card">
+                <h4>🎯 Unplugged Activities</h4>
+                <ul>
+                    <li>Human router game (simulate packet routing)</li>
+                    <li>Binary card activity</li>
+                    <li>Sorting algorithm race</li>
+                    <li>Error detection with parity</li>
+                </ul>
+            </div>
+            <div class="online-resources">
+                <h3>💻 Online Resources</h3>
+                <a href="https://studio.code.org/courses/csp-2023" class="resource-link" target="_blank"><strong>Code.org AP CSP</strong> - Full curriculum</a>
+                <a href="https://apclassroom.collegeboard.org/" class="resource-link" target="_blank"><strong>AP Classroom</strong> - Official resources</a>
+            </div>
+        </div>
+        
+        <div id="differentiation" class="tab-content">
+            <h2 style="color: #302b63; margin-bottom: 20px;">🌟 Differentiation</h2>
+            <div class="differentiation-box">
+                <h4>📈 For Advanced Learners</h4>
+                <ul><li>Text-based coding (Python/JavaScript)</li><li>More complex algorithms</li><li>Independent projects</li></ul>
+            </div>
+            <div class="differentiation-box" style="background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%); color: #2d3436;">
+                <h4>📉 For Struggling Learners</h4>
+                <ul><li>Block-based coding</li><li>Pair programming</li><li>Scaffolded projects</li><li>More unplugged activities</li></ul>
+            </div>
+        </div>
+        
+        <div id="misconceptions" class="tab-content">
+            <h2 style="color: #302b63; margin-bottom: 20px;">❓ Common Misconceptions</h2>
+            <div class="misconception-box">
+                <h4>❌ "The Internet and the World Wide Web are the same thing"</h4>
+                <div class="misconception-content">
+                    <p><strong>Correction:</strong> The Internet is the network infrastructure. The Web is one application that runs on it (along with email, video streaming, etc.).</p>
+                </div>
+            </div>
+            <div class="misconception-box">
+                <h4>❌ "More code is better code"</h4>
+                <div class="misconception-content">
+                    <p><strong>Correction:</strong> Efficient, readable code is better. Good programmers write less code that does more.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="cultural" class="tab-content">
+            <h2 style="color: #302b63; margin-bottom: 20px;">🌍 Impact of Computing</h2>
+            <div class="cultural-box">
+                <h4>✅ Beneficial Effects</h4>
+                <ul>
+                    <li>Global communication and connection</li>
+                    <li>Access to information and education</li>
+                    <li>Medical advances and research</li>
+                    <li>Economic opportunities</li>
+                </ul>
+            </div>
+            <div class="cultural-box" style="background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%); color: #2d3436;">
+                <h4>⚠️ Harmful Effects to Consider</h4>
+                <ul>
+                    <li>Digital divide and unequal access</li>
+                    <li>Privacy concerns</li>
+                    <li>Algorithmic bias</li>
+                    <li>Cybersecurity threats</li>
+                    <li>Misinformation spread</li>
+                </ul>
+            </div>
+            <div class="cultural-box" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);">
+                <h4>👨‍👩‍👧‍👦 Diverse Pioneers in Computing</h4>
+                <ul>
+                    <li><strong>Ada Lovelace:</strong> First computer programmer</li>
+                    <li><strong>Grace Hopper:</strong> Compiler development</li>
+                    <li><strong>Alan Turing:</strong> Foundations of computing</li>
+                    <li><strong>Katherine Johnson:</strong> NASA calculations</li>
+                    <li><strong>Tim Berners-Lee:</strong> Invented the World Wide Web</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showTab(tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) tabContents[i].classList.remove('active');
+            const tabButtons = document.getElementsByClassName('tab-btn');
+            for (let i = 0; i < tabButtons.length; i++) tabButtons[i].classList.remove('active');
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+            window.scrollTo({top: 200, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>

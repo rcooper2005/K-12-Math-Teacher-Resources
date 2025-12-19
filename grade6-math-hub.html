@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6th Grade Math Resources - Complete Teacher Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 30px; padding: 40px; box-shadow: 0 25px 80px rgba(0,0,0,0.2); }
+        h1 { color: #667eea; font-size: 2.8em; margin-bottom: 10px; text-align: center; }
+        .subtitle { text-align: center; color: #666; font-size: 1.3em; margin-bottom: 30px; }
+        .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; justify-content: center; border-bottom: 4px solid #667eea; padding-bottom: 15px; }
+        .tab-btn { background: linear-gradient(135deg, #f5f5f5, #e0e0e0); border: none; padding: 14px 28px; border-radius: 12px 12px 0 0; cursor: pointer; font-size: 1em; font-weight: 700; transition: all 0.3s; color: #555; }
+        .tab-btn:hover { background: linear-gradient(135deg, #667eea, #764ba2); color: white; transform: translateY(-3px); }
+        .tab-btn.active { background: linear-gradient(135deg, #667eea, #764ba2); color: white; }
+        .tab-content { display: none; animation: fadeIn 0.5s ease-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .standard-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 25px; border-radius: 20px; margin-bottom: 25px; color: white; }
+        .standard-item { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 15px; color: #333; }
+        .standard-code { background: #667eea; color: white; padding: 5px 12px; border-radius: 8px; font-weight: 700; display: inline-block; margin-bottom: 10px; }
+        
+        .content-card { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: white; }
+        .inner-content { background: white; padding: 25px; border-radius: 15px; margin-top: 20px; color: #333; }
+        .highlight-section { background: #ede7f6; padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid #667eea; }
+        .highlight-section h5 { color: #667eea; margin-bottom: 8px; }
+        
+        .manipulative-card { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: white; }
+        .manipulative-item { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 15px; color: #333; }
+        .manipulative-item h4 { color: #4facfe; margin-bottom: 10px; }
+        
+        .lesson-card { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: #2d3436; }
+        .lesson-section { background: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; color: #333; }
+        .lesson-section h4 { color: #00b894; margin-bottom: 12px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 25px; font-weight: 700; margin: 10px 0; }
+        
+        .lab-card { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: #2d3436; }
+        .lab-info { background: rgba(255,255,255,0.4); padding: 10px 15px; border-radius: 10px; margin-bottom: 15px; }
+        
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 25px; }
+        .vocab-card { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: 22px; border-radius: 15px; }
+        .vocab-card h4 { color: #2d3436; margin-bottom: 10px; }
+        .vocab-example { background: rgba(255,255,255,0.6); padding: 10px; border-radius: 8px; font-style: italic; }
+        
+        .game-card { background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%); color: #2d3436; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .online-resources { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 25px; border-radius: 15px; margin-top: 30px; color: white; }
+        .resource-link { background: white; padding: 15px; border-radius: 10px; margin-bottom: 10px; display: block; text-decoration: none; color: #333; transition: transform 0.3s; }
+        .resource-link:hover { transform: translateX(10px); }
+        
+        .differentiation-box { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: #2d3436; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .misconception-box { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: #2d3436; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .misconception-content { background: rgba(255,255,255,0.9); color: #333; padding: 15px; border-radius: 10px; margin-top: 10px; }
+        .cultural-box { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #2d3436; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        
+        .video-card { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        .video-card a { color: #fff; text-decoration: underline; }
+        .article-card { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        .assessment-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .assessment-item { background: rgba(255,255,255,0.95); color: #333; padding: 15px; border-radius: 10px; margin-bottom: 10px; }
+        .printable-card { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #2d3436; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        
+        ul { margin-left: 20px; margin-top: 10px; }
+        li { margin-bottom: 10px; }
+        @media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 2em; } .tab-btn { padding: 10px 15px; font-size: 0.9em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 6th Grade Math Resources</h1>
+        <p class="subtitle">Ratios & Proportions • Negative Numbers • Expressions & Equations • Statistics</p>
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('standards')">📋 Standards</button>
+            <button class="tab-btn" onclick="showTab('background')">👩‍🏫 Teacher Background</button>
+            <button class="tab-btn" onclick="showTab('manipulatives')">🧮 Manipulatives</button>
+            <button class="tab-btn" onclick="showTab('lessons')">📚 Lessons</button>
+            <button class="tab-btn" onclick="showTab('labs')">🔬 Investigations</button>
+            <button class="tab-btn" onclick="showTab('videos')">🎬 Videos</button>
+            <button class="tab-btn" onclick="showTab('articles')">📖 Articles</button>
+            <button class="tab-btn" onclick="showTab('assessments')">📝 Assessments</button>
+            <button class="tab-btn" onclick="showTab('printables')">🖨️ Printables</button>
+            <button class="tab-btn" onclick="showTab('vocabulary')">📖 Vocabulary</button>
+            <button class="tab-btn" onclick="showTab('games')">🎮 Games</button>
+            <button class="tab-btn" onclick="showTab('differentiation')">🌟 Differentiation</button>
+            <button class="tab-btn" onclick="showTab('misconceptions')">❓ Misconceptions</button>
+            <button class="tab-btn" onclick="showTab('cultural')">🌍 Cultural Connections</button>
+        </div>
+        
+        <!-- Standards Tab -->
+        <div id="standards" class="tab-content active">
+            <div class="standard-box">
+                <h3>📐 NCTM Content Standards for Sixth Grade</h3>
+                <div class="standard-item">
+                    <span class="standard-code">Ratios & Proportional Relationships</span>
+                    <p><strong>Understand ratio concepts:</strong> Use ratio language; understand unit rates; use ratio reasoning to solve problems.</p>
+                    <p><strong>Represent:</strong> Use tables of equivalent ratios, tape diagrams, double number lines, and equations.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">The Number System</span>
+                    <p><strong>Division of fractions:</strong> Interpret and compute quotients of fractions.</p>
+                    <p><strong>Negative numbers:</strong> Understand positive and negative numbers in real-world contexts. Extend the number line to include negatives.</p>
+                    <p><strong>Absolute value:</strong> Understand ordering and absolute value of rational numbers.</p>
+                    <p><strong>Coordinate plane:</strong> Graph points in all four quadrants.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Expressions & Equations</span>
+                    <p><strong>Expressions:</strong> Write, read, and evaluate expressions with variables. Apply properties (distributive, etc.).</p>
+                    <p><strong>Equations:</strong> Solve one-step equations. Write equations to represent real-world problems.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Statistics & Probability</span>
+                    <p><strong>Statistical questions:</strong> Recognize statistical questions; summarize data distributions.</p>
+                    <p><strong>Measures:</strong> Mean, median, mode, range, interquartile range, mean absolute deviation.</p>
+                    <p><strong>Displays:</strong> Dot plots, histograms, box plots.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Geometry</span>
+                    <p><strong>Area:</strong> Find area of triangles, quadrilaterals, and polygons by composing/decomposing.</p>
+                    <p><strong>Volume:</strong> Find volume of rectangular prisms with fractional edge lengths.</p>
+                    <p><strong>Surface area:</strong> Represent 3D figures using nets; find surface area.</p>
+                </div>
+            </div>
+            
+            <div class="standard-box">
+                <h3>🍑 Georgia Standards of Excellence (GSE) - 6th Grade Math</h3>
+                <div class="standard-item">
+                    <span class="standard-code">MGSE6.RP</span>
+                    <p><strong>Ratios & Proportional Relationships:</strong></p>
+                    <ul>
+                        <li>MGSE6.RP.1 - Understand ratio concepts and ratio language</li>
+                        <li>MGSE6.RP.2 - Understand unit rates</li>
+                        <li>MGSE6.RP.3 - Use ratio reasoning (tables, diagrams, percent)</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">MGSE6.NS</span>
+                    <p><strong>The Number System:</strong></p>
+                    <ul>
+                        <li>MGSE6.NS.1 - Divide fractions by fractions</li>
+                        <li>MGSE6.NS.2-4 - Multi-digit operations; find GCF and LCM</li>
+                        <li>MGSE6.NS.5-8 - Rational numbers, absolute value, coordinate plane</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">MGSE6.EE</span>
+                    <p><strong>Expressions & Equations:</strong></p>
+                    <ul>
+                        <li>MGSE6.EE.1-4 - Write and evaluate expressions; identify equivalent expressions</li>
+                        <li>MGSE6.EE.5-8 - Solve equations and inequalities; represent relationships</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">MGSE6.G</span>
+                    <p><strong>Geometry:</strong></p>
+                    <ul>
+                        <li>MGSE6.G.1-3 - Area of polygons; volume with fractions</li>
+                        <li>MGSE6.G.4 - Surface area using nets</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">MGSE6.SP</span>
+                    <p><strong>Statistics & Probability:</strong></p>
+                    <ul>
+                        <li>MGSE6.SP.1-3 - Statistical questions and variability</li>
+                        <li>MGSE6.SP.4-5 - Display and summarize data; measures of center and spread</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Teacher Background Tab -->
+        <div id="background" class="tab-content">
+            <div class="content-card">
+                <h3>👩‍🏫 Ratios and Proportional Reasoning</h3>
+                <div class="inner-content">
+                    <h4>Foundation for Algebra</h4>
+                    <div class="highlight-section">
+                        <h5>Understanding Ratios</h5>
+                        <p>A ratio compares two quantities. "3 to 5" can be written as 3:5, 3/5, or "3 to 5".</p>
+                        <p>Types: part-to-part (boys to girls) vs. part-to-whole (boys to total students).</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Unit Rates</h5>
+                        <p>A rate with denominator 1. Example: $15 for 3 pounds → $5 per pound.</p>
+                        <p>Unit rates make comparisons easy: Which is better - $12 for 4 lb or $20 for 5 lb?</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Representations</h5>
+                        <ul>
+                            <li><strong>Tables:</strong> Show equivalent ratios</li>
+                            <li><strong>Tape diagrams:</strong> Visual bar models</li>
+                            <li><strong>Double number lines:</strong> Show proportional relationships</li>
+                            <li><strong>Graphs:</strong> Proportional relationships pass through origin</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <h3>➖ Negative Numbers</h3>
+                <div class="inner-content">
+                    <h4>Extending the Number System</h4>
+                    <div class="highlight-section">
+                        <h5>Real-World Contexts</h5>
+                        <ul>
+                            <li>Temperature (below zero)</li>
+                            <li>Elevation (below sea level)</li>
+                            <li>Money (debt)</li>
+                            <li>Football (yards lost)</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Key Concepts</h5>
+                        <p><strong>Opposites:</strong> Numbers same distance from zero but different sides. 5 and -5 are opposites.</p>
+                        <p><strong>Absolute value:</strong> Distance from zero, always positive. |-5| = 5</p>
+                        <p><strong>Ordering:</strong> On number line, left is less. -5 < -2 because -5 is further left.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: #2d3436;">
+                <h3>📝 Expressions & Equations</h3>
+                <div class="inner-content">
+                    <h4>Transition to Algebra</h4>
+                    <div class="highlight-section">
+                        <h5>From Arithmetic to Algebra</h5>
+                        <p>Expressions use variables to represent unknown or changing quantities.</p>
+                        <p>3x + 5 means "3 times some number, plus 5"</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Properties</h5>
+                        <ul>
+                            <li><strong>Distributive:</strong> a(b + c) = ab + ac</li>
+                            <li><strong>Combining like terms:</strong> 3x + 5x = 8x</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Solving Equations</h5>
+                        <p>One-step equations: x + 5 = 12 → x = 7</p>
+                        <p>Key idea: Do the same operation to both sides to keep equality.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: #2d3436;">
+                <h3>📊 Statistics</h3>
+                <div class="inner-content">
+                    <h4>Understanding Data</h4>
+                    <div class="highlight-section">
+                        <h5>Statistical vs. Non-Statistical Questions</h5>
+                        <p>Statistical: "How tall are 6th graders?" (expect variability)</p>
+                        <p>Non-statistical: "How tall is Marcus?" (one answer)</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Measures of Center</h5>
+                        <ul>
+                            <li><strong>Mean:</strong> Sum ÷ count (affected by outliers)</li>
+                            <li><strong>Median:</strong> Middle value (resistant to outliers)</li>
+                            <li><strong>Mode:</strong> Most frequent value</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Measures of Spread</h5>
+                        <ul>
+                            <li><strong>Range:</strong> Max - min</li>
+                            <li><strong>IQR:</strong> Q3 - Q1 (spread of middle 50%)</li>
+                            <li><strong>MAD:</strong> Mean Absolute Deviation (average distance from mean)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Manipulatives Tab -->
+        <div id="manipulatives" class="tab-content">
+            <div class="manipulative-card">
+                <h3>📊 Ratio Tools</h3>
+                <div class="manipulative-item">
+                    <h4>Two-Color Counters</h4>
+                    <p><strong>Uses:</strong> Show ratios, equivalent ratios, part-to-part vs. part-to-whole</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Tape Diagrams</h4>
+                    <p><strong>Uses:</strong> Visual representation of ratios and proportions</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Double Number Lines</h4>
+                    <p><strong>Uses:</strong> Show equivalent ratios, find unit rates, solve proportions</p>
+                </div>
+            </div>
+            
+            <div class="manipulative-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <h3>➖ Integer Tools</h3>
+                <div class="manipulative-item">
+                    <h4>Integer Chips/Counters</h4>
+                    <p><strong>Uses:</strong> Two colors for positive/negative; model operations with integers</p>
+                    <p><strong>Key concept:</strong> +1 and -1 make a "zero pair"</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Vertical Number Lines</h4>
+                    <p><strong>Uses:</strong> Model elevation, temperature; visualize negative numbers</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Four-Quadrant Coordinate Grids</h4>
+                    <p><strong>Uses:</strong> Plot points with negative coordinates</p>
+                </div>
+            </div>
+            
+            <div class="manipulative-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                <h3>📝 Algebra Tools</h3>
+                <div class="manipulative-item">
+                    <h4>Algebra Tiles</h4>
+                    <p><strong>Uses:</strong> Model expressions, combine like terms, solve equations</p>
+                    <p><strong>Pieces:</strong> Unit squares (1), rectangles (x), large squares (x²)</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Balance Scale (or image)</h4>
+                    <p><strong>Uses:</strong> Model equation solving - keep both sides equal!</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Lessons Tab -->
+        <div id="lessons" class="tab-content">
+            <div class="lesson-card">
+                <h3>📚 Lesson 1: Introduction to Ratios</h3>
+                <span class="time-badge">⏱️ 55 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will understand ratio as comparing two quantities</li>
+                        <li>Students will write ratios in multiple forms</li>
+                        <li>Students will distinguish part-to-part from part-to-whole ratios</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (12 min):</strong> Present scenario: "In our class, 12 students have dogs and 18 have cats." Ask: "How can we describe this comparison?" Introduce ratio language: "12 to 18," "12:18," and "12/18."</p>
+                    <p><strong>Guided Practice (18 min):</strong> Identify ratios in various scenarios. Distinguish: "dogs to cats" (12:18) vs. "dogs to total pets" (12:30). Create equivalent ratios: 12:18 = 2:3.</p>
+                    <p><strong>Independent Practice (20 min):</strong> Practice writing and simplifying ratios from word problems and diagrams.</p>
+                    <p><strong>Closure (5 min):</strong> "If ratio of red to blue is 3:5, what does this tell us?"</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <h3>📚 Lesson 2: Understanding Negative Numbers</h3>
+                <span class="time-badge">⏱️ 55 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will understand negative numbers in real-world contexts</li>
+                        <li>Students will locate negative numbers on number lines</li>
+                        <li>Students will compare and order rational numbers</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (12 min):</strong> "It's 5°F outside. The temperature drops 8 degrees. What's the new temperature?" Draw vertical number line. Count down from 5... past 0... to -3°F.</p>
+                    <p><strong>Guided Practice (18 min):</strong> Explore contexts: elevation (Death Valley at -282 ft), money (debt), football yards. Plot numbers on number lines. Compare: Which is colder, -5°F or -2°F?</p>
+                    <p><strong>Independent Practice (20 min):</strong> Plot rational numbers, compare with < and >, solve context problems.</p>
+                    <p><strong>Closure (5 min):</strong> "Is -10 greater or less than -2? Explain."</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: #2d3436;">
+                <h3>📚 Lesson 3: Writing and Evaluating Expressions</h3>
+                <span class="time-badge">⏱️ 50 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will write expressions from word descriptions</li>
+                        <li>Students will evaluate expressions by substituting values</li>
+                        <li>Students will identify parts of expressions (terms, coefficients)</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (10 min):</strong> "I'm thinking of a number. I multiply it by 3 and add 5. How do we write this?" Introduce variable: Let n = the number. Expression: 3n + 5.</p>
+                    <p><strong>Guided Practice (15 min):</strong> Translate phrases to expressions. Evaluate: If n = 4, then 3(4) + 5 = 17.</p>
+                    <p><strong>Independent Practice (20 min):</strong> Write expressions from scenarios; evaluate for given values.</p>
+                    <p><strong>Closure (5 min):</strong> "Write an expression for 'twice a number decreased by 7' and evaluate for x = 10."</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white;">
+                <h3>📚 Lesson 4: Mean, Median, and Mode</h3>
+                <span class="time-badge">⏱️ 55 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will calculate mean, median, and mode</li>
+                        <li>Students will understand when each measure is appropriate</li>
+                        <li>Students will analyze how outliers affect measures</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (12 min):</strong> Present data: Quiz scores 85, 90, 78, 92, 90. Ask: "What's a typical score?" Introduce three measures.</p>
+                    <p><strong>Guided Practice (18 min):</strong> Calculate each. Mean = 87; Median = 90; Mode = 90. Add outlier (45). How do measures change?</p>
+                    <p><strong>Independent Practice (20 min):</strong> Calculate measures for datasets; determine which measure best represents data.</p>
+                    <p><strong>Closure (5 min):</strong> "When might median be better than mean?"</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card">
+                <h3>📚 Lesson 5: Solving One-Step Equations</h3>
+                <span class="time-badge">⏱️ 50 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will solve one-step equations using inverse operations</li>
+                        <li>Students will check solutions by substitution</li>
+                        <li>Students will write and solve equations from word problems</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (10 min):</strong> "I have some money. After spending $15, I have $23. How much did I start with?" Model with equation: x - 15 = 23. Use balance metaphor: add 15 to both sides.</p>
+                    <p><strong>Guided Practice (15 min):</strong> Solve equations with +, -, ×, ÷. Check by substituting. Connect to word problems.</p>
+                    <p><strong>Independent Practice (20 min):</strong> Solve equations; write and solve equations from contexts.</p>
+                    <p><strong>Closure (5 min):</strong> "Solve: 4x = 28. How do you know your answer is correct?"</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Investigations Tab -->
+        <div id="labs" class="tab-content">
+            <div class="lab-card">
+                <h3>🔬 Investigation 1: Unit Rate Shopping</h3>
+                <div class="lab-info"><strong>Focus:</strong> Unit rates and comparison | <strong>Duration:</strong> 50 minutes</div>
+                <div class="inner-content">
+                    <h4>Procedure</h4>
+                    <ol>
+                        <li>Present multiple pricing options (e.g., cereal: 12 oz for $3.60, 16 oz for $4.00, 24 oz for $7.20)</li>
+                        <li>Calculate unit rate (price per ounce) for each</li>
+                        <li>Determine best buy</li>
+                        <li>Extension: Does "bigger" always mean "better deal"? When might you choose smaller?</li>
+                        <li>Students create their own comparison shopping scenario</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="lab-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <h3>🔬 Investigation 2: Integer Operations with Chips</h3>
+                <div class="lab-info"><strong>Focus:</strong> Adding/subtracting integers | <strong>Duration:</strong> 45 minutes</div>
+                <div class="inner-content">
+                    <h4>Procedure</h4>
+                    <ol>
+                        <li>Use two-color chips: yellow = +1, red = -1</li>
+                        <li>Model: 5 + (-3). Start with 5 yellow. Add 3 red. Make zero pairs. Count remaining.</li>
+                        <li>Model: -4 - (-2). Start with 4 red. Remove 2 red. Count remaining.</li>
+                        <li>Explore: What if you can't remove enough? (Add zero pairs first!)</li>
+                        <li>Develop rules from patterns observed</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="lab-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white;">
+                <h3>🔬 Investigation 3: Statistical Analysis Project</h3>
+                <div class="lab-info"><strong>Focus:</strong> Complete statistical analysis | <strong>Duration:</strong> 2 class periods</div>
+                <div class="inner-content">
+                    <h4>Procedure</h4>
+                    <ol>
+                        <li>Students collect data on a question of interest (heights, shoe sizes, etc.)</li>
+                        <li>Calculate all measures: mean, median, mode, range, IQR, MAD</li>
+                        <li>Create displays: dot plot, histogram, or box plot</li>
+                        <li>Write analysis: What does the data tell us? Which measure is most appropriate?</li>
+                        <li>Present findings to class</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Videos Tab -->
+        <div id="videos" class="tab-content">
+            <h2 style="color: #667eea; margin-bottom: 20px;">🎬 Recommended Videos</h2>
+            
+            <div class="video-card">
+                <h4>📹 Ratios & Proportions</h4>
+                <ul>
+                    <li><strong>Math Antics - Ratios and Rates:</strong> Clear introduction - <a href="https://www.youtube.com/watch?v=RQ2nYUBVvqI" target="_blank">YouTube</a></li>
+                    <li><strong>Khan Academy - Ratios:</strong> Comprehensive unit - <a href="https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-ratios-prop-topic" target="_blank">Khan Academy</a></li>
+                </ul>
+            </div>
+            
+            <div class="video-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <h4>📹 Negative Numbers</h4>
+                <ul>
+                    <li><strong>Math Antics - Negative Numbers:</strong> Introduction - <a href="https://www.youtube.com/watch?v=6U0MdnXL9hY" target="_blank">YouTube</a></li>
+                    <li><strong>Math Antics - Integer Addition/Subtraction:</strong> Operations - <a href="https://www.youtube.com/watch?v=DXHB4JR5dBQ" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+            
+            <div class="video-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: #2d3436;">
+                <h4>📹 Statistics</h4>
+                <ul>
+                    <li><strong>Math Antics - Mean, Median, Mode:</strong> Measures of center - <a href="https://www.youtube.com/watch?v=B1HEzNTGeZ4" target="_blank">YouTube</a></li>
+                    <li><strong>Khan Academy - Statistics:</strong> Box plots and IQR - <a href="https://www.khanacademy.org/math/statistics-probability" target="_blank">Khan Academy</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Articles Tab -->
+        <div id="articles" class="tab-content">
+            <h2 style="color: #667eea; margin-bottom: 20px;">📖 Student Reading Passages</h2>
+            
+            <div class="article-card">
+                <h4>📚 Ratios in the Real World</h4>
+                <div style="background: white; color: #333; padding: 15px; border-radius: 10px; margin-top: 10px;">
+                    <p>Ratios are everywhere! Recipes use ratios (2 cups flour to 1 cup sugar). Maps use ratios (1 inch = 10 miles). Even your favorite drink has a ratio of syrup to water!</p>
+                    <p>When comparing ratios, unit rates help. If one brand costs $3 for 12 oz and another costs $4 for 20 oz, which is better? Find cost per ounce: $0.25/oz vs $0.20/oz. The second is cheaper!</p>
+                </div>
+            </div>
+            
+            <div class="article-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <h4>📚 Life Below Zero</h4>
+                <div style="background: white; color: #333; padding: 15px; border-radius: 10px; margin-top: 10px;">
+                    <p>Negative numbers aren't just math - they're real! Temperature can be -10°F in winter. The Dead Sea is 430 meters BELOW sea level (-430 m). When you owe money, that's negative dollars!</p>
+                    <p>On a number line, negative numbers are left of zero. The further left, the smaller the number. So -10 < -5 even though 10 > 5. Think of temperature: -10° is colder (less) than -5°.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Assessments Tab -->
+        <div id="assessments" class="tab-content">
+            <h2 style="color: #667eea; margin-bottom: 20px;">📝 Assessment Tools</h2>
+            
+            <div class="assessment-card">
+                <h4>🎯 Ratios & Proportions</h4>
+                <div class="assessment-item">
+                    <p><strong>Unit rates:</strong> Find and compare unit rates</p>
+                    <p><strong>Equivalent ratios:</strong> Complete ratio tables</p>
+                    <p><strong>Problem solving:</strong> Multi-step ratio word problems</p>
+                </div>
+            </div>
+            
+            <div class="assessment-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <h4>🎯 Number System</h4>
+                <div class="assessment-item">
+                    <p><strong>Integers:</strong> Plot, compare, and order rational numbers</p>
+                    <p><strong>Absolute value:</strong> Evaluate and interpret in context</p>
+                    <p><strong>Coordinate plane:</strong> Plot points in all four quadrants</p>
+                </div>
+            </div>
+            
+            <div class="assessment-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: #2d3436;">
+                <h4>🎯 Expressions, Equations & Statistics</h4>
+                <div class="assessment-item">
+                    <p><strong>Expressions:</strong> Write, evaluate, and simplify</p>
+                    <p><strong>Equations:</strong> Solve one-step equations</p>
+                    <p><strong>Statistics:</strong> Calculate measures; create and interpret displays</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Printables Tab -->
+        <div id="printables" class="tab-content">
+            <h2 style="color: #667eea; margin-bottom: 20px;">🖨️ Printable Resources</h2>
+            
+            <div class="printable-card">
+                <h4>📊 Ratios</h4>
+                <ul>
+                    <li>Ratio tables (blank templates)</li>
+                    <li>Double number line templates</li>
+                    <li>Unit rate practice</li>
+                    <li>Tape diagram problems</li>
+                </ul>
+            </div>
+            
+            <div class="printable-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <h4>➖ Integers & Coordinates</h4>
+                <ul>
+                    <li>Four-quadrant coordinate grids</li>
+                    <li>Integer number lines</li>
+                    <li>Comparing integers practice</li>
+                    <li>Absolute value worksheets</li>
+                </ul>
+            </div>
+            
+            <div class="printable-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                <h4>📝 Algebra & Stats</h4>
+                <ul>
+                    <li>Expression writing practice</li>
+                    <li>One-step equation solving</li>
+                    <li>Statistics calculation worksheets</li>
+                    <li>Box plot and histogram templates</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Vocabulary Tab -->
+        <div id="vocabulary" class="tab-content">
+            <h2 style="color: #667eea; margin-bottom: 20px;">📖 Math Vocabulary</h2>
+            
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <h4>Ratio</h4>
+                    <p><strong>Definition:</strong> A comparison of two quantities</p>
+                    <div class="vocab-example">"The ratio of boys to girls is 3:5."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Unit Rate</h4>
+                    <p><strong>Definition:</strong> A rate with denominator 1</p>
+                    <div class="vocab-example">"$3.50 per gallon is a unit rate."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Absolute Value</h4>
+                    <p><strong>Definition:</strong> Distance from zero on a number line</p>
+                    <div class="vocab-example">"|-7| = 7 because -7 is 7 units from 0."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Integer</h4>
+                    <p><strong>Definition:</strong> Whole numbers and their opposites</p>
+                    <div class="vocab-example">"...-3, -2, -1, 0, 1, 2, 3... are integers."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Variable</h4>
+                    <p><strong>Definition:</strong> A letter representing an unknown value</p>
+                    <div class="vocab-example">"In 3x + 5, x is the variable."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Mean</h4>
+                    <p><strong>Definition:</strong> Sum of values divided by count; the average</p>
+                    <div class="vocab-example">"Mean of 4, 6, 8 is (4+6+8)/3 = 6."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Median</h4>
+                    <p><strong>Definition:</strong> Middle value when data is ordered</p>
+                    <div class="vocab-example">"Median of 3, 5, 9 is 5."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Interquartile Range (IQR)</h4>
+                    <p><strong>Definition:</strong> Spread of middle 50% of data (Q3 - Q1)</p>
+                    <div class="vocab-example">"IQR measures how spread out the data is."</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Games Tab -->
+        <div id="games" class="tab-content">
+            <h2 style="color: #667eea; margin-bottom: 20px;">🎮 Math Games</h2>
+            
+            <div class="game-card">
+                <h4>🎲 Ratio Bingo</h4>
+                <p><strong>Players:</strong> Class | <strong>Materials:</strong> Bingo cards with simplified ratios</p>
+                <ul>
+                    <li>Teacher calls out ratios (6:10, 4 to 8, etc.)</li>
+                    <li>Students mark equivalent simplified ratio on card</li>
+                    <li>First to get 5 in a row wins!</li>
+                </ul>
+            </div>
+            
+            <div class="game-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <h4>🎯 Integer War</h4>
+                <p><strong>Players:</strong> 2 | <strong>Materials:</strong> Integer cards (-10 to 10)</p>
+                <ul>
+                    <li>Each player flips a card</li>
+                    <li>Greater integer wins both cards</li>
+                    <li>Remember: -2 > -8!</li>
+                </ul>
+            </div>
+            
+            <div class="online-resources">
+                <h3>💻 Online Math Games</h3>
+                <a href="https://www.khanacademy.org/math/cc-sixth-grade-math" class="resource-link" target="_blank">
+                    <strong>Khan Academy Grade 6</strong> - Complete practice with videos
+                </a>
+                <a href="https://www.mathplayground.com/grade_6_games.html" class="resource-link" target="_blank">
+                    <strong>Math Playground Grade 6</strong> - Games and logic puzzles
+                </a>
+            </div>
+        </div>
+        
+        <!-- Differentiation Tab -->
+        <div id="differentiation" class="tab-content">
+            <h2 style="color: #667eea; margin-bottom: 20px;">🌟 Differentiation Strategies</h2>
+            
+            <div class="differentiation-box">
+                <h4>📈 For Advanced Learners</h4>
+                <ul>
+                    <li>Complex proportional reasoning problems</li>
+                    <li>Integer operations (all four)</li>
+                    <li>Two-step equations</li>
+                    <li>Statistical analysis with real datasets</li>
+                </ul>
+            </div>
+            
+            <div class="differentiation-box" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                <h4>📉 For Struggling Learners</h4>
+                <ul>
+                    <li>Concrete models for ratios (counters)</li>
+                    <li>Number lines for all integer work</li>
+                    <li>Balance scale metaphor for equations</li>
+                    <li>Calculator support for computation</li>
+                </ul>
+            </div>
+            
+            <div class="differentiation-box" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white;">
+                <h4>🌐 For English Language Learners</h4>
+                <ul>
+                    <li>Visual vocabulary cards</li>
+                    <li>Real-world contexts with familiar items</li>
+                    <li>Sentence frames for explanations</li>
+                    <li>Graphic organizers</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Misconceptions Tab -->
+        <div id="misconceptions" class="tab-content">
+            <h2 style="color: #667eea; margin-bottom: 20px;">❓ Common Misconceptions</h2>
+            
+            <div class="misconception-box">
+                <h4>❌ -5 > -2 because 5 > 2</h4>
+                <div class="misconception-content">
+                    <p><strong>Error:</strong> Comparing absolute values instead of actual values</p>
+                    <p><strong>Correction:</strong> Use number line. -5 is further left, so -5 < -2. Think: which is colder?</p>
+                </div>
+            </div>
+            
+            <div class="misconception-box">
+                <h4>❌ Ratio 3:5 equals 3/8</h4>
+                <div class="misconception-content">
+                    <p><strong>Error:</strong> Confusing part-to-part with part-to-whole</p>
+                    <p><strong>Correction:</strong> 3:5 means 3 parts to 5 parts. Total is 8 parts. 3/8 would be part-to-whole.</p>
+                </div>
+            </div>
+            
+            <div class="misconception-box">
+                <h4>❌ The variable x always equals the same number</h4>
+                <div class="misconception-content">
+                    <p><strong>Error:</strong> Thinking x has one universal value</p>
+                    <p><strong>Correction:</strong> Variables can represent different values in different problems.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cultural Connections Tab -->
+        <div id="cultural" class="tab-content">
+            <h2 style="color: #667eea; margin-bottom: 20px;">🌍 Cultural Connections</h2>
+            
+            <div class="cultural-box">
+                <h4>📊 Ratios Around the World</h4>
+                <ul>
+                    <li><strong>Golden Ratio:</strong> Used in art and architecture worldwide (1.618...)</li>
+                    <li><strong>Cooking:</strong> Every culture has recipes with specific ratios</li>
+                    <li><strong>Music:</strong> Note frequencies have mathematical ratios</li>
+                </ul>
+            </div>
+            
+            <div class="cultural-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <h4>➖ History of Negative Numbers</h4>
+                <ul>
+                    <li><strong>China (200 BCE):</strong> First recorded use of negative numbers</li>
+                    <li><strong>India (700 CE):</strong> Brahmagupta wrote rules for negatives</li>
+                    <li><strong>Europe:</strong> Resisted negatives until 1600s!</li>
+                </ul>
+            </div>
+            
+            <div class="cultural-box" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                <h4>👨‍👩‍👧‍👦 Diverse Mathematicians</h4>
+                <ul>
+                    <li><strong>Brahmagupta:</strong> Indian mathematician - negative number operations</li>
+                    <li><strong>Florence Nightingale:</strong> Pioneer of statistical graphics</li>
+                    <li><strong>David Blackwell:</strong> African American statistician</li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function showTab(tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) tabContents[i].classList.remove('active');
+            const tabButtons = document.getElementsByClassName('tab-btn');
+            for (let i = 0; i < tabButtons.length; i++) tabButtons[i].classList.remove('active');
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+            window.scrollTo({top: 200, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
