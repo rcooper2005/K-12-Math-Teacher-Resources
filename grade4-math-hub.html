@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4th Grade Math Resources - Complete Teacher Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #0984e3 0%, #6c5ce7 50%, #e84393 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 30px; padding: 40px; box-shadow: 0 25px 80px rgba(0,0,0,0.2); }
+        h1 { color: #0984e3; font-size: 2.8em; margin-bottom: 10px; text-align: center; }
+        .subtitle { text-align: center; color: #666; font-size: 1.3em; margin-bottom: 30px; }
+        .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; justify-content: center; border-bottom: 4px solid #0984e3; padding-bottom: 15px; }
+        .tab-btn { background: linear-gradient(135deg, #f5f5f5, #e0e0e0); border: none; padding: 14px 28px; border-radius: 12px 12px 0 0; cursor: pointer; font-size: 1em; font-weight: 700; transition: all 0.3s; color: #555; }
+        .tab-btn:hover { background: linear-gradient(135deg, #0984e3, #0652DD); color: white; transform: translateY(-3px); }
+        .tab-btn.active { background: linear-gradient(135deg, #0984e3, #0652DD); color: white; }
+        .tab-content { display: none; animation: fadeIn 0.5s ease-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .standard-box { background: linear-gradient(135deg, #0984e3 0%, #0652DD 100%); padding: 25px; border-radius: 20px; margin-bottom: 25px; color: white; }
+        .standard-item { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 15px; color: #333; }
+        .standard-code { background: #0984e3; color: white; padding: 5px 12px; border-radius: 8px; font-weight: 700; display: inline-block; margin-bottom: 10px; }
+        
+        .content-card { background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: white; }
+        .inner-content { background: white; padding: 25px; border-radius: 15px; margin-top: 20px; color: #333; }
+        .highlight-section { background: #e3f2fd; padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid #0984e3; }
+        .highlight-section h5 { color: #0984e3; margin-bottom: 8px; }
+        
+        .manipulative-card { background: linear-gradient(135deg, #e17055 0%, #d63031 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: white; }
+        .manipulative-item { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 15px; color: #333; }
+        .manipulative-item h4 { color: #e17055; margin-bottom: 10px; }
+        
+        .lesson-card { background: linear-gradient(135deg, #00b894 0%, #00a085 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: white; }
+        .lesson-section { background: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; color: #333; }
+        .lesson-section h4 { color: #00b894; margin-bottom: 12px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #fdcb6e, #f39c12); color: #2d3436; padding: 8px 20px; border-radius: 25px; font-weight: 700; margin: 10px 0; }
+        
+        .lab-card { background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: white; }
+        .lab-info { background: rgba(255,255,255,0.2); padding: 10px 15px; border-radius: 10px; margin-bottom: 15px; }
+        
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 25px; }
+        .vocab-card { background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%); padding: 22px; border-radius: 15px; }
+        .vocab-card h4 { color: #2d3436; margin-bottom: 10px; }
+        .vocab-example { background: rgba(255,255,255,0.5); padding: 10px; border-radius: 8px; font-style: italic; }
+        
+        .game-card { background: linear-gradient(135deg, #00cec9 0%, #81ecec 100%); color: #2d3436; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .online-resources { background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%); padding: 25px; border-radius: 15px; margin-top: 30px; color: white; }
+        .resource-link { background: white; padding: 15px; border-radius: 10px; margin-bottom: 10px; display: block; text-decoration: none; color: #333; transition: transform 0.3s; }
+        .resource-link:hover { transform: translateX(10px); }
+        
+        .differentiation-box { background: linear-gradient(135deg, #00b894 0%, #55efc4 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .misconception-box { background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .misconception-content { background: rgba(255,255,255,0.95); color: #333; padding: 15px; border-radius: 10px; margin-top: 10px; }
+        .cultural-box { background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        
+        .video-card { background: linear-gradient(135deg, #e84393 0%, #fd79a8 100%); color: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        .video-card a { color: #fff; text-decoration: underline; }
+        .article-card { background: linear-gradient(135deg, #00b894 0%, #55efc4 100%); color: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        .assessment-card { background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .assessment-item { background: rgba(255,255,255,0.95); color: #333; padding: 15px; border-radius: 10px; margin-bottom: 10px; }
+        .printable-card { background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%); color: #2d3436; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        
+        ul { margin-left: 20px; margin-top: 10px; }
+        li { margin-bottom: 10px; }
+        @media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 2em; } .tab-btn { padding: 10px 15px; font-size: 0.9em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔢 4th Grade Math Resources</h1>
+        <p class="subtitle">Multi-Digit Operations • Fraction Equivalence • Decimals • Angles & Measurement</p>
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('standards')">📋 Standards</button>
+            <button class="tab-btn" onclick="showTab('background')">👩‍🏫 Teacher Background</button>
+            <button class="tab-btn" onclick="showTab('manipulatives')">🧮 Manipulatives</button>
+            <button class="tab-btn" onclick="showTab('lessons')">📚 Lessons</button>
+            <button class="tab-btn" onclick="showTab('labs')">🔬 Investigations</button>
+            <button class="tab-btn" onclick="showTab('videos')">🎬 Videos</button>
+            <button class="tab-btn" onclick="showTab('articles')">📖 Articles</button>
+            <button class="tab-btn" onclick="showTab('assessments')">📝 Assessments</button>
+            <button class="tab-btn" onclick="showTab('printables')">🖨️ Printables</button>
+            <button class="tab-btn" onclick="showTab('vocabulary')">📖 Vocabulary</button>
+            <button class="tab-btn" onclick="showTab('games')">🎮 Games</button>
+            <button class="tab-btn" onclick="showTab('differentiation')">🌟 Differentiation</button>
+            <button class="tab-btn" onclick="showTab('misconceptions')">❓ Misconceptions</button>
+            <button class="tab-btn" onclick="showTab('cultural')">🌍 Cultural Connections</button>
+        
+            <button class="tab-btn" onclick="showTab('ai-teachers')">🤖 AI for Teachers</button>
+            <button class="tab-btn" onclick="showTab('ai-students')">🧒 AI for Students</button>
+        </div>
+        
+        <!-- Standards Tab -->
+        <div id="standards" class="tab-content active">
+            <div class="standard-box">
+                <h3>📐 NCTM Content Standards for Fourth Grade</h3>
+                <div class="standard-item">
+                    <span class="standard-code">Multi-Digit Operations</span>
+                    <p><strong>Multiplication:</strong> Multiply whole numbers up to 4-digit by 1-digit and 2-digit by 2-digit using strategies based on place value and properties.</p>
+                    <p><strong>Division:</strong> Find quotients and remainders with up to 4-digit dividends and 1-digit divisors.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Fractions</span>
+                    <p><strong>Equivalence:</strong> Explain why fractions are equivalent. Generate equivalent fractions.</p>
+                    <p><strong>Comparing:</strong> Compare fractions with different numerators and denominators.</p>
+                    <p><strong>Operations:</strong> Add and subtract fractions with like denominators. Multiply fractions by whole numbers.</p>
+                    <p><strong>Decimals:</strong> Understand decimal notation for fractions with denominators 10 and 100.</p>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Measurement & Geometry</span>
+                    <p><strong>Angles:</strong> Recognize and draw angles. Measure angles using protractors. Understand angle measurement.</p>
+                    <p><strong>Unit Conversion:</strong> Know relative sizes of measurement units within one system. Express measurements in larger unit in terms of smaller unit.</p>
+                    <p><strong>Area & Perimeter:</strong> Apply area and perimeter formulas for rectangles.</p>
+                </div>
+            </div>
+            
+            <div class="standard-box">
+                <h3>🍑 Georgia Standards of Excellence (GSE) - 4th Grade Math</h3>
+                <div class="standard-item">
+                    <span class="standard-code">MGSE4.OA</span>
+                    <p><strong>Operations & Algebraic Thinking:</strong></p>
+                    <ul>
+                        <li>MGSE4.OA.1-3 - Multiplicative comparisons; word problems with all operations</li>
+                        <li>MGSE4.OA.4 - Find factor pairs; determine prime/composite</li>
+                        <li>MGSE4.OA.5 - Generate and analyze patterns</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">MGSE4.NBT</span>
+                    <p><strong>Number & Operations in Base Ten:</strong></p>
+                    <ul>
+                        <li>MGSE4.NBT.1-3 - Place value understanding; read/write/compare multi-digit numbers; round</li>
+                        <li>MGSE4.NBT.4 - Fluently add/subtract multi-digit numbers</li>
+                        <li>MGSE4.NBT.5 - Multiply up to 4-digit by 1-digit, 2-digit by 2-digit</li>
+                        <li>MGSE4.NBT.6 - Divide up to 4-digit by 1-digit with remainders</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">MGSE4.NF</span>
+                    <p><strong>Number & Operations—Fractions:</strong></p>
+                    <ul>
+                        <li>MGSE4.NF.1-2 - Fraction equivalence and comparison</li>
+                        <li>MGSE4.NF.3 - Add/subtract fractions with like denominators; decompose fractions</li>
+                        <li>MGSE4.NF.4 - Multiply fractions by whole numbers</li>
+                        <li>MGSE4.NF.5-7 - Decimal notation; compare decimals</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">MGSE4.MD</span>
+                    <p><strong>Measurement & Data:</strong></p>
+                    <ul>
+                        <li>MGSE4.MD.1-3 - Unit conversions; word problems with measurement</li>
+                        <li>MGSE4.MD.4 - Line plots with fractions</li>
+                        <li>MGSE4.MD.5-7 - Angle concepts and measurement</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">MGSE4.G</span>
+                    <p><strong>Geometry:</strong></p>
+                    <ul>
+                        <li>MGSE4.G.1-3 - Points, lines, rays, angles; classify 2D figures; lines of symmetry</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="standard-box">
+                <h3>📍 Gwinnett County AKS - 4th Grade</h3>
+                <div class="standard-item">
+                    <span class="standard-code">Key Skills</span>
+                    <ul>
+                        <li>Multiply multi-digit numbers (up to 4 × 1 and 2 × 2)</li>
+                        <li>Divide multi-digit by 1-digit with remainders</li>
+                        <li>Find equivalent fractions; compare fractions</li>
+                        <li>Add and subtract fractions with like denominators</li>
+                        <li>Understand decimal notation (tenths and hundredths)</li>
+                        <li>Measure and draw angles with protractor</li>
+                        <li>Convert measurement units within a system</li>
+                        <li>Classify 2D shapes by properties</li>
+                        <li>Identify prime and composite numbers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Teacher Background Tab -->
+        <div id="background" class="tab-content">
+            <div class="content-card">
+                <h3>👩‍🏫 Multi-Digit Multiplication</h3>
+                <div class="inner-content">
+                    <h4>Strategies and Algorithms</h4>
+                    <div class="highlight-section">
+                        <h5>Area Model (Partial Products)</h5>
+                        <p>Break factors into place value parts and multiply each part:</p>
+                        <p>23 × 47 = (20 + 3)(40 + 7) = 800 + 140 + 120 + 21 = 1,081</p>
+                        <p>Builds understanding before standard algorithm.</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Standard Algorithm</h5>
+                        <p>Fourth grade introduces the standard algorithm after conceptual foundations.</p>
+                        <p>Key: Students should understand WHY it works, not just HOW.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="background: linear-gradient(135deg, #e17055 0%, #d63031 100%);">
+                <h3>🔢 Fraction Equivalence</h3>
+                <div class="inner-content">
+                    <h4>Building Understanding</h4>
+                    <div class="highlight-section">
+                        <h5>The Big Idea</h5>
+                        <p>Equivalent fractions name the same amount using different-sized pieces.</p>
+                        <p>1/2 = 2/4 = 4/8 - same amount, different number of pieces!</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Generating Equivalents</h5>
+                        <p>Multiply numerator AND denominator by the same number (not zero).</p>
+                        <p>This works because you're multiplying by 1 (e.g., 2/2 = 1).</p>
+                        <p>Example: 3/4 = 3×2/4×2 = 6/8</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Comparing Fractions</h5>
+                        <p>Strategy 1: Common denominators - convert to equivalent fractions</p>
+                        <p>Strategy 2: Common numerators - compare piece sizes</p>
+                        <p>Strategy 3: Benchmark fractions (compare to 1/2 or 1)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="background: linear-gradient(135deg, #00b894 0%, #55efc4 100%);">
+                <h3>📐 Angles</h3>
+                <div class="inner-content">
+                    <h4>Understanding Angle Measurement</h4>
+                    <div class="highlight-section">
+                        <h5>What is an Angle?</h5>
+                        <p>An angle is formed by two rays sharing a common endpoint (vertex).</p>
+                        <p>We measure how far one ray has rotated from the other.</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Angle Types</h5>
+                        <ul>
+                            <li><strong>Acute:</strong> Less than 90°</li>
+                            <li><strong>Right:</strong> Exactly 90°</li>
+                            <li><strong>Obtuse:</strong> Between 90° and 180°</li>
+                            <li><strong>Straight:</strong> Exactly 180°</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Using Protractors</h5>
+                        <p>Key skills: Align vertex at center, one ray along 0°, read correct scale.</p>
+                        <p>Common error: Reading wrong scale (inside vs. outside numbers).</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%); color: #2d3436;">
+                <h3>🔟 Decimals</h3>
+                <div class="inner-content">
+                    <h4>Introducing Decimal Notation</h4>
+                    <div class="highlight-section">
+                        <h5>Connection to Fractions</h5>
+                        <p>Decimals are another way to write fractions with denominators of 10, 100, etc.</p>
+                        <p>0.3 = 3/10 (three tenths)</p>
+                        <p>0.47 = 47/100 (forty-seven hundredths)</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Place Value Extension</h5>
+                        <p>Decimal point separates ones from tenths.</p>
+                        <p>Each place is 10× less than the one to its left.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Manipulatives Tab -->
+        <div id="manipulatives" class="tab-content">
+            <div class="manipulative-card">
+                <h3>🧮 Multiplication & Division</h3>
+                <div class="manipulative-item">
+                    <h4>Base Ten Blocks</h4>
+                    <p><strong>Uses:</strong> Area model multiplication, understanding partial products</p>
+                    <p><strong>Example:</strong> 23 × 14 using flats, rods, and units arranged in an array</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Grid/Area Models</h4>
+                    <p><strong>Uses:</strong> Visual multiplication, breaking apart factors</p>
+                    <p><strong>Transition:</strong> From concrete blocks to drawn grids to open arrays</p>
+                </div>
+            </div>
+            
+            <div class="manipulative-card" style="background: linear-gradient(135deg, #00b894 0%, #55efc4 100%);">
+                <h3>🔢 Fractions & Decimals</h3>
+                <div class="manipulative-item">
+                    <h4>Fraction Strips/Bars</h4>
+                    <p><strong>Uses:</strong> Equivalent fractions, comparing, adding/subtracting</p>
+                    <p><strong>Key:</strong> Include strips for halves, thirds, fourths, sixths, eighths, twelfths</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Decimal Grids (10×10)</h4>
+                    <p><strong>Uses:</strong> Tenths and hundredths, decimal-fraction connection</p>
+                    <p><strong>Visual:</strong> Shade 0.47 = 47 small squares out of 100</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Number Lines</h4>
+                    <p><strong>Uses:</strong> Fraction/decimal placement, comparison, equivalence</p>
+                </div>
+            </div>
+            
+            <div class="manipulative-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);">
+                <h3>📐 Geometry Tools</h3>
+                <div class="manipulative-item">
+                    <h4>Protractors</h4>
+                    <p><strong>Uses:</strong> Measuring and drawing angles</p>
+                    <p><strong>Teaching tip:</strong> Practice reading both scales; estimate first</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Angle Explorers</h4>
+                    <p><strong>Uses:</strong> Understanding angle as rotation; comparing angles</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Pattern Blocks & Geoboards</h4>
+                    <p><strong>Uses:</strong> Classifying shapes, symmetry, angle exploration</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Lessons Tab -->
+        <div id="lessons" class="tab-content">
+            <div class="lesson-card">
+                <h3>📚 Lesson 1: Multi-Digit Multiplication (Area Model)</h3>
+                <span class="time-badge">⏱️ 55 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will multiply 2-digit by 2-digit numbers using the area model</li>
+                        <li>Students will explain partial products and why they work</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (12 min):</strong> Review multiplication as area. "A garden is 23 ft by 14 ft. Let's find the area." Draw rectangle, break into parts: 20×10, 20×4, 3×10, 3×4.</p>
+                    <p><strong>Guided Practice (18 min):</strong> Calculate each partial product. Add together: 200 + 80 + 30 + 12 = 322 sq ft. Practice with another example.</p>
+                    <p><strong>Independent Practice (20 min):</strong> Solve problems using area model. Record all partial products.</p>
+                    <p><strong>Closure (5 min):</strong> "Why do we break numbers apart? How does this connect to place value?"</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #e17055 0%, #d63031 100%);">
+                <h3>📚 Lesson 2: Equivalent Fractions</h3>
+                <span class="time-badge">⏱️ 50 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will identify and generate equivalent fractions</li>
+                        <li>Students will explain why equivalent fractions represent the same amount</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (10 min):</strong> Show 1/2 and 2/4 using fraction strips. "Are these the same amount?" Discuss: same size, different number of pieces.</p>
+                    <p><strong>Guided Practice (15 min):</strong> Discover pattern: 1/2 = 2/4 = 3/6 = 4/8. "What's happening to numerator and denominator?" Both multiplied by same number!</p>
+                    <p><strong>Independent Practice (20 min):</strong> Generate equivalent fractions. Find the missing number: 3/4 = ?/8.</p>
+                    <p><strong>Closure (5 min):</strong> "How many fractions equal 1/2? How do you know?"</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);">
+                <h3>📚 Lesson 3: Measuring Angles</h3>
+                <span class="time-badge">⏱️ 50 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will use a protractor to measure angles</li>
+                        <li>Students will classify angles as acute, right, obtuse, or straight</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (12 min):</strong> Review angle vocabulary. Introduce protractor parts: center point, baseline, degree marks. Model measurement.</p>
+                    <p><strong>Guided Practice (15 min):</strong> Practice measuring together. Key: vertex at center, ray along 0°, read correct scale. Estimate first!</p>
+                    <p><strong>Independent Practice (18 min):</strong> Measure various angles, classify each, record measurements.</p>
+                    <p><strong>Closure (5 min):</strong> "How do you know which scale to read?"</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%); color: #2d3436;">
+                <h3>📚 Lesson 4: Decimals and Fractions</h3>
+                <span class="time-badge">⏱️ 50 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will convert between fractions with denominators 10/100 and decimals</li>
+                        <li>Students will understand decimal place value (tenths, hundredths)</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (10 min):</strong> Show 10×10 grid. Shade 3 columns. "What fraction is shaded? 3/10. We write this as 0.3" Connect to place value.</p>
+                    <p><strong>Guided Practice (15 min):</strong> Practice tenths, then hundredths. 0.47 = 47/100. Locate on number line.</p>
+                    <p><strong>Independent Practice (20 min):</strong> Convert between forms. Shade grids for decimals. Write decimals from shaded grids.</p>
+                    <p><strong>Closure (5 min):</strong> "Is 0.8 or 0.75 larger? How do you know?"</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);">
+                <h3>📚 Lesson 5: Adding Fractions with Like Denominators</h3>
+                <span class="time-badge">⏱️ 45 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will add fractions with the same denominator</li>
+                        <li>Students will understand why only numerators are added</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction (10 min):</strong> "I ate 2/8 of a pizza. My sister ate 3/8. How much did we eat together?" Use fraction strips.</p>
+                    <p><strong>Guided Practice (15 min):</strong> Model: 2/8 + 3/8 = 5/8. "We're adding eighths to eighths, so we still have eighths!" Add numerators, keep denominator.</p>
+                    <p><strong>Independent Practice (15 min):</strong> Practice adding. Include sums greater than 1: 5/6 + 4/6 = 9/6 = 1 3/6 = 1 1/2.</p>
+                    <p><strong>Closure (5 min):</strong> "Why don't we add the denominators too?"</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Investigations Tab -->
+        <div id="labs" class="tab-content">
+            <div class="lab-card">
+                <h3>🔬 Investigation 1: Factor Game</h3>
+                <div class="lab-info"><strong>Focus:</strong> Factors, multiples, prime/composite | <strong>Duration:</strong> 45 minutes</div>
+                <div class="inner-content">
+                    <h4>Procedure</h4>
+                    <ol>
+                        <li>Use a 1-30 number grid</li>
+                        <li>Player 1 chooses a number (their score)</li>
+                        <li>Player 2 gets all unused factors of that number</li>
+                        <li>Alternate, choosing from remaining numbers</li>
+                        <li>After exploring, discuss: Which numbers give the most to your opponent? The least?</li>
+                        <li>Introduce prime (only 2 factors) vs. composite (more than 2 factors)</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="lab-card" style="background: linear-gradient(135deg, #00b894 0%, #55efc4 100%);">
+                <h3>🔬 Investigation 2: Fraction Equivalence Patterns</h3>
+                <div class="lab-info"><strong>Focus:</strong> Generating equivalent fractions | <strong>Duration:</strong> 40 minutes</div>
+                <div class="inner-content">
+                    <h4>Procedure</h4>
+                    <ol>
+                        <li>Create a "fraction family" for 1/2: list all equivalents up to twelfths</li>
+                        <li>Look for patterns: What's happening to numerators? Denominators?</li>
+                        <li>Predict: What would the equivalent with denominator 100 be?</li>
+                        <li>Repeat for 1/3 and 3/4</li>
+                        <li>Discussion: How can you tell if two fractions are equivalent?</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="lab-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);">
+                <h3>🔬 Investigation 3: Angle Hunt</h3>
+                <div class="lab-info"><strong>Focus:</strong> Real-world angles | <strong>Duration:</strong> 45 minutes</div>
+                <div class="inner-content">
+                    <h4>Procedure</h4>
+                    <ol>
+                        <li>Hunt for angles in the classroom/school</li>
+                        <li>Photograph or sketch each angle found</li>
+                        <li>Estimate measurement, then measure with protractor</li>
+                        <li>Classify each: acute, right, obtuse, straight</li>
+                        <li>Challenge: Find an angle of exactly 45°, 90°, 120°</li>
+                        <li>Create a class angle gallery</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="lab-card" style="background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%); color: #2d3436;">
+                <h3>🔬 Investigation 4: Decimal Number Line</h3>
+                <div class="lab-info"><strong>Focus:</strong> Decimal place value | <strong>Duration:</strong> 40 minutes</div>
+                <div class="inner-content">
+                    <h4>Procedure</h4>
+                    <ol>
+                        <li>Create a large number line from 0 to 1</li>
+                        <li>First, mark tenths (0.1, 0.2, ... 0.9)</li>
+                        <li>Between 0.3 and 0.4, mark hundredths</li>
+                        <li>Place mystery decimals: 0.35, 0.07, 0.72</li>
+                        <li>Discussion: Is 0.35 closer to 0.3 or 0.4? Why?</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Videos Tab -->
+        <div id="videos" class="tab-content">
+            <h2 style="color: #0984e3; margin-bottom: 20px;">🎬 Recommended Videos</h2>
+            
+            <div class="video-card">
+                <h4>📹 Multi-Digit Multiplication</h4>
+                <ul>
+                    <li><strong>Math Antics - Multi-Digit Multiplication:</strong> Area model and algorithm - <a href="https://www.youtube.com/watch?v=mvOkMYCygps" target="_blank">YouTube</a></li>
+                    <li><strong>Khan Academy - Multiplication:</strong> Step-by-step - <a href="https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide" target="_blank">Khan Academy</a></li>
+                </ul>
+            </div>
+            
+            <div class="video-card" style="background: linear-gradient(135deg, #00b894 0%, #55efc4 100%); color: #2d3436;">
+                <h4>📹 Fractions</h4>
+                <ul>
+                    <li><strong>Math Antics - Equivalent Fractions:</strong> Visual explanation - <a href="https://www.youtube.com/watch?v=qcHHhd6HizI" target="_blank">YouTube</a></li>
+                    <li><strong>Math Antics - Comparing Fractions:</strong> Different strategies - <a href="https://www.youtube.com/watch?v=MZT8bD9Elts" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+            
+            <div class="video-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);">
+                <h4>📹 Decimals & Angles</h4>
+                <ul>
+                    <li><strong>Math Antics - Decimals:</strong> Introduction to decimals - <a href="https://www.youtube.com/watch?v=U7hlGBXvek8" target="_blank">YouTube</a></li>
+                    <li><strong>Math Antics - Angles:</strong> Types and measurement - <a href="https://www.youtube.com/watch?v=btPUNxLvJPg" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Articles Tab -->
+        <div id="articles" class="tab-content">
+            <h2 style="color: #0984e3; margin-bottom: 20px;">📖 Student Reading Passages</h2>
+            
+            <div class="article-card">
+                <h4>📚 What Are Equivalent Fractions?</h4>
+                <div style="background: white; color: #333; padding: 15px; border-radius: 10px; margin-top: 10px;">
+                    <p>Imagine cutting a pizza. If you cut it into 2 equal pieces and eat 1, you ate 1/2. But if you cut it into 4 pieces and eat 2, you still ate the same amount - just in smaller pieces!</p>
+                    <p>1/2 = 2/4. These are called equivalent fractions. They name the same amount using different-sized pieces.</p>
+                    <p>To make equivalent fractions, multiply (or divide) the top and bottom by the same number. Try it: 3/4 = 6/8. Same pizza, different slices!</p>
+                </div>
+            </div>
+            
+            <div class="article-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);">
+                <h4>📚 Understanding Angles</h4>
+                <div style="background: white; color: #333; padding: 15px; border-radius: 10px; margin-top: 10px;">
+                    <p>An angle measures how much something has turned. Think of a door opening - it can open a little (small angle) or a lot (big angle).</p>
+                    <p>We measure angles in degrees. A complete turn is 360°. A right angle (like a corner of a book) is 90°. Half a turn is 180°.</p>
+                    <p>Angles smaller than 90° are called acute. Angles larger than 90° but smaller than 180° are obtuse. Look around - angles are everywhere!</p>
+                </div>
+            </div>
+            
+            <div class="article-card" style="background: linear-gradient(135deg, #e17055 0%, #d63031 100%);">
+                <h4>📚 Decimals: Another Way to Write Fractions</h4>
+                <div style="background: white; color: #333; padding: 15px; border-radius: 10px; margin-top: 10px;">
+                    <p>You see decimals every day! Money uses decimals: $3.50 means 3 dollars and 50 cents (50 hundredths of a dollar).</p>
+                    <p>The decimal point separates wholes from parts. After the point, the first place is tenths, the second is hundredths.</p>
+                    <p>0.7 = 7/10 (seven tenths). 0.25 = 25/100 (twenty-five hundredths). Same amounts, different ways to write them!</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Assessments Tab -->
+        <div id="assessments" class="tab-content">
+            <h2 style="color: #0984e3; margin-bottom: 20px;">📝 Assessment Tools</h2>
+            
+            <div class="assessment-card">
+                <h4>🎯 Operations Assessment</h4>
+                <div class="assessment-item">
+                    <p><strong>Multiplication:</strong> Solve 34 × 27 using area model AND algorithm</p>
+                    <p><strong>Division:</strong> Solve 847 ÷ 6 with remainder</p>
+                    <p><strong>Explanation:</strong> Explain your strategy</p>
+                </div>
+            </div>
+            
+            <div class="assessment-card" style="background: linear-gradient(135deg, #00b894 0%, #55efc4 100%);">
+                <h4>🎯 Fractions Assessment</h4>
+                <div class="assessment-item">
+                    <p><strong>Equivalence:</strong> Name 3 fractions equivalent to 2/3</p>
+                    <p><strong>Comparing:</strong> Compare 3/5 and 2/3. Which is larger? Explain.</p>
+                    <p><strong>Operations:</strong> Add: 3/8 + 5/8. Multiply: 3 × 2/5</p>
+                </div>
+            </div>
+            
+            <div class="assessment-card" style="background: linear-gradient(135deg, #e17055 0%, #d63031 100%);">
+                <h4>🎯 Geometry & Decimals</h4>
+                <div class="assessment-item">
+                    <p><strong>Angles:</strong> Measure and classify 5 angles</p>
+                    <p><strong>Decimals:</strong> Write 47/100 as a decimal. Compare 0.6 and 0.45.</p>
+                    <p><strong>Conversions:</strong> Convert 3 feet to inches; 5,000 meters to kilometers</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Printables Tab -->
+        <div id="printables" class="tab-content">
+            <h2 style="color: #0984e3; margin-bottom: 20px;">🖨️ Printable Resources</h2>
+            
+            <div class="printable-card">
+                <h4>✖️ Operations</h4>
+                <ul>
+                    <li>Area model multiplication templates</li>
+                    <li>Partial products practice</li>
+                    <li>Division with remainders</li>
+                    <li>Multi-step word problems</li>
+                </ul>
+            </div>
+            
+            <div class="printable-card" style="background: linear-gradient(135deg, #00b894 0%, #55efc4 100%); color: #2d3436;">
+                <h4>🔢 Fractions & Decimals</h4>
+                <ul>
+                    <li>Equivalent fractions chart</li>
+                    <li>Fraction comparison worksheets</li>
+                    <li>Decimal grids (10×10)</li>
+                    <li>Fraction/decimal number lines</li>
+                </ul>
+            </div>
+            
+            <div class="printable-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%); color: white;">
+                <h4>📐 Geometry</h4>
+                <ul>
+                    <li>Angle measurement practice</li>
+                    <li>Protractor practice sheets</li>
+                    <li>Shape classification charts</li>
+                    <li>Symmetry activities</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Vocabulary Tab -->
+        <div id="vocabulary" class="tab-content">
+            <h2 style="color: #0984e3; margin-bottom: 20px;">📖 Math Vocabulary</h2>
+            
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <h4>Equivalent Fractions</h4>
+                    <p><strong>Definition:</strong> Fractions that represent the same amount</p>
+                    <div class="vocab-example">"1/2, 2/4, and 3/6 are all equivalent fractions."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Prime Number</h4>
+                    <p><strong>Definition:</strong> A number with exactly 2 factors: 1 and itself</p>
+                    <div class="vocab-example">"7 is prime because only 1 × 7 = 7."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Composite Number</h4>
+                    <p><strong>Definition:</strong> A number with more than 2 factors</p>
+                    <div class="vocab-example">"12 is composite: 1, 2, 3, 4, 6, 12 are all factors."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Acute Angle</h4>
+                    <p><strong>Definition:</strong> An angle measuring less than 90°</p>
+                    <div class="vocab-example">"A 45° angle is acute."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Obtuse Angle</h4>
+                    <p><strong>Definition:</strong> An angle measuring more than 90° but less than 180°</p>
+                    <div class="vocab-example">"A 120° angle is obtuse."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Decimal</h4>
+                    <p><strong>Definition:</strong> A number written with a decimal point showing parts less than 1</p>
+                    <div class="vocab-example">"0.75 is a decimal equal to 75/100 or 3/4."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Tenths</h4>
+                    <p><strong>Definition:</strong> The first place to the right of the decimal point</p>
+                    <div class="vocab-example">"In 0.3, the 3 is in the tenths place."</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Hundredths</h4>
+                    <p><strong>Definition:</strong> The second place to the right of the decimal point</p>
+                    <div class="vocab-example">"In 0.47, the 7 is in the hundredths place."</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Games Tab -->
+        <div id="games" class="tab-content">
+            <h2 style="color: #0984e3; margin-bottom: 20px;">🎮 Math Games</h2>
+            
+            <div class="game-card">
+                <h4>🎲 Factor Capture</h4>
+                <p><strong>Players:</strong> 2 | <strong>Materials:</strong> 1-36 game board, markers</p>
+                <ul>
+                    <li>Player 1 chooses a number</li>
+                    <li>Player 2 captures all its factors</li>
+                    <li>Alternate turns; track scores</li>
+                    <li>Strategic thinking about primes and composites!</li>
+                </ul>
+            </div>
+            
+            <div class="game-card" style="background: linear-gradient(135deg, #e17055 0%, #fd79a8 100%); color: white;">
+                <h4>🎯 Fraction War</h4>
+                <p><strong>Players:</strong> 2 | <strong>Materials:</strong> Fraction cards</p>
+                <ul>
+                    <li>Each player flips a fraction card</li>
+                    <li>Larger fraction wins both cards</li>
+                    <li>Must prove with equivalent fractions or benchmarks</li>
+                </ul>
+            </div>
+            
+            <div class="game-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%); color: white;">
+                <h4>📐 Angle Estimation</h4>
+                <p><strong>Players:</strong> Teams | <strong>Materials:</strong> Protractor, angle cards</p>
+                <ul>
+                    <li>Show an angle; teams estimate degrees</li>
+                    <li>Closest estimate scores a point</li>
+                    <li>Builds angle intuition!</li>
+                </ul>
+            </div>
+            
+            <div class="online-resources">
+                <h3>💻 Online Math Games</h3>
+                <a href="https://www.splashlearn.com/math/fourth-grade" class="resource-link" target="_blank">
+                    <strong>SplashLearn Grade 4</strong> - Multiplication, fractions, decimals games
+                </a>
+                <a href="https://www.mathplayground.com/grade_4_games.html" class="resource-link" target="_blank">
+                    <strong>Math Playground Grade 4</strong> - Logic and computation games
+                </a>
+            </div>
+        </div>
+        
+        <!-- Differentiation Tab -->
+        <div id="differentiation" class="tab-content">
+            <h2 style="color: #0984e3; margin-bottom: 20px;">🌟 Differentiation Strategies</h2>
+            
+            <div class="differentiation-box">
+                <h4>📈 For Advanced Learners</h4>
+                <ul>
+                    <li>3-digit by 2-digit multiplication</li>
+                    <li>Unlike denominators (5th grade preview)</li>
+                    <li>Decimal operations</li>
+                    <li>Complex angle problems</li>
+                    <li>Algebraic thinking with variables</li>
+                </ul>
+            </div>
+            
+            <div class="differentiation-box" style="background: linear-gradient(135deg, #e17055 0%, #d63031 100%);">
+                <h4>📉 For Struggling Learners</h4>
+                <ul>
+                    <li>Extended time with area model before algorithm</li>
+                    <li>Focus on simpler fractions first</li>
+                    <li>Manipulatives for all fraction work</li>
+                    <li>Angle estimation before precision</li>
+                    <li>Smaller number ranges</li>
+                </ul>
+            </div>
+            
+            <div class="differentiation-box" style="background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);">
+                <h4>🌐 For English Language Learners</h4>
+                <ul>
+                    <li>Visual vocabulary cards</li>
+                    <li>Graphic organizers for word problems</li>
+                    <li>Partner work for discussions</li>
+                    <li>Hands-on manipulatives</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Misconceptions Tab -->
+        <div id="misconceptions" class="tab-content">
+            <h2 style="color: #0984e3; margin-bottom: 20px;">❓ Common Misconceptions</h2>
+            
+            <div class="misconception-box">
+                <h4>❌ Multiply numerator AND denominator to add fractions</h4>
+                <div class="misconception-content">
+                    <p><strong>Error:</strong> 1/4 + 2/4 = 3/8</p>
+                    <p><strong>Correction:</strong> Same denominator = same-sized pieces. Just add pieces: 1/4 + 2/4 = 3/4</p>
+                </div>
+            </div>
+            
+            <div class="misconception-box">
+                <h4>❌ 0.45 > 0.6 because 45 > 6</h4>
+                <div class="misconception-content">
+                    <p><strong>Error:</strong> Comparing digits without considering place value</p>
+                    <p><strong>Correction:</strong> 0.6 = 0.60 = 60 hundredths. 60 > 45, so 0.6 > 0.45</p>
+                </div>
+            </div>
+            
+            <div class="misconception-box">
+                <h4>❌ Reading wrong protractor scale</h4>
+                <div class="misconception-content">
+                    <p><strong>Error:</strong> Reading 150° instead of 30° (or vice versa)</p>
+                    <p><strong>Correction:</strong> Always estimate first. Does 150° make sense for an acute angle? Check angle type.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cultural Connections Tab -->
+        <div id="cultural" class="tab-content">
+            <h2 style="color: #0984e3; margin-bottom: 20px;">🌍 Cultural Connections</h2>
+            
+            <div class="cultural-box">
+                <h4>✖️ Multiplication Methods</h4>
+                <ul>
+                    <li><strong>Lattice Method:</strong> From India, used in medieval Islamic mathematics</li>
+                    <li><strong>Russian Peasant Method:</strong> Uses only doubling and halving</li>
+                    <li><strong>Activity:</strong> Try the same problem using different cultural methods!</li>
+                </ul>
+            </div>
+            
+            <div class="cultural-box" style="background: linear-gradient(135deg, #00b894 0%, #55efc4 100%);">
+                <h4>🔢 Fractions & Decimals Worldwide</h4>
+                <ul>
+                    <li><strong>Egyptian Fractions:</strong> Only used unit fractions (1/n)</li>
+                    <li><strong>Decimal Systems:</strong> Different countries use comma vs. point (1.5 vs. 1,5)</li>
+                    <li><strong>Music:</strong> Rhythm uses fractions universally!</li>
+                </ul>
+            </div>
+            
+            <div class="cultural-box" style="background: linear-gradient(135deg, #e17055 0%, #d63031 100%);">
+                <h4>👨‍👩‍👧‍👦 Diverse Mathematicians</h4>
+                <ul>
+                    <li><strong>Sophie Germain:</strong> French mathematician who overcame gender barriers</li>
+                    <li><strong>Euclid:</strong> Greek "Father of Geometry" - angles and shapes</li>
+                    <li><strong>Brahmagupta:</strong> Indian mathematician who developed negative numbers</li>
+                </ul>
+            </div>
+            
+            <div class="cultural-box" style="background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%); color: #2d3436;">
+                <h4>📚 Diverse Books</h4>
+                <ul>
+                    <li><strong>"Blockhead: The Life of Fibonacci"</strong> by Joseph D'Agnese - Number patterns</li>
+                    <li><strong>"Working with Fractions"</strong> by David Adler - Fraction concepts</li>
+                    <li><strong>"Sir Cumference and the Great Knight of Angleland"</strong> - Angles in stories</li>
+                </ul>
+            </div>
+        </div>
+        <!-- AI for Teachers Tab -->
+        <div id="ai-teachers" class="tab-content">
+
+            <div class="content-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);">
+                <h3>🤖 AI for Teachers</h3>
+                <p>AI tools and resources for enhancing math instruction</p>
+                
+                <div class="inner-content">
+                    <h4>🎯 Lesson Planning & Content Creation</h4>
+                    <div class="highlight-section">
+                        <h5>General AI Assistants</h5>
+                        <ul>
+                            <li><strong>ChatGPT / Claude:</strong> Generate lesson ideas, problem sets, discussion questions, and differentiated activities</li>
+                            <li><strong>MagicSchool AI:</strong> Education-specific tools for rubrics, IEP goals, and lesson planning</li>
+                            <li><strong>Diffit:</strong> Adapt math texts to different reading levels</li>
+                            <li><strong>Curipod:</strong> Create interactive math presentations with real-time student feedback</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="highlight-section">
+                        <h5>Math-Specific AI Tools</h5>
+                        <ul>
+                            <li><strong>Wolfram Alpha:</strong> Computational verification and step-by-step solutions</li>
+                            <li><strong>Photomath / Mathway:</strong> Solution verification and multiple solving methods</li>
+                            <li><strong>GeoGebra:</strong> Dynamic geometry and algebra visualizations</li>
+                            <li><strong>Desmos:</strong> Interactive graphing and exploration activities</li>
+                            <li><strong>Khan Academy / IXL / DeltaMath:</strong> AI-powered adaptive practice platforms</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="inner-content" style="margin-top: 20px;">
+                    <h4>💬 Example Prompts for 4th Grade Math Teachers</h4>
+                    <div class="highlight-section">
+                        <h5>Differentiated Problem Sets</h5>
+                        <ul>
+                            <li>"Create a set of 10 word problems about Multi-Digit Operations, Decimals, Geometry at three different complexity levels for heterogeneous grouping."</li>
+                            <li>"Generate visual models and manipulative activities for teaching Multi-Digit Operations, Decimals, Geometry to struggling learners."</li>
+                            <li>"Design challenge problems for students who have mastered Multi-Digit Operations, Decimals, Geometry and need extension."</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="highlight-section">
+                        <h5>Real-World Connections</h5>
+                        <ul>
+                            <li>"Create a project-based learning activity connecting Multi-Digit Operations, Decimals, Geometry to real-world situations students encounter."</li>
+                            <li>"Write a math story problem set in a context relevant to diverse student backgrounds."</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="highlight-section">
+                        <h5>Common Error Analysis</h5>
+                        <ul>
+                            <li>"What are the most common misconceptions students have about Multi-Digit Operations, Decimals, Geometry? Provide diagnostic questions to identify each."</li>
+                            <li>"Create a set of error analysis activities where students find and correct common mistakes."</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="inner-content" style="margin-top: 20px;">
+                    <h4>⚠️ Important Considerations</h4>
+                    <div class="highlight-section" style="border-left-color: #e17055;">
+                        <h5>Mathematical Accuracy</h5>
+                        <ul>
+                            <li><strong>Always verify AI outputs:</strong> AI can make mathematical errors, especially with multi-step problems</li>
+                            <li><strong>Check solutions step-by-step:</strong> Verify each step before using problems with students</li>
+                            <li><strong>Watch for notation errors:</strong> AI may use inconsistent or incorrect mathematical notation</li>
+                            <li><strong>Test with edge cases:</strong> Check if AI-generated problems work with boundary conditions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="highlight-section" style="border-left-color: #fdcb6e;">
+                        <h5>Pedagogical Considerations</h5>
+                        <ul>
+                            <li><strong>Use AI as a starting point:</strong> Refine and adapt outputs for your specific students</li>
+                            <li><strong>Maintain your expertise:</strong> You understand your students better than any AI</li>
+                            <li><strong>Model critical evaluation:</strong> Show students how you evaluate AI-generated content</li>
+                            <li><strong>Preserve productive struggle:</strong> Don't let AI remove the valuable learning from challenge</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- AI for Students Tab -->
+        <div id="ai-students" class="tab-content">
+
+            <div class="content-card" style="background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);">
+                <h3>🧒 AI for Students</h3>
+                <p>Building AI literacy foundations for 4th Grade math learners</p>
+                
+                <div class="inner-content">
+                    <h4>📋 Age & Usage Guidelines</h4>
+                    <div class="highlight-section" style="border-left-color: #e74c3c;">
+                        <h5>Important Restrictions</h5>
+                        <ul>
+                            <li><strong>Most AI tools require users to be 13+</strong> - This includes ChatGPT, Claude, and similar tools</li>
+                            <li><strong>Elementary students should NOT independently use AI chatbots</strong></li>
+                            <li><strong>Teacher-supervised demonstrations only</strong> - Teacher types all prompts and controls interaction</li>
+                            <li><strong>Always follow your school and district AI policies</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="inner-content" style="margin-top: 20px;">
+                    <h4>✅ Teacher-Led AI Demonstrations</h4>
+                    <div class="highlight-section">
+                        <h5>How Teachers Can Model AI Use</h5>
+                        <ul>
+                            <li><strong>Math story problems:</strong> Have class suggest a topic, teacher asks AI to create word problems, class solves together</li>
+                            <li><strong>Checking work:</strong> Demonstrate asking AI to verify a solution, then discuss if the AI got it right</li>
+                            <li><strong>Exploring concepts:</strong> Project AI explanations of Multi-Digit Operations, Decimals, Geometry and discuss as a class</li>
+                            <li><strong>Critical evaluation:</strong> Intentionally show AI making a math error so students learn to check</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="highlight-section">
+                        <h5>Whole-Class AI Activities</h5>
+                        <ul>
+                            <li>Students suggest what to ask the AI (teacher types)</li>
+                            <li>Class works together to verify AI's solutions</li>
+                            <li>Compare AI explanations to textbook explanations</li>
+                            <li>Discuss: "Did the AI explain this clearly? What would make it better?"</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="inner-content" style="margin-top: 20px;">
+                    <h4>🧠 AI Literacy for 4th Grade</h4>
+                    <div class="highlight-section">
+                        <h5>Key Concepts Students Should Understand</h5>
+                        <ul>
+                            <li><strong>AI is a tool, not a brain:</strong> It processes information but doesn't truly "understand" math</li>
+                            <li><strong>AI can be wrong:</strong> Just like calculators give wrong answers if you push wrong buttons</li>
+                            <li><strong>Showing work matters:</strong> AI can't replace the learning that happens when you work through problems</li>
+                            <li><strong>Understanding beats answers:</strong> Copying AI answers means you don't learn anything</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="inner-content" style="margin-top: 20px;">
+                    <h4>🚫 What AI Cannot Do for Math Learning</h4>
+                    <div class="highlight-section" style="border-left-color: #e74c3c;">
+                        <h5>Limitations Students Must Understand</h5>
+                        <ul>
+                            <li><strong>Replace productive struggle:</strong> The confusion and hard work is WHERE learning happens</li>
+                            <li><strong>Build number sense:</strong> Only practice with numbers develops mathematical intuition</li>
+                            <li><strong>Guarantee correct answers:</strong> AI makes math errors regularly, especially with word problems</li>
+                            <li><strong>Understand YOUR thinking:</strong> AI can't know what you're confused about or why</li>
+                            <li><strong>Show work YOUR way:</strong> Your teacher needs to see YOUR thinking process</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="inner-content" style="margin-top: 20px;">
+                    <h4>🎮 Approved Digital Math Tools for Elementary</h4>
+                    <div class="highlight-section">
+                        <h5>Age-Appropriate Platforms</h5>
+                        <ul>
+                            <li><strong>Khan Academy Kids:</strong> Interactive lessons with immediate feedback</li>
+                            <li><strong>Prodigy Math:</strong> Game-based practice aligned to standards</li>
+                            <li><strong>Reflex Math:</strong> Fact fluency building</li>
+                            <li><strong>Freckle:</strong> Adaptive practice at your level</li>
+                            <li><strong>These platforms are designed for student use</strong> with appropriate safeguards</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        
+    </div>
+    
+    <script>
+        function showTab(tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) tabContents[i].classList.remove('active');
+            const tabButtons = document.getElementsByClassName('tab-btn');
+            for (let i = 0; i < tabButtons.length; i++) tabButtons[i].classList.remove('active');
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+            window.scrollTo({top: 200, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>

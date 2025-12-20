@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP Calculus AB Resources - Complete Teacher Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 50%, #16213e 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 30px; padding: 40px; box-shadow: 0 25px 80px rgba(0,0,0,0.5); }
+        h1 { color: #1a1a2e; font-size: 2.8em; margin-bottom: 10px; text-align: center; }
+        .subtitle { text-align: center; color: #666; font-size: 1.3em; margin-bottom: 30px; }
+        .ap-badge { background: linear-gradient(135deg, #00b894, #00cec9); color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 20px; }
+        .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; justify-content: center; border-bottom: 4px solid #00b894; padding-bottom: 15px; }
+        .tab-btn { background: linear-gradient(135deg, #f5f5f5, #e0e0e0); border: none; padding: 14px 28px; border-radius: 12px 12px 0 0; cursor: pointer; font-size: 1em; font-weight: 700; transition: all 0.3s; color: #555; }
+        .tab-btn:hover { background: linear-gradient(135deg, #00b894, #00cec9); color: white; transform: translateY(-3px); }
+        .tab-btn.active { background: linear-gradient(135deg, #00b894, #00cec9); color: white; }
+        .tab-content { display: none; animation: fadeIn 0.5s ease-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .standard-box { background: linear-gradient(135deg, #00b894 0%, #00cec9 100%); padding: 25px; border-radius: 20px; margin-bottom: 25px; color: white; }
+        .standard-item { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 15px; color: #333; }
+        .standard-code { background: #e17055; color: white; padding: 5px 12px; border-radius: 8px; font-weight: 700; display: inline-block; margin-bottom: 10px; }
+        .unit-weight { background: #6c5ce7; color: white; padding: 3px 10px; border-radius: 15px; font-size: 0.85em; margin-left: 10px; }
+        
+        .content-card { background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: white; }
+        .inner-content { background: white; padding: 25px; border-radius: 15px; margin-top: 20px; color: #333; }
+        .highlight-section { background: #f0fff4; padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid #00b894; }
+        .highlight-section h5 { color: #00b894; margin-bottom: 8px; }
+        .formula-box { background: #2d3436; color: #00b894; padding: 15px; border-radius: 10px; font-family: 'Courier New', monospace; margin: 10px 0; }
+        
+        .manipulative-card { background: linear-gradient(135deg, #e17055 0%, #d63031 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: white; }
+        .manipulative-item { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 15px; color: #333; }
+        .manipulative-item h4 { color: #e17055; margin-bottom: 10px; }
+        
+        .lesson-card { background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: white; }
+        .lesson-section { background: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; color: #333; }
+        .lesson-section h4 { color: #0984e3; margin-bottom: 12px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #00b894, #00cec9); color: white; padding: 8px 20px; border-radius: 25px; font-weight: 700; margin: 10px 0; }
+        
+        .lab-card { background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%); padding: 30px; border-radius: 20px; margin-bottom: 30px; color: #2d3436; }
+        .lab-info { background: rgba(255,255,255,0.5); padding: 10px 15px; border-radius: 10px; margin-bottom: 15px; }
+        
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 25px; }
+        .vocab-card { background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 100%); padding: 22px; border-radius: 15px; }
+        .vocab-card h4 { color: #2d3436; margin-bottom: 10px; }
+        .vocab-example { background: rgba(255,255,255,0.7); padding: 10px; border-radius: 8px; font-style: italic; }
+        
+        .game-card { background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .online-resources { background: linear-gradient(135deg, #00b894 0%, #00cec9 100%); padding: 25px; border-radius: 15px; margin-top: 30px; color: white; }
+        .resource-link { background: white; padding: 15px; border-radius: 10px; margin-bottom: 10px; display: block; text-decoration: none; color: #333; transition: transform 0.3s; }
+        .resource-link:hover { transform: translateX(10px); }
+        
+        .differentiation-box { background: linear-gradient(135deg, #00b894 0%, #00cec9 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .misconception-box { background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%); color: #2d3436; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .misconception-content { background: rgba(255,255,255,0.95); color: #333; padding: 15px; border-radius: 10px; margin-top: 10px; }
+        .cultural-box { background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        
+        .video-card { background: linear-gradient(135deg, #e17055 0%, #d63031 100%); color: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        .video-card a { color: #fff; text-decoration: underline; }
+        .article-card { background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%); color: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        .assessment-card { background: linear-gradient(135deg, #00b894 0%, #6c5ce7 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .assessment-item { background: rgba(255,255,255,0.95); color: #333; padding: 15px; border-radius: 10px; margin-bottom: 10px; }
+        .printable-card { background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 100%); color: #2d3436; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        
+        .frq-tip { background: #fff3cd; border: 2px solid #ffc107; padding: 15px; border-radius: 10px; margin: 15px 0; }
+        .frq-tip h5 { color: #856404; margin-bottom: 8px; }
+        
+        ul { margin-left: 20px; margin-top: 10px; }
+        li { margin-bottom: 10px; }
+        @media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 2em; } .tab-btn { padding: 10px 15px; font-size: 0.9em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align: center;"><span class="ap-badge">College Board AP Course</span></div>
+        <h1>∫ AP Calculus AB Resources</h1>
+        <p class="subtitle">Limits • Derivatives • Integrals • Differential Equations • Applications</p>
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('standards')">📋 CED Units</button>
+            <button class="tab-btn" onclick="showTab('background')">👩‍🏫 Key Concepts</button>
+            <button class="tab-btn" onclick="showTab('manipulatives')">🧮 Tools</button>
+            <button class="tab-btn" onclick="showTab('lessons')">📚 Lessons</button>
+            <button class="tab-btn" onclick="showTab('labs')">🔬 Investigations</button>
+            <button class="tab-btn" onclick="showTab('videos')">🎬 Videos</button>
+            <button class="tab-btn" onclick="showTab('articles')">📖 Articles</button>
+            <button class="tab-btn" onclick="showTab('assessments')">📝 AP Exam Prep</button>
+            <button class="tab-btn" onclick="showTab('printables')">🖨️ Printables</button>
+            <button class="tab-btn" onclick="showTab('vocabulary')">📖 Vocabulary</button>
+            <button class="tab-btn" onclick="showTab('games')">🎮 Activities</button>
+            <button class="tab-btn" onclick="showTab('differentiation')">🌟 Differentiation</button>
+            <button class="tab-btn" onclick="showTab('misconceptions')">❓ Misconceptions</button>
+            <button class="tab-btn" onclick="showTab('cultural')">🌍 History</button>
+        
+            <button class="tab-btn" onclick="showTab('ai-teachers')">🤖 AI for Teachers</button>
+            <button class="tab-btn" onclick="showTab('ai-students')">🧒 AI for Students</button>
+        </div>
+        
+        <!-- CED Units Tab -->
+        <div id="standards" class="tab-content active">
+            <div class="standard-box">
+                <h3>📐 AP Calculus AB Course Framework (CED)</h3>
+                <div class="standard-item">
+                    <span class="standard-code">Unit 1: Limits and Continuity</span>
+                    <span class="unit-weight">10-12% of Exam</span>
+                    <ul>
+                        <li>Introducing Calculus: Can Change Occur at an Instant?</li>
+                        <li>Defining Limits and Using Limit Notation</li>
+                        <li>Estimating Limit Values from Graphs and Tables</li>
+                        <li>Determining Limits Using Algebraic Properties and Manipulation</li>
+                        <li>Squeeze Theorem; Connecting Multiple Representations of Limits</li>
+                        <li>Continuity; Removing Discontinuities; Intermediate Value Theorem</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Unit 2: Differentiation: Definition and Fundamental Properties</span>
+                    <span class="unit-weight">10-12% of Exam</span>
+                    <ul>
+                        <li>Defining Average and Instantaneous Rates of Change at a Point</li>
+                        <li>Defining the Derivative of a Function; Derivative as a Function</li>
+                        <li>Differentiability; Basic Differentiation Rules (Power, Constant, Sum/Difference)</li>
+                        <li>Product Rule; Quotient Rule</li>
+                        <li>Derivatives of Trigonometric Functions; Derivatives of eˣ and ln x</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Unit 3: Differentiation: Composite, Implicit, and Inverse Functions</span>
+                    <span class="unit-weight">9-13% of Exam</span>
+                    <ul>
+                        <li>Chain Rule</li>
+                        <li>Implicit Differentiation</li>
+                        <li>Differentiating Inverse Functions; Inverse Trigonometric Functions</li>
+                        <li>Higher-Order Derivatives</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Unit 4: Contextual Applications of Differentiation</span>
+                    <span class="unit-weight">10-15% of Exam</span>
+                    <ul>
+                        <li>Straight-Line Motion: Position, Velocity, Acceleration</li>
+                        <li>Rates of Change in Applied Contexts (Non-Motion)</li>
+                        <li>Related Rates</li>
+                        <li>Linearization and Approximation</li>
+                        <li>L'Hôpital's Rule</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Unit 5: Analytical Applications of Differentiation</span>
+                    <span class="unit-weight">15-18% of Exam</span>
+                    <ul>
+                        <li>Mean Value Theorem</li>
+                        <li>Extreme Value Theorem; Critical Points</li>
+                        <li>First Derivative Test; Increasing/Decreasing Functions</li>
+                        <li>Second Derivative Test; Concavity</li>
+                        <li>Optimization Problems</li>
+                        <li>Connecting f, f', and f'' graphs</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Unit 6: Integration and Accumulation of Change</span>
+                    <span class="unit-weight">17-20% of Exam</span>
+                    <ul>
+                        <li>Riemann Sums and Definite Integrals</li>
+                        <li>Fundamental Theorem of Calculus (FTC Parts 1 and 2)</li>
+                        <li>Antiderivatives and Indefinite Integrals</li>
+                        <li>Properties of Definite Integrals</li>
+                        <li>u-Substitution</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Unit 7: Differential Equations</span>
+                    <span class="unit-weight">6-12% of Exam</span>
+                    <ul>
+                        <li>Modeling with Differential Equations</li>
+                        <li>Slope Fields</li>
+                        <li>Separation of Variables</li>
+                        <li>Exponential Growth and Decay Models</li>
+                    </ul>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-code">Unit 8: Applications of Integration</span>
+                    <span class="unit-weight">10-15% of Exam</span>
+                    <ul>
+                        <li>Average Value of a Function</li>
+                        <li>Connecting Position, Velocity, Acceleration Using Integrals</li>
+                        <li>Area Between Curves</li>
+                        <li>Volumes: Disks, Washers, Cross-Sections</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Key Concepts Tab -->
+        <div id="background" class="tab-content">
+            <div class="content-card">
+                <h3>👩‍🏫 The Derivative</h3>
+                <div class="inner-content">
+                    <h4>Instantaneous Rate of Change</h4>
+                    <div class="highlight-section">
+                        <h5>Definition</h5>
+                        <div class="formula-box">f'(x) = lim[h→0] [f(x+h) - f(x)] / h</div>
+                        <p>The derivative measures the instantaneous rate of change of a function at a point.</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Key Differentiation Rules</h5>
+                        <ul>
+                            <li><strong>Power Rule:</strong> d/dx[xⁿ] = nxⁿ⁻¹</li>
+                            <li><strong>Product Rule:</strong> d/dx[f·g] = f'g + fg'</li>
+                            <li><strong>Quotient Rule:</strong> d/dx[f/g] = (f'g - fg')/g²</li>
+                            <li><strong>Chain Rule:</strong> d/dx[f(g(x))] = f'(g(x))·g'(x)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="background: linear-gradient(135deg, #e17055 0%, #d63031 100%);">
+                <h3>∫ The Integral</h3>
+                <div class="inner-content">
+                    <h4>Accumulation of Change</h4>
+                    <div class="highlight-section">
+                        <h5>Fundamental Theorem of Calculus</h5>
+                        <p><strong>Part 1:</strong> If F(x) = ∫ₐˣ f(t)dt, then F'(x) = f(x)</p>
+                        <p><strong>Part 2:</strong> ∫ₐᵇ f(x)dx = F(b) - F(a), where F is any antiderivative of f</p>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Key Integration Formulas</h5>
+                        <ul>
+                            <li>∫ xⁿ dx = xⁿ⁺¹/(n+1) + C (n ≠ -1)</li>
+                            <li>∫ eˣ dx = eˣ + C</li>
+                            <li>∫ 1/x dx = ln|x| + C</li>
+                            <li>∫ cos x dx = sin x + C</li>
+                            <li>∫ sin x dx = -cos x + C</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%); color: #2d3436;">
+                <h3>📈 Applications</h3>
+                <div class="inner-content">
+                    <h4>Related Rates Framework</h4>
+                    <div class="highlight-section">
+                        <h5>Problem-Solving Steps</h5>
+                        <ol>
+                            <li>Draw a picture; label variables</li>
+                            <li>Write equation relating variables</li>
+                            <li>Differentiate both sides with respect to time t</li>
+                            <li>Substitute known values; solve for unknown rate</li>
+                        </ol>
+                    </div>
+                    <div class="highlight-section">
+                        <h5>Optimization Framework</h5>
+                        <ol>
+                            <li>Identify quantity to optimize</li>
+                            <li>Write as function of one variable</li>
+                            <li>Find critical points (f'(x) = 0)</li>
+                            <li>Test endpoints and critical points</li>
+                            <li>Verify max/min using first or second derivative test</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tools Tab -->
+        <div id="manipulatives" class="tab-content">
+            <div class="manipulative-card">
+                <h3>📈 Graphing Technology</h3>
+                <div class="manipulative-item">
+                    <h4>Graphing Calculator (TI-84/TI-Nspire)</h4>
+                    <p><strong>Uses:</strong> Graph functions and derivatives, numerical integration, slope fields</p>
+                    <p><strong>AP Exam:</strong> Calculator allowed on Parts A of both sections (45 min each)</p>
+                </div>
+                <div class="manipulative-item">
+                    <h4>Desmos</h4>
+                    <p><strong>Uses:</strong> Explore derivatives visually, Riemann sums, area between curves</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Lessons Tab -->
+        <div id="lessons" class="tab-content">
+            <div class="lesson-card">
+                <h3>📚 Lesson: The Chain Rule</h3>
+                <span class="time-badge">⏱️ 55 minutes</span>
+                <div class="lesson-section">
+                    <h4>Learning Objectives</h4>
+                    <ul>
+                        <li>Students will identify composite functions</li>
+                        <li>Students will apply the chain rule</li>
+                        <li>Students will combine chain rule with other rules</li>
+                    </ul>
+                </div>
+                <div class="lesson-section">
+                    <h4>Lesson Procedure</h4>
+                    <p><strong>Introduction:</strong> "We know d/dx[x²] = 2x. But what about d/dx[(3x+1)²]?" Can't just say 2(3x+1). Need chain rule!</p>
+                    <p><strong>Development:</strong> If y = f(g(x)), then dy/dx = f'(g(x)) · g'(x). "Derivative of outside × derivative of inside."</p>
+                    <p><strong>Practice:</strong> d/dx[(3x+1)²] = 2(3x+1) · 3 = 6(3x+1). Build complexity.</p>
+                </div>
+            </div>
+            
+            <div class="lesson-card" style="background: linear-gradient(135deg, #e17055 0%, #d63031 100%);">
+                <h3>📚 Lesson: Fundamental Theorem of Calculus</h3>
+                <span class="time-badge">⏱️ 55 minutes</span>
+                <div class="lesson-section">
+                    <h4>The Big Connection</h4>
+                    <p>The FTC connects the two main operations of calculus - differentiation and integration are inverses!</p>
+                    <p><strong>Part 1:</strong> Differentiation undoes integration</p>
+                    <p><strong>Part 2:</strong> Net change equals integral of rate of change</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Investigations Tab -->
+        <div id="labs" class="tab-content">
+            <div class="lab-card">
+                <h3>🔬 Investigation: Riemann Sums Exploration</h3>
+                <div class="lab-info"><strong>Focus:</strong> Approximating integrals | <strong>Duration:</strong> 50 min</div>
+                <div class="inner-content">
+                    <h4>Procedure</h4>
+                    <ol>
+                        <li>Estimate ∫₀⁴ x² dx using left, right, and midpoint Riemann sums (n=4)</li>
+                        <li>Increase n to 8, then 16. What happens to the approximations?</li>
+                        <li>Calculate exact value using FTC</li>
+                        <li>Compare approximations to exact value</li>
+                        <li>When is left sum an overestimate? Underestimate?</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Videos Tab -->
+        <div id="videos" class="tab-content">
+            <h2 style="color: #00b894; margin-bottom: 20px;">🎬 Recommended Videos</h2>
+            <div class="video-card">
+                <h4>📹 Conceptual Understanding</h4>
+                <ul>
+                    <li><strong>3Blue1Brown - Essence of Calculus:</strong> Beautiful visual series - <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr" target="_blank">YouTube</a></li>
+                    <li><strong>Professor Leonard:</strong> Full course lectures - <a href="https://www.youtube.com/user/professorleonard57" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+            <div class="video-card" style="background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);">
+                <h4>📹 AP Exam Prep</h4>
+                <ul>
+                    <li><strong>Khan Academy AP Calc AB:</strong> Aligned to CED - <a href="https://www.khanacademy.org/math/ap-calculus-ab" target="_blank">Khan Academy</a></li>
+                    <li><strong>College Board AP Classroom:</strong> Official resources</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- AP Exam Prep Tab -->
+        <div id="assessments" class="tab-content">
+            <h2 style="color: #00b894; margin-bottom: 20px;">📝 AP Exam Preparation</h2>
+            
+            <div class="assessment-card">
+                <h4>🎯 Exam Structure</h4>
+                <div class="assessment-item">
+                    <p><strong>Section I: Multiple Choice (50%)</strong></p>
+                    <ul>
+                        <li>Part A: 30 questions, 60 min, NO calculator</li>
+                        <li>Part B: 15 questions, 45 min, calculator allowed</li>
+                    </ul>
+                    <p><strong>Section II: Free Response (50%)</strong></p>
+                    <ul>
+                        <li>Part A: 2 questions, 30 min, calculator allowed</li>
+                        <li>Part B: 4 questions, 60 min, NO calculator</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="frq-tip">
+                <h5>📝 FRQ Tips</h5>
+                <ul>
+                    <li>Show ALL work - partial credit is available!</li>
+                    <li>Use proper notation (don't write "lim" without showing what x approaches)</li>
+                    <li>Justify answers when asked (MVT, FTC, etc.)</li>
+                    <li>Include units in contextual problems</li>
+                    <li>Don't round until final answer</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Vocabulary Tab -->
+        <div id="vocabulary" class="tab-content">
+            <h2 style="color: #00b894; margin-bottom: 20px;">📖 Calculus Vocabulary</h2>
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <h4>Derivative</h4>
+                    <p><strong>Definition:</strong> Instantaneous rate of change; slope of tangent line</p>
+                    <div class="vocab-example">"f'(x) = lim[h→0] [f(x+h) - f(x)]/h"</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Antiderivative</h4>
+                    <p><strong>Definition:</strong> Function F where F' = f</p>
+                    <div class="vocab-example">"An antiderivative of 2x is x²"</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Definite Integral</h4>
+                    <p><strong>Definition:</strong> Net signed area under curve from a to b</p>
+                    <div class="vocab-example">"∫₀² x dx = 2 (area of triangle)"</div>
+                </div>
+                <div class="vocab-card">
+                    <h4>Critical Point</h4>
+                    <p><strong>Definition:</strong> Where f'(x) = 0 or f'(x) undefined</p>
+                    <div class="vocab-example">"Possible locations of extrema"</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Remaining tabs -->
+        <div id="printables" class="tab-content">
+            <h2 style="color: #00b894;">🖨️ Printables</h2>
+            <div class="printable-card"><h4>Derivative rules reference, integration formulas, FRQ practice, formula sheet</h4></div>
+        </div>
+        
+        <div id="games" class="tab-content">
+            <h2 style="color: #00b894;">🎮 Activities</h2>
+            <div class="game-card"><h4>Derivative Matching, Integration Relay, f/f'/f'' Graph Sorting</h4></div>
+            <div class="online-resources">
+                <a href="https://www.khanacademy.org/math/ap-calculus-ab" class="resource-link" target="_blank"><strong>Khan Academy AP Calc AB</strong></a>
+                <a href="https://apcentral.collegeboard.org/courses/ap-calculus-ab" class="resource-link" target="_blank"><strong>College Board AP Central</strong></a>
+            </div>
+        </div>
+        
+        <div id="differentiation" class="tab-content">
+            <h2 style="color: #00b894;">🌟 Differentiation</h2>
+            <div class="differentiation-box"><h4>Advanced:</h4> BC topics preview, proof-based problems, competition problems</div>
+            <div class="differentiation-box" style="background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%); color: #2d3436;"><h4>Support:</h4> Pre-calculus review, visual approaches, step-by-step guides</div>
+        </div>
+        
+        <div id="misconceptions" class="tab-content">
+            <h2 style="color: #00b894;">❓ Misconceptions</h2>
+            <div class="misconception-box">
+                <h4>❌ d/dx[f·g] = f'·g'</h4>
+                <div class="misconception-content"><p>Use Product Rule: d/dx[f·g] = f'g + fg'</p></div>
+            </div>
+            <div class="misconception-box">
+                <h4>❌ ∫f·g dx = (∫f dx)(∫g dx)</h4>
+                <div class="misconception-content"><p>No product rule for integration! May need u-sub or (in BC) integration by parts.</p></div>
+            </div>
+        </div>
+        
+        <div id="cultural" class="tab-content">
+            <h2 style="color: #00b894;">🌍 History of Calculus</h2>
+            <div class="cultural-box"><h4>Newton vs. Leibniz:</h4> Both independently developed calculus in the 1680s. Newton used "fluxions," Leibniz gave us the notation we use today (dy/dx, ∫).</div>
+            <div class="cultural-box" style="background: linear-gradient(135deg, #e17055 0%, #d63031 100%);"><h4>Applications:</h4> Space flight, medical imaging, economics, machine learning - calculus is everywhere!</div>
+        </div>
+        <!-- AI for Teachers Tab -->
+        <div id="ai-teachers" class="tab-content">
+
+            <div class="content-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);">
+                <h3>🤖 AI for Teachers</h3>
+                <p>AI tools and resources for enhancing math instruction</p>
+                
+                <div class="inner-content">
+                    <h4>🎯 Lesson Planning & Content Creation</h4>
+                    <div class="highlight-section">
+                        <h5>General AI Assistants</h5>
+                        <ul>
+                            <li><strong>ChatGPT / Claude:</strong> Generate lesson ideas, problem sets, discussion questions, and differentiated activities</li>
+                            <li><strong>MagicSchool AI:</strong> Education-specific tools for rubrics, IEP goals, and lesson planning</li>
+                            <li><strong>Diffit:</strong> Adapt math texts to different reading levels</li>
+                            <li><strong>Curipod:</strong> Create interactive math presentations with real-time student feedback</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="highlight-section">
+                        <h5>Math-Specific AI Tools</h5>
+                        <ul>
+                            <li><strong>Wolfram Alpha:</strong> Computational verification and step-by-step solutions</li>
+                            <li><strong>Photomath / Mathway:</strong> Solution verification and multiple solving methods</li>
+                            <li><strong>GeoGebra:</strong> Dynamic geometry and algebra visualizations</li>
+                            <li><strong>Desmos:</strong> Interactive graphing and exploration activities</li>
+                            <li><strong>Khan Academy / IXL / DeltaMath:</strong> AI-powered adaptive practice platforms</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="inner-content" style="margin-top: 20px;">
+                    <h4>💬 Example Prompts for AP Calculus AB Teachers</h4>
+                    <div class="highlight-section">
+                        <h5>AP Exam Preparation</h5>
+                        <ul>
+                            <li>"Create AP-style free response questions on Limits, Derivatives, Integrals with scoring guidelines."</li>
+                            <li>"Generate multiple choice questions on Limits, Derivatives, Integrals with plausible distractors based on common errors."</li>
+                            <li>"Design a practice set that mirrors the calculator/non-calculator format of the AP exam."</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="highlight-section">
+                        <h5>Deep Conceptual Understanding</h5>
+                        <ul>
+                            <li>"Create problems that require students to connect Limits, Derivatives, Integrals to multiple units/topics."</li>
+                            <li>"Write questions that assess understanding of Limits, Derivatives, Integrals at the analysis and evaluation levels."</li>
+                            <li>"Design investigations where students explore the limits and edge cases of Limits, Derivatives, Integrals."</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="highlight-section">
+                        <h5>College Readiness</h5>
+                        <ul>
+                            <li>"Create problems similar to what students will encounter in college-level courses."</li>
+                            <li>"Design activities that develop mathematical communication skills expected in higher education."</li>
+                            <li>"Write problems requiring extended reasoning and multi-step justification."</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="inner-content" style="margin-top: 20px;">
+                    <h4>⚠️ Important Considerations</h4>
+                    <div class="highlight-section" style="border-left-color: #e17055;">
+                        <h5>Mathematical Accuracy</h5>
+                        <ul>
+                            <li><strong>Always verify AI outputs:</strong> AI can make mathematical errors, especially with multi-step problems</li>
+                            <li><strong>Check solutions step-by-step:</strong> Verify each step before using problems with students</li>
+                            <li><strong>Watch for notation errors:</strong> AI may use inconsistent or incorrect mathematical notation</li>
+                            <li><strong>Test with edge cases:</strong> Check if AI-generated problems work with boundary conditions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="highlight-section" style="border-left-color: #fdcb6e;">
+                        <h5>Pedagogical Considerations</h5>
+                        <ul>
+                            <li><strong>Use AI as a starting point:</strong> Refine and adapt outputs for your specific students</li>
+                            <li><strong>Maintain your expertise:</strong> You understand your students better than any AI</li>
+                            <li><strong>Model critical evaluation:</strong> Show students how you evaluate AI-generated content</li>
+                            <li><strong>Preserve productive struggle:</strong> Don't let AI remove the valuable learning from challenge</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- AI for Students Tab -->
+        <div id="ai-students" class="tab-content">
+
+            <div class="content-card" style="background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);">
+                <h3>🧒 AI for Students</h3>
+                <p>College-level AI literacy for AP Calculus AB students</p>
+                
+                <div class="inner-content">
+                    <h4>📋 AP-Level Expectations</h4>
+                    <div class="highlight-section" style="border-left-color: #0984e3;">
+                        <h5>Preparing for College-Level Work</h5>
+                        <ul>
+                            <li><strong>Academic integrity is paramount:</strong> AI misuse can result in score cancellation</li>
+                            <li><strong>The AP exam tests YOUR knowledge:</strong> No AI, no notes, no calculator on some sections</li>
+                            <li><strong>College professors have strict AI policies:</strong> Develop skills now that will serve you later</li>
+                            <li><strong>Understanding trumps answer-getting:</strong> Conceptual questions require deep understanding</li>
+                            <li><strong>AI should enhance learning, not replace it</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="inner-content" style="margin-top: 20px;">
+                    <h4>✅ Strategic AI Use for AP Success</h4>
+                    <div class="highlight-section">
+                        <h5>Effective Learning Strategies</h5>
+                        <ul>
+                            <li><strong>Concept clarification:</strong> "Explain the relationship between Limits, Derivatives, Integrals and [related concept]"</li>
+                            <li><strong>Multiple representations:</strong> "Show this concept algebraically, graphically, and numerically"</li>
+                            <li><strong>Connection mapping:</strong> "What prerequisite concepts must I understand before tackling this?"</li>
+                            <li><strong>Error analysis:</strong> "Here's my solution - identify where my reasoning went wrong"</li>
+                            <li><strong>FRQ practice:</strong> Generate AP-style free response questions for practice</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="highlight-section">
+                        <h5>Exam Preparation (Study Phase Only)</h5>
+                        <ul>
+                            <li>Create concept summary sheets for each unit</li>
+                            <li>Generate practice problems with varying difficulty</li>
+                            <li>Identify and practice your weak areas</li>
+                            <li>Review solution strategies for different problem types</li>
+                            <li>Practice explaining your reasoning clearly</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="inner-content" style="margin-top: 20px;">
+                    <h4>🔍 Rigorous Verification for AP Calculus AB</h4>
+                    <div class="highlight-section">
+                        <h5>Checking Complex Mathematical Work</h5>
+                        <ul>
+                            <li><strong>Symbolic verification:</strong> Use CAS to verify algebraic manipulations</li>
+                            <li><strong>Numerical approximation:</strong> Check symbolic answers with decimal approximations</li>
+                            <li><strong>Graphical confirmation:</strong> Visualize functions and solutions</li>
+                            <li><strong>Limiting behavior:</strong> Check if answers behave correctly as x→0, x→∞, etc.</li>
+                            <li><strong>Special cases:</strong> Verify solutions work for boundary conditions</li>
+                            <li><strong>Cross-reference:</strong> Compare AI output with textbook examples and solutions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="highlight-section" style="border-left-color: #e74c3c;">
+                        <h5>AI Limitations in Advanced Math</h5>
+                        <ul>
+                            <li>May miss subtle errors in limit arguments</li>
+                            <li>Can struggle with formal proof structure</li>
+                            <li>Sometimes uses techniques not taught in your course</li>
+                            <li>May not format solutions as AP readers expect</li>
+                            <li>Can make errors with special functions and series</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="inner-content" style="margin-top: 20px;">
+                    <h4>🎯 Why Deep Understanding Matters</h4>
+                    <div class="highlight-section" style="border-left-color: #e74c3c;">
+                        <h5>Beyond Getting the Right Answer</h5>
+                        <ul>
+                            <li><strong>AP FRQs require justification:</strong> You must explain your reasoning, not just state answers</li>
+                            <li><strong>Conceptual MCQs test understanding:</strong> Many questions can't be solved by just computing</li>
+                            <li><strong>College courses move fast:</strong> You need genuine fluency, not look-it-up skills</li>
+                            <li><strong>Research and careers require deep knowledge:</strong> You'll need to solve novel problems</li>
+                            <li><strong>Mathematical maturity comes from struggle:</strong> There's no substitute for working through difficulties</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="inner-content" style="margin-top: 20px;">
+                    <h4>🛠️ AP-Level Mathematical Tools</h4>
+                    <div class="highlight-section">
+                        <h5>For Learning & Verification</h5>
+                        <ul>
+                            <li><strong>Desmos:</strong> Advanced graphing and exploration</li>
+                            <li><strong>Wolfram Alpha Pro:</strong> Step-by-step solutions for calculus and statistics</li>
+                            <li><strong>GeoGebra CAS:</strong> Computer algebra system capabilities</li>
+                            <li><strong>StatKey:</strong> Statistical simulations and inference</li>
+                            <li><strong>Khan Academy:</strong> AP-specific courses and practice</li>
+                            <li><strong>College Board AP Classroom:</strong> Official practice and resources</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+    
+    <script>
+        function showTab(tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) tabContents[i].classList.remove('active');
+            const tabButtons = document.getElementsByClassName('tab-btn');
+            for (let i = 0; i < tabButtons.length; i++) tabButtons[i].classList.remove('active');
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+            window.scrollTo({top: 200, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
