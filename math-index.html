@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📐 K-12 Math Teacher Resource Hubs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            min-height: 100vh;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: #3b82f6;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-top: 4px solid #3b82f6;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #3b82f6;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #3b82f6;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hub-count {
+            background: #3b82f6;
+            color: white;
+            font-size: 0.875rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .grade-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 20px;
+        }
+
+        .grade-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 4px solid #3b82f6;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: block;
+        }
+
+        .grade-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+        }
+
+        .grade-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 8px;
+        }
+
+        .grade-card p {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .standards-tag {
+            font-size: 0.75rem;
+            color: #1e40af;
+            font-weight: 600;
+            background: #dbeafe;
+            padding: 4px 10px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .features-section {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            margin-top: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .features-section h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .feature-tag {
+            background: #eff6ff;
+            color: #1e40af;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid #cbd5e1;
+        }
+
+        footer p {
+            color: #64748b;
+            font-size: 0.875rem;
+            margin-bottom: 8px;
+        }
+
+        footer a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.75rem; }
+            .stats-bar { gap: 12px; }
+            .stat-item { padding: 12px 16px; }
+            .grade-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📐 K-12 Math Teacher Resource Hubs</h1>
+            <p class="subtitle">Comprehensive Teaching Resources Aligned to Georgia Standards of Excellence</p>
+        </header>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">17</div>
+                <div class="stat-label">Tabs per Hub</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">✓</div>
+                <div class="stat-label">GSE Aligned</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">AI</div>
+                <div class="stat-label">Tools Integrated</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">18</div>
+                <div class="stat-label">Total Hubs</div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">🌱 Elementary School (K-5) <span class="hub-count">6 Hubs</span></h2>
+            <div class="grade-grid">
+                <a href="kindergarten-math-hub.html" class="grade-card">
+                    <h3>Kindergarten Math</h3>
+                    <p>Counting and cardinality, number sense, basic shapes, patterns, and comparison skills.</p>
+                    <span class="standards-tag">MGSEK.CC • MGSEK.OA • MGSEK.G</span>
+                </a>
+                <a href="grade1-math-hub.html" class="grade-card">
+                    <h3>1st Grade Math</h3>
+                    <p>Addition and subtraction to 20, place value, measurement, and telling time.</p>
+                    <span class="standards-tag">MGSE1.OA • MGSE1.NBT • MGSE1.MD</span>
+                </a>
+                <a href="grade2-math-hub.html" class="grade-card">
+                    <h3>2nd Grade Math</h3>
+                    <p>Two-digit operations, time and money, basic fractions, and measurement concepts.</p>
+                    <span class="standards-tag">MGSE2.OA • MGSE2.NBT • MGSE2.MD</span>
+                </a>
+                <a href="grade3-math-hub.html" class="grade-card">
+                    <h3>3rd Grade Math</h3>
+                    <p>Multiplication and division, fractions introduction, area and perimeter, elapsed time.</p>
+                    <span class="standards-tag">MGSE3.OA • MGSE3.NF • MGSE3.MD</span>
+                </a>
+                <a href="grade4-math-hub.html" class="grade-card">
+                    <h3>4th Grade Math</h3>
+                    <p>Multi-digit operations, equivalent fractions, decimals, angles and symmetry.</p>
+                    <span class="standards-tag">MGSE4.NBT • MGSE4.NF • MGSE4.MD</span>
+                </a>
+                <a href="grade5-math-hub.html" class="grade-card">
+                    <h3>5th Grade Math</h3>
+                    <p>Fraction operations, decimal operations, volume, and coordinate graphing.</p>
+                    <span class="standards-tag">MGSE5.NF • MGSE5.NBT • MGSE5.G</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">📈 Middle School (6-8) <span class="hub-count">3 Hubs</span></h2>
+            <div class="grade-grid">
+                <a href="grade6-math-hub.html" class="grade-card">
+                    <h3>6th Grade Math</h3>
+                    <p>Ratios and proportions, integers, expressions and equations, statistics basics.</p>
+                    <span class="standards-tag">MGSE6.RP • MGSE6.NS • MGSE6.EE</span>
+                </a>
+                <a href="grade7-math-hub.html" class="grade-card">
+                    <h3>7th Grade Math</h3>
+                    <p>Proportional relationships, rational number operations, geometry, probability.</p>
+                    <span class="standards-tag">MGSE7.RP • MGSE7.NS • MGSE7.G</span>
+                </a>
+                <a href="grade8-math-hub.html" class="grade-card">
+                    <h3>8th Grade Math</h3>
+                    <p>Linear functions, Pythagorean theorem, transformations, systems introduction.</p>
+                    <span class="standards-tag">MGSE8.EE • MGSE8.F • MGSE8.G</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">🎓 High School (9-12) <span class="hub-count">5 Hubs</span></h2>
+            <div class="grade-grid">
+                <a href="algebra1-hub.html" class="grade-card">
+                    <h3>Algebra 1</h3>
+                    <p>Linear equations, quadratic functions, exponential functions, systems of equations.</p>
+                    <span class="standards-tag">MGSE9-12.A.REI • MGSE9-12.F.IF</span>
+                </a>
+                <a href="geometry-hub.html" class="grade-card">
+                    <h3>Geometry</h3>
+                    <p>Congruence, similarity, trigonometry, circles, geometric proofs, area and volume.</p>
+                    <span class="standards-tag">MGSE9-12.G.CO • MGSE9-12.G.SRT</span>
+                </a>
+                <a href="algebra2-hub.html" class="grade-card">
+                    <h3>Algebra 2</h3>
+                    <p>Polynomials, logarithms, trigonometric functions, sequences and series.</p>
+                    <span class="standards-tag">MGSE9-12.A.APR • MGSE9-12.F.TF</span>
+                </a>
+                <a href="precalculus-hub.html" class="grade-card">
+                    <h3>Pre-Calculus</h3>
+                    <p>Advanced trigonometry, vectors, polar coordinates, limits introduction.</p>
+                    <span class="standards-tag">MGSE9-12.F.TF • MGSE9-12.N.VM</span>
+                </a>
+                <a href="financial-literacy-hub.html" class="grade-card">
+                    <h3>Financial Literacy</h3>
+                    <p>Personal finance, budgeting, investing, credit, taxes, and economic decision-making.</p>
+                    <span class="standards-tag">Financial Literacy Standards</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">🏆 Advanced Placement (AP) <span class="hub-count">4 Hubs</span></h2>
+            <div class="grade-grid">
+                <a href="ap-calculus-ab-hub.html" class="grade-card">
+                    <h3>AP Calculus AB</h3>
+                    <p>Limits, derivatives, integrals, and their real-world applications.</p>
+                    <span class="standards-tag">College Board AP® • Units 1-8</span>
+                </a>
+                <a href="ap-calculus-bc-hub.html" class="grade-card">
+                    <h3>AP Calculus BC</h3>
+                    <p>Advanced integration techniques, series, parametric and polar calculus.</p>
+                    <span class="standards-tag">College Board AP® • Units 1-10</span>
+                </a>
+                <a href="ap-statistics-hub.html" class="grade-card">
+                    <h3>AP Statistics</h3>
+                    <p>Experimental design, probability, statistical inference, regression analysis.</p>
+                    <span class="standards-tag">College Board AP® • Units 1-9</span>
+                </a>
+                <a href="ap-computer-science-principles-hub.html" class="grade-card">
+                    <h3>AP Computer Science Principles</h3>
+                    <p>Programming, data analysis, algorithms, internet, and computing impact.</p>
+                    <span class="standards-tag">College Board AP® • Big Ideas 1-5</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <h3>📋 Each Hub Includes 17 Resource Tabs</h3>
+            <div class="features-grid">
+                <span class="feature-tag">📋 Standards</span>
+                <span class="feature-tag">👩‍🏫 Teacher Background</span>
+                <span class="feature-tag">🧮 Manipulatives</span>
+                <span class="feature-tag">📚 Lesson Plans</span>
+                <span class="feature-tag">🔬 Investigations</span>
+                <span class="feature-tag">🎬 Videos</span>
+                <span class="feature-tag">📖 Articles</span>
+                <span class="feature-tag">📝 Assessments</span>
+                <span class="feature-tag">🖨️ Printables</span>
+                <span class="feature-tag">🔤 Vocabulary</span>
+                <span class="feature-tag">🎮 Games</span>
+                <span class="feature-tag">♿ Differentiation</span>
+                <span class="feature-tag">❓ Misconceptions</span>
+                <span class="feature-tag">🌍 Cultural Connections</span>
+                <span class="feature-tag">🤖 AI for Teachers</span>
+                <span class="feature-tag">🧒 AI for Students</span>
+            </div>
+        </section>
+
+        <footer>
+            <p>Created by Dr. Rebecca Cooper</p>
+            <p>Standards: GSE (Georgia Standards of Excellence) • AKS (Academic Knowledge and Skills) • NCTM • College Board AP®</p>
+            <p><a href="https://github.com/rcooper2005/K-12-Math-Teacher-Resources">View on GitHub</a></p>
+        </footer>
+    </div>
+</body>
+</html>
