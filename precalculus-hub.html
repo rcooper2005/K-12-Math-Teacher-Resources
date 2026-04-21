@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pre-Calculus Resources - Complete Teacher Hub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pre-Calculus Resources - Complete Teacher Hub</title><meta content="Pre-Calculus teaching hub: advanced trigonometry, vectors, polar coordinates, and introduction to limits. GSE-aligned lessons and practice." name="description"/><meta content="Dr. Rebecca Cooper" name="author"/><meta content="Pre-Calculus Resources - Complete Teacher Hub | Georgia K-12 Teacher Resources" property="og:title"/><meta content="Pre-Calculus teaching hub: advanced trigonometry, vectors, polar coordinates, and introduction to limits. GSE-aligned lessons and practice." property="og:description"/><meta content="website" property="og:type"/><meta content="https://rcooper2005.github.io/K-12-Math-Teacher-Resources/precalculus-hub.html" property="og:url"/><meta content="Georgia K-12 Teacher Resources" property="og:site_name"/><meta content="summary" name="twitter:card"/><meta content="Pre-Calculus Resources - Complete Teacher Hub | Georgia K-12 Teacher Resources" name="twitter:title"/><meta content="Pre-Calculus teaching hub: advanced trigonometry, vectors, polar coordinates, and introduction to limits. GSE-aligned lessons and practice." name="twitter:description"/><link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📐%3C/text%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #6dd5ed 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
         .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 30px; padding: 40px; box-shadow: 0 25px 80px rgba(0,0,0,0.4); }
@@ -66,693 +67,644 @@
         li { margin-bottom: 10px; }
         @media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 2em; } .tab-btn { padding: 10px 15px; font-size: 0.9em; } }
     </style>
-</head>
+<style>
+/* CC license footer — added site-wide for consistent attribution */
+footer .cc-license { font-size: 0.85em; color: #666; text-align: center;
+  padding: 1em; margin-top: 2em; border-top: 1px solid #ddd; line-height: 1.7; }
+footer .cc-license a { color: #1a4b8c; }
+footer .cc-license img { vertical-align: middle; }
+</style></head>
 <body>
-    <div class="container">
-        <h1>📐 Pre-Calculus Resources</h1>
-        <p class="subtitle">Functions • Trigonometry • Polar • Vectors • Sequences & Series • Limits Introduction</p>
-        
-        <div class="tabs">
-            <button class="tab-btn active" onclick="showTab('standards')">📋 Standards</button>
-            <button class="tab-btn" onclick="showTab('background')">👩‍🏫 Teacher Background</button>
-            <button class="tab-btn" onclick="showTab('manipulatives')">🧮 Tools</button>
-            <button class="tab-btn" onclick="showTab('lessons')">📚 Lessons</button>
-            <button class="tab-btn" onclick="showTab('labs')">🔬 Investigations</button>
-            <button class="tab-btn" onclick="showTab('videos')">🎬 Videos</button>
-            <button class="tab-btn" onclick="showTab('articles')">📖 Articles</button>
-            <button class="tab-btn" onclick="showTab('assessments')">📝 Assessments</button>
-            <button class="tab-btn" onclick="showTab('printables')">🖨️ Printables</button>
-            <button class="tab-btn" onclick="showTab('vocabulary')">📖 Vocabulary</button>
-            <button class="tab-btn" onclick="showTab('games')">🎮 Games</button>
-            <button class="tab-btn" onclick="showTab('differentiation')">🌟 Differentiation</button>
-            <button class="tab-btn" onclick="showTab('misconceptions')">❓ Misconceptions</button>
-            <button class="tab-btn" onclick="showTab('cultural')">🌍 Cultural Connections</button>
-        
-            <button class="tab-btn" onclick="showTab('ai-teachers')">🤖 AI for Teachers</button>
-            <button class="tab-btn" onclick="showTab('ai-students')">🧒 AI for Students</button>
-        </div>
-        
-        <!-- Standards Tab -->
-        <div id="standards" class="tab-content active">
-            <div class="standard-box">
-                <h3>📐 Pre-Calculus Content Standards</h3>
-                <div class="standard-item">
-                    <span class="standard-code">Functions</span>
-                    <p><strong>Analysis:</strong> Analyze functions using different representations (algebraic, graphical, numerical, verbal).</p>
-                    <p><strong>Building:</strong> Build new functions from existing functions (transformations, compositions, inverses).</p>
-                    <p><strong>Types:</strong> Polynomial, rational, exponential, logarithmic, trigonometric, piecewise.</p>
-                </div>
-                <div class="standard-item">
-                    <span class="standard-code">Trigonometry</span>
-                    <p><strong>Unit Circle:</strong> Extend the domain of trig functions using the unit circle.</p>
-                    <p><strong>Modeling:</strong> Model periodic phenomena with trigonometric functions.</p>
-                    <p><strong>Identities:</strong> Prove and apply trigonometric identities (Pythagorean, sum/difference, double/half angle).</p>
-                    <p><strong>Inverse Trig:</strong> Understand inverse trig functions and their domains/ranges.</p>
-                    <p><strong>Laws:</strong> Apply Law of Sines and Law of Cosines to non-right triangles.</p>
-                </div>
-                <div class="standard-item">
-                    <span class="standard-code">Polar & Parametric</span>
-                    <p><strong>Polar:</strong> Convert between rectangular and polar coordinates; graph polar equations.</p>
-                    <p><strong>Complex:</strong> Represent complex numbers in polar form; DeMoivre's Theorem.</p>
-                    <p><strong>Parametric:</strong> Graph parametric equations; eliminate the parameter.</p>
-                </div>
-                <div class="standard-item">
-                    <span class="standard-code">Vectors</span>
-                    <p><strong>Operations:</strong> Add, subtract, and scale vectors; find magnitude and direction.</p>
-                    <p><strong>Dot Product:</strong> Calculate and interpret dot product; find angle between vectors.</p>
-                    <p><strong>Applications:</strong> Work, force, and motion problems.</p>
-                </div>
-                <div class="standard-item">
-                    <span class="standard-code">Sequences & Series</span>
-                    <p><strong>Arithmetic:</strong> Find nth term and sum of arithmetic sequences.</p>
-                    <p><strong>Geometric:</strong> Find nth term and sum (finite and infinite) of geometric sequences.</p>
-                    <p><strong>Notation:</strong> Use sigma notation; expand and evaluate sums.</p>
-                </div>
-                <div class="standard-item">
-                    <span class="standard-code">Introduction to Calculus Concepts</span>
-                    <p><strong>Limits:</strong> Understand the concept of limit; evaluate limits graphically and algebraically.</p>
-                    <p><strong>Continuity:</strong> Understand continuity and identify discontinuities.</p>
-                    <p><strong>Rates:</strong> Average vs. instantaneous rate of change (intuitive).</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Teacher Background Tab -->
-        <div id="background" class="tab-content">
-            <div class="content-card">
-                <h3>👩‍🏫 Advanced Trigonometry</h3>
-                <div class="inner-content">
-                    <h4>Beyond Right Triangles</h4>
-                    <div class="highlight-section">
-                        <h5>Trigonometric Identities</h5>
-                        <ul>
-                            <li><strong>Pythagorean:</strong> sin²θ + cos²θ = 1, 1 + tan²θ = sec²θ, 1 + cot²θ = csc²θ</li>
-                            <li><strong>Sum/Difference:</strong> sin(A±B) = sinA cosB ± cosA sinB</li>
-                            <li><strong>Double Angle:</strong> sin(2θ) = 2sinθcosθ, cos(2θ) = cos²θ - sin²θ</li>
-                            <li><strong>Half Angle:</strong> sin(θ/2) = ±√[(1-cosθ)/2]</li>
-                        </ul>
-                    </div>
-                    <div class="highlight-section">
-                        <h5>Laws for Non-Right Triangles</h5>
-                        <p><strong>Law of Sines:</strong> a/sinA = b/sinB = c/sinC</p>
-                        <p><strong>Law of Cosines:</strong> c² = a² + b² - 2ab·cosC</p>
-                        <p>Use Law of Sines when you know AAS, ASA, or SSA (ambiguous case)</p>
-                        <p>Use Law of Cosines when you know SAS or SSS</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="content-card" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);">
-                <h3>🔄 Polar Coordinates & Complex Numbers</h3>
-                <div class="inner-content">
-                    <h4>Alternative Coordinate Systems</h4>
-                    <div class="highlight-section">
-                        <h5>Polar Coordinates (r, θ)</h5>
-                        <p>r = distance from origin; θ = angle from positive x-axis</p>
-                        <p><strong>Conversions:</strong></p>
-                        <ul>
-                            <li>x = r·cosθ, y = r·sinθ (polar to rectangular)</li>
-                            <li>r = √(x² + y²), θ = arctan(y/x) (rectangular to polar)</li>
-                        </ul>
-                    </div>
-                    <div class="highlight-section">
-                        <h5>Complex Numbers in Polar Form</h5>
-                        <p>z = r(cosθ + i·sinθ) = r·cis(θ) = re^(iθ)</p>
-                        <p><strong>DeMoivre's Theorem:</strong> [r·cis(θ)]^n = r^n·cis(nθ)</p>
-                        <p>Used to find powers and roots of complex numbers</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="content-card" style="background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);">
-                <h3>➡️ Vectors</h3>
-                <div class="inner-content">
-                    <h4>Quantities with Direction</h4>
-                    <div class="highlight-section">
-                        <h5>Vector Representations</h5>
-                        <ul>
-                            <li><strong>Component form:</strong> ⟨a, b⟩</li>
-                            <li><strong>Unit vector form:</strong> ai + bj</li>
-                            <li><strong>Magnitude:</strong> |v| = √(a² + b²)</li>
-                            <li><strong>Direction:</strong> θ = arctan(b/a)</li>
-                        </ul>
-                    </div>
-                    <div class="highlight-section">
-                        <h5>Dot Product</h5>
-                        <p>u · v = |u||v|cosθ = u₁v₁ + u₂v₂</p>
-                        <p>If u · v = 0, vectors are perpendicular</p>
-                        <p><strong>Applications:</strong> Work = F · d (force times displacement)</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="content-card" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);">
-                <h3>📈 Sequences, Series & Limits</h3>
-                <div class="inner-content">
-                    <h4>Patterns and Their Sums</h4>
-                    <div class="highlight-section">
-                        <h5>Sequences</h5>
-                        <ul>
-                            <li><strong>Arithmetic:</strong> aₙ = a₁ + (n-1)d; common difference d</li>
-                            <li><strong>Geometric:</strong> aₙ = a₁ · r^(n-1); common ratio r</li>
-                        </ul>
-                    </div>
-                    <div class="highlight-section">
-                        <h5>Series (Sums)</h5>
-                        <ul>
-                            <li><strong>Arithmetic:</strong> Sₙ = n(a₁ + aₙ)/2</li>
-                            <li><strong>Geometric (finite):</strong> Sₙ = a₁(1 - rⁿ)/(1 - r)</li>
-                            <li><strong>Geometric (infinite, |r| < 1):</strong> S = a₁/(1 - r)</li>
-                        </ul>
-                    </div>
-                    <div class="highlight-section">
-                        <h5>Introduction to Limits</h5>
-                        <p>lim(x→a) f(x) = L means f(x) approaches L as x approaches a</p>
-                        <p>Foundation for calculus: derivatives and integrals are defined using limits</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Tools Tab -->
-        <div id="manipulatives" class="tab-content">
-            <div class="manipulative-card">
-                <h3>📈 Graphing Technology</h3>
-                <div class="manipulative-item">
-                    <h4>Desmos</h4>
-                    <p><strong>Uses:</strong> Graph all function types, polar graphs, parametric equations, explore limits</p>
-                </div>
-                <div class="manipulative-item">
-                    <h4>GeoGebra</h4>
-                    <p><strong>Uses:</strong> Dynamic geometry, vectors, 3D graphing, CAS capabilities</p>
-                </div>
-                <div class="manipulative-item">
-                    <h4>TI-84/TI-Nspire</h4>
-                    <p><strong>Uses:</strong> All graphing modes, sequences, matrices, statistical analysis</p>
-                </div>
-            </div>
-            
-            <div class="manipulative-card" style="background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);">
-                <h3>📐 Reference Materials</h3>
-                <div class="manipulative-item">
-                    <h4>Unit Circle Reference</h4>
-                    <p><strong>Uses:</strong> Quick reference for trig values at key angles</p>
-                </div>
-                <div class="manipulative-item">
-                    <h4>Identity Reference Sheet</h4>
-                    <p><strong>Uses:</strong> All trig identities organized by type</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Lessons Tab -->
-        <div id="lessons" class="tab-content">
-            <div class="lesson-card">
-                <h3>📚 Lesson 1: Verifying Trigonometric Identities</h3>
-                <span class="time-badge">⏱️ 55 minutes</span>
-                <div class="lesson-section">
-                    <h4>Learning Objectives</h4>
-                    <ul>
-                        <li>Students will use fundamental identities to verify equations</li>
-                        <li>Students will develop strategies for identity proofs</li>
-                        <li>Students will recognize equivalent expressions</li>
-                    </ul>
-                </div>
-                <div class="lesson-section">
-                    <h4>Lesson Procedure</h4>
-                    <p><strong>Introduction (12 min):</strong> Review fundamental identities. Key strategy: Work on ONE side only, transform to match the other side.</p>
-                    <p><strong>Guided Practice (18 min):</strong> Verify: tanθ + cotθ = secθcscθ. Work left side: sinθ/cosθ + cosθ/sinθ = (sin²θ + cos²θ)/(sinθcosθ) = 1/(sinθcosθ) = secθcscθ ✓</p>
-                    <p><strong>Independent Practice (20 min):</strong> Verify identities with varying complexity.</p>
-                    <p><strong>Closure (5 min):</strong> "What strategies are most helpful when verifying identities?"</p>
-                </div>
-            </div>
-            
-            <div class="lesson-card" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);">
-                <h3>📚 Lesson 2: Law of Sines and Law of Cosines</h3>
-                <span class="time-badge">⏱️ 55 minutes</span>
-                <div class="lesson-section">
-                    <h4>Learning Objectives</h4>
-                    <ul>
-                        <li>Students will apply Law of Sines to solve triangles</li>
-                        <li>Students will apply Law of Cosines to solve triangles</li>
-                        <li>Students will determine which law to use based on given information</li>
-                    </ul>
-                </div>
-                <div class="lesson-section">
-                    <h4>Lesson Procedure</h4>
-                    <p><strong>Introduction (12 min):</strong> "We know SOH-CAH-TOA for right triangles. What about other triangles?" Introduce both laws.</p>
-                    <p><strong>Guided Practice (18 min):</strong> Decision tree: AAS/ASA → Law of Sines. SAS/SSS → Law of Cosines. SSA → Law of Sines but check for ambiguous case.</p>
-                    <p><strong>Independent Practice (20 min):</strong> Solve various triangles; real-world applications.</p>
-                    <p><strong>Closure (5 min):</strong> "When would you choose Law of Cosines over Law of Sines?"</p>
-                </div>
-            </div>
-            
-            <div class="lesson-card" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
-                <h3>📚 Lesson 3: Introduction to Polar Coordinates</h3>
-                <span class="time-badge">⏱️ 55 minutes</span>
-                <div class="lesson-section">
-                    <h4>Learning Objectives</h4>
-                    <ul>
-                        <li>Students will plot points in polar coordinates</li>
-                        <li>Students will convert between polar and rectangular</li>
-                        <li>Students will graph basic polar equations</li>
-                    </ul>
-                </div>
-                <div class="lesson-section">
-                    <h4>Lesson Procedure</h4>
-                    <p><strong>Introduction (12 min):</strong> In rectangular (x, y), we measure right/up. In polar (r, θ), we measure distance and angle. Both describe the same points!</p>
-                    <p><strong>Guided Practice (18 min):</strong> Plot (3, π/4), (-2, π/2). Convert (3, 4) to polar. Convert (5, π/6) to rectangular.</p>
-                    <p><strong>Independent Practice (20 min):</strong> Convert points; graph simple polar equations like r = 3, θ = π/4, r = 2cosθ.</p>
-                    <p><strong>Closure (5 min):</strong> "What does r = 3 look like in polar coordinates?"</p>
-                </div>
-            </div>
-            
-            <div class="lesson-card" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);">
-                <h3>📚 Lesson 4: Vector Operations and Dot Product</h3>
-                <span class="time-badge">⏱️ 55 minutes</span>
-                <div class="lesson-section">
-                    <h4>Learning Objectives</h4>
-                    <ul>
-                        <li>Students will perform vector addition and scalar multiplication</li>
-                        <li>Students will calculate dot product</li>
-                        <li>Students will find angle between vectors</li>
-                    </ul>
-                </div>
-                <div class="lesson-section">
-                    <h4>Lesson Procedure</h4>
-                    <p><strong>Introduction (12 min):</strong> Vectors have magnitude AND direction. Review component form and operations: u + v = ⟨u₁+v₁, u₂+v₂⟩, ku = ⟨ku₁, ku₂⟩.</p>
-                    <p><strong>Guided Practice (18 min):</strong> Introduce dot product: u · v = u₁v₁ + u₂v₂. Alternative: u · v = |u||v|cosθ. Solve for angle between vectors.</p>
-                    <p><strong>Independent Practice (20 min):</strong> Vector operations; dot products; angles; orthogonality.</p>
-                    <p><strong>Closure (5 min):</strong> "How can you tell if two vectors are perpendicular?"</p>
-                </div>
-            </div>
-            
-            <div class="lesson-card">
-                <h3>📚 Lesson 5: Introduction to Limits</h3>
-                <span class="time-badge">⏱️ 50 minutes</span>
-                <div class="lesson-section">
-                    <h4>Learning Objectives</h4>
-                    <ul>
-                        <li>Students will understand the concept of a limit</li>
-                        <li>Students will evaluate limits graphically and numerically</li>
-                        <li>Students will evaluate simple limits algebraically</li>
-                    </ul>
-                </div>
-                <div class="lesson-section">
-                    <h4>Lesson Procedure</h4>
-                    <p><strong>Introduction (10 min):</strong> "What value does f(x) approach as x approaches 2?" Even if f(2) doesn't exist, the limit might! Use graph and table to illustrate.</p>
-                    <p><strong>Guided Practice (18 min):</strong> Evaluate limits from graphs. Use tables to estimate. Algebraically: direct substitution, factoring to remove discontinuity.</p>
-                    <p><strong>Independent Practice (18 min):</strong> Find limits various ways; identify when limit doesn't exist.</p>
-                    <p><strong>Closure (4 min):</strong> "What's the difference between f(2) and lim(x→2) f(x)?"</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Investigations Tab -->
-        <div id="labs" class="tab-content">
-            <div class="lab-card">
-                <h3>🔬 Investigation 1: Exploring Polar Graphs</h3>
-                <div class="lab-info"><strong>Focus:</strong> Polar curve families | <strong>Duration:</strong> 55 minutes</div>
-                <div class="inner-content">
-                    <h4>Procedure</h4>
-                    <ol>
-                        <li>Use Desmos to graph r = a·cos(nθ) for various a and n values</li>
-                        <li>Graph r = a·sin(nθ) and compare</li>
-                        <li>Explore rose curves: How does n affect number of petals?</li>
-                        <li>Graph limaçons: r = a + b·cosθ. What happens when a = b? When a < b?</li>
-                        <li>Create a "gallery" of polar curves with descriptions</li>
-                    </ol>
-                </div>
-            </div>
-            
-            <div class="lab-card" style="background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);">
-                <h3>🔬 Investigation 2: Sequences in Nature</h3>
-                <div class="lab-info"><strong>Focus:</strong> Fibonacci and geometric patterns | <strong>Duration:</strong> 50 minutes</div>
-                <div class="inner-content">
-                    <h4>Procedure</h4>
-                    <ol>
-                        <li>Generate Fibonacci sequence: 1, 1, 2, 3, 5, 8, 13, 21...</li>
-                        <li>Calculate ratios of consecutive terms: 1/1, 2/1, 3/2, 5/3...</li>
-                        <li>What do these ratios approach? (Golden ratio φ ≈ 1.618)</li>
-                        <li>Research where Fibonacci appears in nature (shells, flowers, trees)</li>
-                        <li>Explore golden spiral construction</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Videos Tab -->
-        <div id="videos" class="tab-content">
-            <h2 style="color: #1e3c72; margin-bottom: 20px;">🎬 Recommended Videos</h2>
-            
-            <div class="video-card">
-                <h4>📹 Trigonometry</h4>
-                <ul>
-                    <li><strong>Khan Academy - Trig Identities:</strong> Verifying and proving - <a href="https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:trig" target="_blank">Khan Academy</a></li>
-                    <li><strong>Professor Leonard - Trig:</strong> Comprehensive lectures - <a href="https://www.youtube.com/user/professorleonard57" target="_blank">YouTube</a></li>
-                </ul>
-            </div>
-            
-            <div class="video-card" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);">
-                <h4>📹 Polar & Vectors</h4>
-                <ul>
-                    <li><strong>3Blue1Brown - Vectors:</strong> Essence of linear algebra - <a href="https://www.youtube.com/watch?v=fNk_zzaMoSs" target="_blank">YouTube</a></li>
-                    <li><strong>Khan Academy - Polar:</strong> Coordinates and graphing - <a href="https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:polar" target="_blank">Khan Academy</a></li>
-                </ul>
-            </div>
-            
-            <div class="video-card" style="background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);">
-                <h4>📹 Sequences, Series & Limits</h4>
-                <ul>
-                    <li><strong>3Blue1Brown - Limits:</strong> Essence of calculus preview - <a href="https://www.youtube.com/watch?v=WUvTyaaNkzM" target="_blank">YouTube</a></li>
-                    <li><strong>Khan Academy - Series:</strong> Arithmetic and geometric - <a href="https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:series" target="_blank">Khan Academy</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- Articles Tab -->
-        <div id="articles" class="tab-content">
-            <h2 style="color: #1e3c72; margin-bottom: 20px;">📖 Student Reading Passages</h2>
-            
-            <div class="article-card">
-                <h4>📚 The Golden Ratio: Mathematics of Beauty</h4>
-                <div style="background: white; color: #333; padding: 15px; border-radius: 10px; margin-top: 10px;">
-                    <p>The ratio (1 + √5)/2 ≈ 1.618... appears everywhere: in the spiral of a nautilus shell, the arrangement of seeds in a sunflower, and the proportions of the Parthenon.</p>
-                    <p>This "golden ratio" φ is intimately connected to the Fibonacci sequence - the ratio of consecutive Fibonacci numbers approaches φ as the sequence continues. It's also the only number where φ = 1 + 1/φ!</p>
-                </div>
-            </div>
-            
-            <div class="article-card" style="background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);">
-                <h4>📚 From Finite to Infinite: The Birth of Calculus</h4>
-                <div style="background: white; color: #333; padding: 15px; border-radius: 10px; margin-top: 10px;">
-                    <p>For centuries, mathematicians struggled with infinity. How can you add infinitely many numbers and get a finite answer? The concept of limits, developed by Newton and Leibniz in the 1600s, finally made sense of this.</p>
-                    <p>A limit captures what happens as we approach a value, even if we never quite reach it. This idea is the foundation of calculus, which revolutionized science and engineering.</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Assessments Tab -->
-        <div id="assessments" class="tab-content">
-            <h2 style="color: #1e3c72; margin-bottom: 20px;">📝 Assessment Tools</h2>
-            
-            <div class="assessment-card">
-                <h4>🎯 Trigonometry</h4>
-                <div class="assessment-item">
-                    <p><strong>Identities:</strong> Verify and prove identities</p>
-                    <p><strong>Equations:</strong> Solve trig equations on specified intervals</p>
-                    <p><strong>Laws:</strong> Apply Law of Sines/Cosines; identify ambiguous cases</p>
-                </div>
-            </div>
-            
-            <div class="assessment-card" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);">
-                <h4>🎯 Polar & Vectors</h4>
-                <div class="assessment-item">
-                    <p><strong>Conversions:</strong> Between coordinate systems</p>
-                    <p><strong>Graphing:</strong> Identify and graph polar curves</p>
-                    <p><strong>Vectors:</strong> Operations, dot product, applications</p>
-                </div>
-            </div>
-            
-            <div class="assessment-card" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); color: white;">
-                <h4>🎯 Sequences, Series & Limits</h4>
-                <div class="assessment-item">
-                    <p><strong>Formulas:</strong> Find nth terms and sums</p>
-                    <p><strong>Convergence:</strong> Determine if infinite series converges</p>
-                    <p><strong>Limits:</strong> Evaluate using multiple methods</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Vocabulary Tab -->
-        <div id="vocabulary" class="tab-content">
-            <h2 style="color: #1e3c72; margin-bottom: 20px;">📖 Math Vocabulary</h2>
-            
-            <div class="vocab-grid">
-                <div class="vocab-card">
-                    <h4>Identity</h4>
-                    <p><strong>Definition:</strong> An equation true for all values in the domain</p>
-                    <div class="vocab-example">"sin²θ + cos²θ = 1 is true for all θ."</div>
-                </div>
-                <div class="vocab-card">
-                    <h4>Polar Coordinates</h4>
-                    <p><strong>Definition:</strong> System using distance r and angle θ from origin</p>
-                    <div class="vocab-example">"(3, π/4) means 3 units at 45° from positive x-axis."</div>
-                </div>
-                <div class="vocab-card">
-                    <h4>Dot Product</h4>
-                    <p><strong>Definition:</strong> Operation on vectors: u·v = u₁v₁ + u₂v₂ = |u||v|cosθ</p>
-                    <div class="vocab-example">"⟨3,4⟩·⟨2,1⟩ = 6 + 4 = 10"</div>
-                </div>
-                <div class="vocab-card">
-                    <h4>Convergent Series</h4>
-                    <p><strong>Definition:</strong> Infinite series with a finite sum</p>
-                    <div class="vocab-example">"1 + 1/2 + 1/4 + 1/8 + ... = 2 (converges)"</div>
-                </div>
-                <div class="vocab-card">
-                    <h4>Limit</h4>
-                    <p><strong>Definition:</strong> Value a function approaches as input approaches some value</p>
-                    <div class="vocab-example">"lim(x→2) (x² - 4)/(x - 2) = 4"</div>
-                </div>
-                <div class="vocab-card">
-                    <h4>Ambiguous Case</h4>
-                    <p><strong>Definition:</strong> SSA situation where 0, 1, or 2 triangles are possible</p>
-                    <div class="vocab-example">"Given two sides and non-included angle, check all possibilities."</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Remaining tabs abbreviated for space -->
-        <div id="printables" class="tab-content">
-            <h2 style="color: #1e3c72; margin-bottom: 20px;">🖨️ Printable Resources</h2>
-            <div class="printable-card"><h4>Trig identity reference sheets, unit circle blanks, polar graph paper, vector worksheets, sequence/series formulas</h4></div>
-        </div>
-        
-        <div id="games" class="tab-content">
-            <h2 style="color: #1e3c72; margin-bottom: 20px;">🎮 Math Activities</h2>
-            <div class="game-card"><h4>Identity Matching, Polar Art Project, Vector Treasure Hunt</h4></div>
-            <div class="online-resources">
-                <h3>💻 Online Resources</h3>
-                <a href="https://www.desmos.com/" class="resource-link" target="_blank"><strong>Desmos</strong></a>
-                <a href="https://www.khanacademy.org/math/precalculus" class="resource-link" target="_blank"><strong>Khan Academy Pre-Calc</strong></a>
-            </div>
-        </div>
-        
-        <div id="differentiation" class="tab-content">
-            <h2 style="color: #1e3c72; margin-bottom: 20px;">🌟 Differentiation</h2>
-            <div class="differentiation-box"><h4>Advanced:</h4> Parametric calculus preview, complex analysis, matrix transformations</div>
-            <div class="differentiation-box" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);"><h4>Support:</h4> Extended graphing calculator use, reference sheets, visual approaches</div>
-        </div>
-        
-        <div id="misconceptions" class="tab-content">
-            <h2 style="color: #1e3c72; margin-bottom: 20px;">❓ Misconceptions</h2>
-            <div class="misconception-box">
-                <h4>❌ sin(A + B) = sinA + sinB</h4>
-                <div class="misconception-content"><p>Use sum formula: sin(A + B) = sinA cosB + cosA sinB</p></div>
-            </div>
-            <div class="misconception-box">
-                <h4>❌ Limit equals function value</h4>
-                <div class="misconception-content"><p>Limit is what function APPROACHES, not necessarily the function value at that point.</p></div>
-            </div>
-        </div>
-        
-        <div id="cultural" class="tab-content">
-            <h2 style="color: #1e3c72; margin-bottom: 20px;">🌍 Cultural Connections</h2>
-            <div class="cultural-box"><h4>Ancient trigonometry:</h4> Indian mathematicians developed sine; Arab scholars created tangent tables; Greeks used geometry.</div>
-            <div class="cultural-box" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);"><h4>Mathematicians:</h4> Hipparchus (trig tables), Fibonacci (sequences), Newton & Leibniz (calculus)</div>
-        </div>
-        <!-- AI for Teachers Tab -->
-        <div id="ai-teachers" class="tab-content">
-
-            <div class="content-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);">
-                <h3>🤖 AI for Teachers</h3>
-                <p>AI tools and resources for enhancing math instruction</p>
-                
-                <div class="inner-content">
-                    <h4>🎯 Lesson Planning & Content Creation</h4>
-                    <div class="highlight-section">
-                        <h5>General AI Assistants</h5>
-                        <ul>
-                            <li><strong>ChatGPT / Claude:</strong> Generate lesson ideas, problem sets, discussion questions, and differentiated activities</li>
-                            <li><strong>MagicSchool AI:</strong> Education-specific tools for rubrics, IEP goals, and lesson planning</li>
-                            <li><strong>Diffit:</strong> Adapt math texts to different reading levels</li>
-                            <li><strong>Curipod:</strong> Create interactive math presentations with real-time student feedback</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="highlight-section">
-                        <h5>Math-Specific AI Tools</h5>
-                        <ul>
-                            <li><strong>Wolfram Alpha:</strong> Computational verification and step-by-step solutions</li>
-                            <li><strong>Photomath / Mathway:</strong> Solution verification and multiple solving methods</li>
-                            <li><strong>GeoGebra:</strong> Dynamic geometry and algebra visualizations</li>
-                            <li><strong>Desmos:</strong> Interactive graphing and exploration activities</li>
-                            <li><strong>Khan Academy / IXL / DeltaMath:</strong> AI-powered adaptive practice platforms</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="inner-content" style="margin-top: 20px;">
-                    <h4>💬 Example Prompts for Pre-Calculus Teachers</h4>
-                    <div class="highlight-section">
-                        <h5>Rigorous Problem Design</h5>
-                        <ul>
-                            <li>"Create a problem set on Advanced Functions, Vectors, Limits that progresses from procedural fluency to conceptual understanding to application."</li>
-                            <li>"Generate problems that connect Advanced Functions, Vectors, Limits to prerequisite concepts and foreshadow future coursework."</li>
-                            <li>"Design problems requiring Advanced Functions, Vectors, Limits that incorporate multiple representations (algebraic, graphical, numerical, verbal)."</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="highlight-section">
-                        <h5>Conceptual Development</h5>
-                        <ul>
-                            <li>"Create a discovery-based lesson where students develop the concept of Advanced Functions, Vectors, Limits through guided investigation."</li>
-                            <li>"Write probing questions that reveal whether students truly understand Advanced Functions, Vectors, Limits or are just following procedures."</li>
-                            <li>"Design an activity that helps students see why Advanced Functions, Vectors, Limits works, not just how to do it."</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="highlight-section">
-                        <h5>Technology Integration</h5>
-                        <ul>
-                            <li>"Create a Desmos activity that lets students explore Advanced Functions, Vectors, Limits dynamically."</li>
-                            <li>"Design a spreadsheet investigation that helps students discover patterns in Advanced Functions, Vectors, Limits."</li>
-                            <li>"Write a project where students use graphing technology to analyze real data using Advanced Functions, Vectors, Limits."</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="inner-content" style="margin-top: 20px;">
-                    <h4>⚠️ Important Considerations</h4>
-                    <div class="highlight-section" style="border-left-color: #e17055;">
-                        <h5>Mathematical Accuracy</h5>
-                        <ul>
-                            <li><strong>Always verify AI outputs:</strong> AI can make mathematical errors, especially with multi-step problems</li>
-                            <li><strong>Check solutions step-by-step:</strong> Verify each step before using problems with students</li>
-                            <li><strong>Watch for notation errors:</strong> AI may use inconsistent or incorrect mathematical notation</li>
-                            <li><strong>Test with edge cases:</strong> Check if AI-generated problems work with boundary conditions</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="highlight-section" style="border-left-color: #fdcb6e;">
-                        <h5>Pedagogical Considerations</h5>
-                        <ul>
-                            <li><strong>Use AI as a starting point:</strong> Refine and adapt outputs for your specific students</li>
-                            <li><strong>Maintain your expertise:</strong> You understand your students better than any AI</li>
-                            <li><strong>Model critical evaluation:</strong> Show students how you evaluate AI-generated content</li>
-                            <li><strong>Preserve productive struggle:</strong> Don't let AI remove the valuable learning from challenge</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        
-        <!-- AI for Students Tab -->
-        <div id="ai-students" class="tab-content">
-
-            <div class="content-card" style="background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);">
-                <h3>🧒 AI for Students</h3>
-                <p>Responsible AI integration for Pre-Calculus mathematical learning</p>
-                
-                <div class="inner-content">
-                    <h4>📋 Usage Guidelines</h4>
-                    <div class="highlight-section" style="border-left-color: #0984e3;">
-                        <h5>Expectations for High School Students</h5>
-                        <ul>
-                            <li><strong>AI use must align with academic integrity policies</strong></li>
-                            <li><strong>Your teacher will specify when AI use is permitted</strong> - ask if unclear</li>
-                            <li><strong>AI is a tool for learning, not a shortcut around learning</strong></li>
-                            <li><strong>You are responsible for verifying any AI output you use</strong></li>
-                            <li><strong>College and careers expect strong foundational skills</strong> - develop them now</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="inner-content" style="margin-top: 20px;">
-                    <h4>✅ Productive Uses of AI (When Permitted)</h4>
-                    <div class="highlight-section">
-                        <h5>After Attempting Problems Independently</h5>
-                        <ul>
-                            <li><strong>Compare solution methods:</strong> See if there's a more elegant approach than yours</li>
-                            <li><strong>Debug your work:</strong> "I got this answer but the book says this - where did I go wrong?"</li>
-                            <li><strong>Deepen understanding:</strong> "Explain WHY this formula works, not just how to use it"</li>
-                            <li><strong>Connect concepts:</strong> "How does Advanced Functions, Vectors, Limits relate to what I learned in previous units?"</li>
-                            <li><strong>Explore extensions:</strong> "What if this were a 3D problem instead of 2D?"</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="highlight-section">
-                        <h5>Study and Practice</h5>
-                        <ul>
-                            <li>Generate additional practice problems at your level</li>
-                            <li>Create study guides for upcoming assessments</li>
-                            <li>Get multiple explanations of difficult concepts</li>
-                            <li>Review prerequisite skills you're shaky on</li>
-                            <li>Prepare for class discussions by exploring topics ahead</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="inner-content" style="margin-top: 20px;">
-                    <h4>🔍 Mathematical Verification Skills</h4>
-                    <div class="highlight-section">
-                        <h5>Always Verify AI Solutions</h5>
-                        <ul>
-                            <li><strong>Check boundary conditions:</strong> Does the solution work at extremes?</li>
-                            <li><strong>Verify graphically:</strong> Graph equations and solutions to check visually</li>
-                            <li><strong>Substitute back:</strong> Put answers back into original equations</li>
-                            <li><strong>Dimensional analysis:</strong> Do units work out correctly?</li>
-                            <li><strong>Reasonableness check:</strong> Does the answer make sense in context?</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="highlight-section" style="border-left-color: #e74c3c;">
-                        <h5>Common AI Errors in Pre-Calculus</h5>
-                        <ul>
-                            <li>Incorrect handling of negative exponents and radicals</li>
-                            <li>Errors in multi-step algebraic manipulation</li>
-                            <li>Wrong interpretation of function notation</li>
-                            <li>Mistakes with domain and range restrictions</li>
-                            <li>Oversimplification of word problem contexts</li>
-                            <li>Incorrect graphical interpretations</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="inner-content" style="margin-top: 20px;">
-                    <h4>🚫 The Irreplaceable Value of Your Work</h4>
-                    <div class="highlight-section" style="border-left-color: #e74c3c;">
-                        <h5>Why Process Matters More Than Answers</h5>
-                        <ul>
-                            <li><strong>Tests assess YOUR knowledge:</strong> AI won't be there on the SAT, ACT, or final exam</li>
-                            <li><strong>College professors expect fluency:</strong> You can't use AI during lectures or office hours</li>
-                            <li><strong>Careers require understanding:</strong> Engineers, analysts, and scientists must actually understand math</li>
-                            <li><strong>Problem-solving transfers:</strong> The skills you build solving math problems apply everywhere</li>
-                            <li><strong>Showing YOUR work builds YOUR brain:</strong> There's no shortcut to mathematical maturity</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="inner-content" style="margin-top: 20px;">
-                    <h4>🛠️ Recommended Mathematical Tools</h4>
-                    <div class="highlight-section">
-                        <h5>For Learning & Verification</h5>
-                        <ul>
-                            <li><strong>Desmos:</strong> Powerful graphing calculator with activity builder</li>
-                            <li><strong>GeoGebra:</strong> Dynamic geometry and CAS capabilities</li>
-                            <li><strong>Wolfram Alpha:</strong> Computational verification and step-by-step solutions</li>
-                            <li><strong>Symbolab:</strong> Step-by-step equation solving</li>
-                            <li><strong>Khan Academy:</strong> Comprehensive video library and practice</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        
-    </div>
-    
-    <script>
+<div class="container">
+<h1>📐 Pre-Calculus Resources</h1>
+<p class="subtitle">Functions • Trigonometry • Polar • Vectors • Sequences &amp; Series • Limits Introduction</p>
+<div class="tabs">
+<button class="tab-btn active" onclick="showTab('standards')">📋 Standards</button>
+<button class="tab-btn" onclick="showTab('background')">👩‍🏫 Teacher Background</button>
+<button class="tab-btn" onclick="showTab('manipulatives')">🧮 Tools</button>
+<button class="tab-btn" onclick="showTab('lessons')">📚 Lessons</button>
+<button class="tab-btn" onclick="showTab('labs')">🔬 Investigations</button>
+<button class="tab-btn" onclick="showTab('videos')">🎬 Videos</button>
+<button class="tab-btn" onclick="showTab('articles')">📖 Articles</button>
+<button class="tab-btn" onclick="showTab('assessments')">📝 Assessments</button>
+<button class="tab-btn" onclick="showTab('printables')">🖨️ Printables</button>
+<button class="tab-btn" onclick="showTab('vocabulary')">📖 Vocabulary</button>
+<button class="tab-btn" onclick="showTab('games')">🎮 Games</button>
+<button class="tab-btn" onclick="showTab('differentiation')">🌟 Differentiation</button>
+<button class="tab-btn" onclick="showTab('misconceptions')">❓ Misconceptions</button>
+<button class="tab-btn" onclick="showTab('cultural')">🌍 Cultural Connections</button>
+<button class="tab-btn" onclick="showTab('ai-teachers')">🤖 AI for Teachers</button>
+<button class="tab-btn" onclick="showTab('ai-students')">🧒 AI for Students</button>
+</div>
+<!-- Standards Tab -->
+<div class="tab-content active" id="standards">
+<div class="standard-box">
+<h3>📐 Pre-Calculus Content Standards</h3>
+<div class="standard-item">
+<span class="standard-code">Functions</span>
+<p><strong>Analysis:</strong> Analyze functions using different representations (algebraic, graphical, numerical, verbal).</p>
+<p><strong>Building:</strong> Build new functions from existing functions (transformations, compositions, inverses).</p>
+<p><strong>Types:</strong> Polynomial, rational, exponential, logarithmic, trigonometric, piecewise.</p>
+</div>
+<div class="standard-item">
+<span class="standard-code">Trigonometry</span>
+<p><strong>Unit Circle:</strong> Extend the domain of trig functions using the unit circle.</p>
+<p><strong>Modeling:</strong> Model periodic phenomena with trigonometric functions.</p>
+<p><strong>Identities:</strong> Prove and apply trigonometric identities (Pythagorean, sum/difference, double/half angle).</p>
+<p><strong>Inverse Trig:</strong> Understand inverse trig functions and their domains/ranges.</p>
+<p><strong>Laws:</strong> Apply Law of Sines and Law of Cosines to non-right triangles.</p>
+</div>
+<div class="standard-item">
+<span class="standard-code">Polar &amp; Parametric</span>
+<p><strong>Polar:</strong> Convert between rectangular and polar coordinates; graph polar equations.</p>
+<p><strong>Complex:</strong> Represent complex numbers in polar form; DeMoivre's Theorem.</p>
+<p><strong>Parametric:</strong> Graph parametric equations; eliminate the parameter.</p>
+</div>
+<div class="standard-item">
+<span class="standard-code">Vectors</span>
+<p><strong>Operations:</strong> Add, subtract, and scale vectors; find magnitude and direction.</p>
+<p><strong>Dot Product:</strong> Calculate and interpret dot product; find angle between vectors.</p>
+<p><strong>Applications:</strong> Work, force, and motion problems.</p>
+</div>
+<div class="standard-item">
+<span class="standard-code">Sequences &amp; Series</span>
+<p><strong>Arithmetic:</strong> Find nth term and sum of arithmetic sequences.</p>
+<p><strong>Geometric:</strong> Find nth term and sum (finite and infinite) of geometric sequences.</p>
+<p><strong>Notation:</strong> Use sigma notation; expand and evaluate sums.</p>
+</div>
+<div class="standard-item">
+<span class="standard-code">Introduction to Calculus Concepts</span>
+<p><strong>Limits:</strong> Understand the concept of limit; evaluate limits graphically and algebraically.</p>
+<p><strong>Continuity:</strong> Understand continuity and identify discontinuities.</p>
+<p><strong>Rates:</strong> Average vs. instantaneous rate of change (intuitive).</p>
+</div>
+</div>
+</div>
+<!-- Teacher Background Tab -->
+<div class="tab-content" id="background">
+<div class="content-card">
+<h3>👩‍🏫 Advanced Trigonometry</h3>
+<div class="inner-content">
+<h4>Beyond Right Triangles</h4>
+<div class="highlight-section">
+<h5>Trigonometric Identities</h5>
+<ul>
+<li><strong>Pythagorean:</strong> sin²θ + cos²θ = 1, 1 + tan²θ = sec²θ, 1 + cot²θ = csc²θ</li>
+<li><strong>Sum/Difference:</strong> sin(A±B) = sinA cosB ± cosA sinB</li>
+<li><strong>Double Angle:</strong> sin(2θ) = 2sinθcosθ, cos(2θ) = cos²θ - sin²θ</li>
+<li><strong>Half Angle:</strong> sin(θ/2) = ±√[(1-cosθ)/2]</li>
+</ul>
+</div>
+<div class="highlight-section">
+<h5>Laws for Non-Right Triangles</h5>
+<p><strong>Law of Sines:</strong> a/sinA = b/sinB = c/sinC</p>
+<p><strong>Law of Cosines:</strong> c² = a² + b² - 2ab·cosC</p>
+<p>Use Law of Sines when you know AAS, ASA, or SSA (ambiguous case)</p>
+<p>Use Law of Cosines when you know SAS or SSS</p>
+</div>
+</div>
+</div>
+<div class="content-card" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);">
+<h3>🔄 Polar Coordinates &amp; Complex Numbers</h3>
+<div class="inner-content">
+<h4>Alternative Coordinate Systems</h4>
+<div class="highlight-section">
+<h5>Polar Coordinates (r, θ)</h5>
+<p>r = distance from origin; θ = angle from positive x-axis</p>
+<p><strong>Conversions:</strong></p>
+<ul>
+<li>x = r·cosθ, y = r·sinθ (polar to rectangular)</li>
+<li>r = √(x² + y²), θ = arctan(y/x) (rectangular to polar)</li>
+</ul>
+</div>
+<div class="highlight-section">
+<h5>Complex Numbers in Polar Form</h5>
+<p>z = r(cosθ + i·sinθ) = r·cis(θ) = re^(iθ)</p>
+<p><strong>DeMoivre's Theorem:</strong> [r·cis(θ)]^n = r^n·cis(nθ)</p>
+<p>Used to find powers and roots of complex numbers</p>
+</div>
+</div>
+</div>
+<div class="content-card" style="background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);">
+<h3>➡️ Vectors</h3>
+<div class="inner-content">
+<h4>Quantities with Direction</h4>
+<div class="highlight-section">
+<h5>Vector Representations</h5>
+<ul>
+<li><strong>Component form:</strong> ⟨a, b⟩</li>
+<li><strong>Unit vector form:</strong> ai + bj</li>
+<li><strong>Magnitude:</strong> |v| = √(a² + b²)</li>
+<li><strong>Direction:</strong> θ = arctan(b/a)</li>
+</ul>
+</div>
+<div class="highlight-section">
+<h5>Dot Product</h5>
+<p>u · v = |u||v|cosθ = u₁v₁ + u₂v₂</p>
+<p>If u · v = 0, vectors are perpendicular</p>
+<p><strong>Applications:</strong> Work = F · d (force times displacement)</p>
+</div>
+</div>
+</div>
+<div class="content-card" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);">
+<h3>📈 Sequences, Series &amp; Limits</h3>
+<div class="inner-content">
+<h4>Patterns and Their Sums</h4>
+<div class="highlight-section">
+<h5>Sequences</h5>
+<ul>
+<li><strong>Arithmetic:</strong> aₙ = a₁ + (n-1)d; common difference d</li>
+<li><strong>Geometric:</strong> aₙ = a₁ · r^(n-1); common ratio r</li>
+</ul>
+</div>
+<div class="highlight-section">
+<h5>Series (Sums)</h5>
+<ul>
+<li><strong>Arithmetic:</strong> Sₙ = n(a₁ + aₙ)/2</li>
+<li><strong>Geometric (finite):</strong> Sₙ = a₁(1 - rⁿ)/(1 - r)</li>
+<li><strong>Geometric (infinite, |r| &lt; 1):</strong> S = a₁/(1 - r)</li>
+</ul>
+</div>
+<div class="highlight-section">
+<h5>Introduction to Limits</h5>
+<p>lim(x→a) f(x) = L means f(x) approaches L as x approaches a</p>
+<p>Foundation for calculus: derivatives and integrals are defined using limits</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Tools Tab -->
+<div class="tab-content" id="manipulatives">
+<div class="manipulative-card">
+<h3>📈 Graphing Technology</h3>
+<div class="manipulative-item">
+<h4>Desmos</h4>
+<p><strong>Uses:</strong> Graph all function types, polar graphs, parametric equations, explore limits</p>
+</div>
+<div class="manipulative-item">
+<h4>GeoGebra</h4>
+<p><strong>Uses:</strong> Dynamic geometry, vectors, 3D graphing, CAS capabilities</p>
+</div>
+<div class="manipulative-item">
+<h4>TI-84/TI-Nspire</h4>
+<p><strong>Uses:</strong> All graphing modes, sequences, matrices, statistical analysis</p>
+</div>
+</div>
+<div class="manipulative-card" style="background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);">
+<h3>📐 Reference Materials</h3>
+<div class="manipulative-item">
+<h4>Unit Circle Reference</h4>
+<p><strong>Uses:</strong> Quick reference for trig values at key angles</p>
+</div>
+<div class="manipulative-item">
+<h4>Identity Reference Sheet</h4>
+<p><strong>Uses:</strong> All trig identities organized by type</p>
+</div>
+</div>
+</div>
+<!-- Lessons Tab -->
+<div class="tab-content" id="lessons">
+<div class="lesson-card">
+<h3>📚 Lesson 1: Verifying Trigonometric Identities</h3>
+<span class="time-badge">⏱️ 55 minutes</span>
+<div class="lesson-section">
+<h4>Learning Objectives</h4>
+<ul>
+<li>Students will use fundamental identities to verify equations</li>
+<li>Students will develop strategies for identity proofs</li>
+<li>Students will recognize equivalent expressions</li>
+</ul>
+</div>
+<div class="lesson-section">
+<h4>Lesson Procedure</h4>
+<p><strong>Introduction (12 min):</strong> Review fundamental identities. Key strategy: Work on ONE side only, transform to match the other side.</p>
+<p><strong>Guided Practice (18 min):</strong> Verify: tanθ + cotθ = secθcscθ. Work left side: sinθ/cosθ + cosθ/sinθ = (sin²θ + cos²θ)/(sinθcosθ) = 1/(sinθcosθ) = secθcscθ ✓</p>
+<p><strong>Independent Practice (20 min):</strong> Verify identities with varying complexity.</p>
+<p><strong>Closure (5 min):</strong> "What strategies are most helpful when verifying identities?"</p>
+</div>
+</div>
+<div class="lesson-card" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);">
+<h3>📚 Lesson 2: Law of Sines and Law of Cosines</h3>
+<span class="time-badge">⏱️ 55 minutes</span>
+<div class="lesson-section">
+<h4>Learning Objectives</h4>
+<ul>
+<li>Students will apply Law of Sines to solve triangles</li>
+<li>Students will apply Law of Cosines to solve triangles</li>
+<li>Students will determine which law to use based on given information</li>
+</ul>
+</div>
+<div class="lesson-section">
+<h4>Lesson Procedure</h4>
+<p><strong>Introduction (12 min):</strong> "We know SOH-CAH-TOA for right triangles. What about other triangles?" Introduce both laws.</p>
+<p><strong>Guided Practice (18 min):</strong> Decision tree: AAS/ASA → Law of Sines. SAS/SSS → Law of Cosines. SSA → Law of Sines but check for ambiguous case.</p>
+<p><strong>Independent Practice (20 min):</strong> Solve various triangles; real-world applications.</p>
+<p><strong>Closure (5 min):</strong> "When would you choose Law of Cosines over Law of Sines?"</p>
+</div>
+</div>
+<div class="lesson-card" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
+<h3>📚 Lesson 3: Introduction to Polar Coordinates</h3>
+<span class="time-badge">⏱️ 55 minutes</span>
+<div class="lesson-section">
+<h4>Learning Objectives</h4>
+<ul>
+<li>Students will plot points in polar coordinates</li>
+<li>Students will convert between polar and rectangular</li>
+<li>Students will graph basic polar equations</li>
+</ul>
+</div>
+<div class="lesson-section">
+<h4>Lesson Procedure</h4>
+<p><strong>Introduction (12 min):</strong> In rectangular (x, y), we measure right/up. In polar (r, θ), we measure distance and angle. Both describe the same points!</p>
+<p><strong>Guided Practice (18 min):</strong> Plot (3, π/4), (-2, π/2). Convert (3, 4) to polar. Convert (5, π/6) to rectangular.</p>
+<p><strong>Independent Practice (20 min):</strong> Convert points; graph simple polar equations like r = 3, θ = π/4, r = 2cosθ.</p>
+<p><strong>Closure (5 min):</strong> "What does r = 3 look like in polar coordinates?"</p>
+</div>
+</div>
+<div class="lesson-card" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);">
+<h3>📚 Lesson 4: Vector Operations and Dot Product</h3>
+<span class="time-badge">⏱️ 55 minutes</span>
+<div class="lesson-section">
+<h4>Learning Objectives</h4>
+<ul>
+<li>Students will perform vector addition and scalar multiplication</li>
+<li>Students will calculate dot product</li>
+<li>Students will find angle between vectors</li>
+</ul>
+</div>
+<div class="lesson-section">
+<h4>Lesson Procedure</h4>
+<p><strong>Introduction (12 min):</strong> Vectors have magnitude AND direction. Review component form and operations: u + v = ⟨u₁+v₁, u₂+v₂⟩, ku = ⟨ku₁, ku₂⟩.</p>
+<p><strong>Guided Practice (18 min):</strong> Introduce dot product: u · v = u₁v₁ + u₂v₂. Alternative: u · v = |u||v|cosθ. Solve for angle between vectors.</p>
+<p><strong>Independent Practice (20 min):</strong> Vector operations; dot products; angles; orthogonality.</p>
+<p><strong>Closure (5 min):</strong> "How can you tell if two vectors are perpendicular?"</p>
+</div>
+</div>
+<div class="lesson-card">
+<h3>📚 Lesson 5: Introduction to Limits</h3>
+<span class="time-badge">⏱️ 50 minutes</span>
+<div class="lesson-section">
+<h4>Learning Objectives</h4>
+<ul>
+<li>Students will understand the concept of a limit</li>
+<li>Students will evaluate limits graphically and numerically</li>
+<li>Students will evaluate simple limits algebraically</li>
+</ul>
+</div>
+<div class="lesson-section">
+<h4>Lesson Procedure</h4>
+<p><strong>Introduction (10 min):</strong> "What value does f(x) approach as x approaches 2?" Even if f(2) doesn't exist, the limit might! Use graph and table to illustrate.</p>
+<p><strong>Guided Practice (18 min):</strong> Evaluate limits from graphs. Use tables to estimate. Algebraically: direct substitution, factoring to remove discontinuity.</p>
+<p><strong>Independent Practice (18 min):</strong> Find limits various ways; identify when limit doesn't exist.</p>
+<p><strong>Closure (4 min):</strong> "What's the difference between f(2) and lim(x→2) f(x)?"</p>
+</div>
+</div>
+</div>
+<!-- Investigations Tab -->
+<div class="tab-content" id="labs">
+<div class="lab-card">
+<h3>🔬 Investigation 1: Exploring Polar Graphs</h3>
+<div class="lab-info"><strong>Focus:</strong> Polar curve families | <strong>Duration:</strong> 55 minutes</div>
+<div class="inner-content">
+<h4>Procedure</h4>
+<ol>
+<li>Use Desmos to graph r = a·cos(nθ) for various a and n values</li>
+<li>Graph r = a·sin(nθ) and compare</li>
+<li>Explore rose curves: How does n affect number of petals?</li>
+<li>Graph limaçons: r = a + b·cosθ. What happens when a = b? When a &lt; b?</li>
+<li>Create a "gallery" of polar curves with descriptions</li>
+</ol>
+</div>
+</div>
+<div class="lab-card" style="background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);">
+<h3>🔬 Investigation 2: Sequences in Nature</h3>
+<div class="lab-info"><strong>Focus:</strong> Fibonacci and geometric patterns | <strong>Duration:</strong> 50 minutes</div>
+<div class="inner-content">
+<h4>Procedure</h4>
+<ol>
+<li>Generate Fibonacci sequence: 1, 1, 2, 3, 5, 8, 13, 21...</li>
+<li>Calculate ratios of consecutive terms: 1/1, 2/1, 3/2, 5/3...</li>
+<li>What do these ratios approach? (Golden ratio φ ≈ 1.618)</li>
+<li>Research where Fibonacci appears in nature (shells, flowers, trees)</li>
+<li>Explore golden spiral construction</li>
+</ol>
+</div>
+</div>
+</div>
+<!-- Videos Tab -->
+<div class="tab-content" id="videos">
+<h2 style="color: #1e3c72; margin-bottom: 20px;">🎬 Recommended Videos</h2>
+<div class="video-card">
+<h4>📹 Trigonometry</h4>
+<ul>
+<li><strong>Khan Academy - Trig Identities:</strong> Verifying and proving - <a href="https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:trig" target="_blank">Khan Academy</a></li>
+<li><strong>Professor Leonard - Trig:</strong> Comprehensive lectures - <a href="https://www.youtube.com/user/professorleonard57" target="_blank">YouTube</a></li>
+</ul>
+</div>
+<div class="video-card" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);">
+<h4>📹 Polar &amp; Vectors</h4>
+<ul>
+<li><strong>3Blue1Brown - Vectors:</strong> Essence of linear algebra - <a href="https://www.youtube.com/watch?v=fNk_zzaMoSs" target="_blank">YouTube</a></li>
+<li><strong>Khan Academy - Polar:</strong> Coordinates and graphing - <a href="https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:polar" target="_blank">Khan Academy</a></li>
+</ul>
+</div>
+<div class="video-card" style="background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);">
+<h4>📹 Sequences, Series &amp; Limits</h4>
+<ul>
+<li><strong>3Blue1Brown - Limits:</strong> Essence of calculus preview - <a href="https://www.youtube.com/watch?v=WUvTyaaNkzM" target="_blank">YouTube</a></li>
+<li><strong>Khan Academy - Series:</strong> Arithmetic and geometric - <a href="https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:series" target="_blank">Khan Academy</a></li>
+</ul>
+</div>
+</div>
+<!-- Articles Tab -->
+<div class="tab-content" id="articles">
+<h2 style="color: #1e3c72; margin-bottom: 20px;">📖 Student Reading Passages</h2>
+<div class="article-card">
+<h4>📚 The Golden Ratio: Mathematics of Beauty</h4>
+<div style="background: white; color: #333; padding: 15px; border-radius: 10px; margin-top: 10px;">
+<p>The ratio (1 + √5)/2 ≈ 1.618... appears everywhere: in the spiral of a nautilus shell, the arrangement of seeds in a sunflower, and the proportions of the Parthenon.</p>
+<p>This "golden ratio" φ is intimately connected to the Fibonacci sequence - the ratio of consecutive Fibonacci numbers approaches φ as the sequence continues. It's also the only number where φ = 1 + 1/φ!</p>
+</div>
+</div>
+<div class="article-card" style="background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);">
+<h4>📚 From Finite to Infinite: The Birth of Calculus</h4>
+<div style="background: white; color: #333; padding: 15px; border-radius: 10px; margin-top: 10px;">
+<p>For centuries, mathematicians struggled with infinity. How can you add infinitely many numbers and get a finite answer? The concept of limits, developed by Newton and Leibniz in the 1600s, finally made sense of this.</p>
+<p>A limit captures what happens as we approach a value, even if we never quite reach it. This idea is the foundation of calculus, which revolutionized science and engineering.</p>
+</div>
+</div>
+</div>
+<!-- Assessments Tab -->
+<div class="tab-content" id="assessments">
+<h2 style="color: #1e3c72; margin-bottom: 20px;">📝 Assessment Tools</h2>
+<div class="assessment-card">
+<h4>🎯 Trigonometry</h4>
+<div class="assessment-item">
+<p><strong>Identities:</strong> Verify and prove identities</p>
+<p><strong>Equations:</strong> Solve trig equations on specified intervals</p>
+<p><strong>Laws:</strong> Apply Law of Sines/Cosines; identify ambiguous cases</p>
+</div>
+</div>
+<div class="assessment-card" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);">
+<h4>🎯 Polar &amp; Vectors</h4>
+<div class="assessment-item">
+<p><strong>Conversions:</strong> Between coordinate systems</p>
+<p><strong>Graphing:</strong> Identify and graph polar curves</p>
+<p><strong>Vectors:</strong> Operations, dot product, applications</p>
+</div>
+</div>
+<div class="assessment-card" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); color: white;">
+<h4>🎯 Sequences, Series &amp; Limits</h4>
+<div class="assessment-item">
+<p><strong>Formulas:</strong> Find nth terms and sums</p>
+<p><strong>Convergence:</strong> Determine if infinite series converges</p>
+<p><strong>Limits:</strong> Evaluate using multiple methods</p>
+</div>
+</div>
+</div>
+<!-- Vocabulary Tab -->
+<div class="tab-content" id="vocabulary">
+<h2 style="color: #1e3c72; margin-bottom: 20px;">📖 Math Vocabulary</h2>
+<div class="vocab-grid">
+<div class="vocab-card">
+<h4>Identity</h4>
+<p><strong>Definition:</strong> An equation true for all values in the domain</p>
+<div class="vocab-example">"sin²θ + cos²θ = 1 is true for all θ."</div>
+</div>
+<div class="vocab-card">
+<h4>Polar Coordinates</h4>
+<p><strong>Definition:</strong> System using distance r and angle θ from origin</p>
+<div class="vocab-example">"(3, π/4) means 3 units at 45° from positive x-axis."</div>
+</div>
+<div class="vocab-card">
+<h4>Dot Product</h4>
+<p><strong>Definition:</strong> Operation on vectors: u·v = u₁v₁ + u₂v₂ = |u||v|cosθ</p>
+<div class="vocab-example">"⟨3,4⟩·⟨2,1⟩ = 6 + 4 = 10"</div>
+</div>
+<div class="vocab-card">
+<h4>Convergent Series</h4>
+<p><strong>Definition:</strong> Infinite series with a finite sum</p>
+<div class="vocab-example">"1 + 1/2 + 1/4 + 1/8 + ... = 2 (converges)"</div>
+</div>
+<div class="vocab-card">
+<h4>Limit</h4>
+<p><strong>Definition:</strong> Value a function approaches as input approaches some value</p>
+<div class="vocab-example">"lim(x→2) (x² - 4)/(x - 2) = 4"</div>
+</div>
+<div class="vocab-card">
+<h4>Ambiguous Case</h4>
+<p><strong>Definition:</strong> SSA situation where 0, 1, or 2 triangles are possible</p>
+<div class="vocab-example">"Given two sides and non-included angle, check all possibilities."</div>
+</div>
+</div>
+</div>
+<!-- Remaining tabs abbreviated for space -->
+<div class="tab-content" id="printables">
+<h2 style="color: #1e3c72; margin-bottom: 20px;">🖨️ Printable Resources</h2>
+<div class="printable-card"><h4>Trig identity reference sheets, unit circle blanks, polar graph paper, vector worksheets, sequence/series formulas</h4></div>
+</div>
+<div class="tab-content" id="games">
+<h2 style="color: #1e3c72; margin-bottom: 20px;">🎮 Math Activities</h2>
+<div class="game-card"><h4>Identity Matching, Polar Art Project, Vector Treasure Hunt</h4></div>
+<div class="online-resources">
+<h3>💻 Online Resources</h3>
+<a class="resource-link" href="https://www.desmos.com/" target="_blank"><strong>Desmos</strong></a>
+<a class="resource-link" href="https://www.khanacademy.org/math/precalculus" target="_blank"><strong>Khan Academy Pre-Calc</strong></a>
+</div>
+</div>
+<div class="tab-content" id="differentiation">
+<h2 style="color: #1e3c72; margin-bottom: 20px;">🌟 Differentiation</h2>
+<div class="differentiation-box"><h4>Advanced:</h4> Parametric calculus preview, complex analysis, matrix transformations</div>
+<div class="differentiation-box" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);"><h4>Support:</h4> Extended graphing calculator use, reference sheets, visual approaches</div>
+</div>
+<div class="tab-content" id="misconceptions">
+<h2 style="color: #1e3c72; margin-bottom: 20px;">❓ Misconceptions</h2>
+<div class="misconception-box">
+<h4>❌ sin(A + B) = sinA + sinB</h4>
+<div class="misconception-content"><p>Use sum formula: sin(A + B) = sinA cosB + cosA sinB</p></div>
+</div>
+<div class="misconception-box">
+<h4>❌ Limit equals function value</h4>
+<div class="misconception-content"><p>Limit is what function APPROACHES, not necessarily the function value at that point.</p></div>
+</div>
+</div>
+<div class="tab-content" id="cultural">
+<h2 style="color: #1e3c72; margin-bottom: 20px;">🌍 Cultural Connections</h2>
+<div class="cultural-box"><h4>Ancient trigonometry:</h4> Indian mathematicians developed sine; Arab scholars created tangent tables; Greeks used geometry.</div>
+<div class="cultural-box" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);"><h4>Mathematicians:</h4> Hipparchus (trig tables), Fibonacci (sequences), Newton &amp; Leibniz (calculus)</div>
+</div>
+<!-- AI for Teachers Tab -->
+<div class="tab-content" id="ai-teachers">
+<div class="content-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);">
+<h3>🤖 AI for Teachers</h3>
+<p>AI tools and resources for enhancing math instruction</p>
+<div class="inner-content">
+<h4>🎯 Lesson Planning &amp; Content Creation</h4>
+<div class="highlight-section">
+<h5>General AI Assistants</h5>
+<ul>
+<li><strong>ChatGPT / Claude:</strong> Generate lesson ideas, problem sets, discussion questions, and differentiated activities</li>
+<li><strong>MagicSchool AI:</strong> Education-specific tools for rubrics, IEP goals, and lesson planning</li>
+<li><strong>Diffit:</strong> Adapt math texts to different reading levels</li>
+<li><strong>Curipod:</strong> Create interactive math presentations with real-time student feedback</li>
+</ul>
+</div>
+<div class="highlight-section">
+<h5>Math-Specific AI Tools</h5>
+<ul>
+<li><strong>Wolfram Alpha:</strong> Computational verification and step-by-step solutions</li>
+<li><strong>Photomath / Mathway:</strong> Solution verification and multiple solving methods</li>
+<li><strong>GeoGebra:</strong> Dynamic geometry and algebra visualizations</li>
+<li><strong>Desmos:</strong> Interactive graphing and exploration activities</li>
+<li><strong>Khan Academy / IXL / DeltaMath:</strong> AI-powered adaptive practice platforms</li>
+</ul>
+</div>
+</div>
+<div class="inner-content" style="margin-top: 20px;">
+<h4>💬 Example Prompts for Pre-Calculus Teachers</h4>
+<div class="highlight-section">
+<h5>Rigorous Problem Design</h5>
+<ul>
+<li>"Create a problem set on Advanced Functions, Vectors, Limits that progresses from procedural fluency to conceptual understanding to application."</li>
+<li>"Generate problems that connect Advanced Functions, Vectors, Limits to prerequisite concepts and foreshadow future coursework."</li>
+<li>"Design problems requiring Advanced Functions, Vectors, Limits that incorporate multiple representations (algebraic, graphical, numerical, verbal)."</li>
+</ul>
+</div>
+<div class="highlight-section">
+<h5>Conceptual Development</h5>
+<ul>
+<li>"Create a discovery-based lesson where students develop the concept of Advanced Functions, Vectors, Limits through guided investigation."</li>
+<li>"Write probing questions that reveal whether students truly understand Advanced Functions, Vectors, Limits or are just following procedures."</li>
+<li>"Design an activity that helps students see why Advanced Functions, Vectors, Limits works, not just how to do it."</li>
+</ul>
+</div>
+<div class="highlight-section">
+<h5>Technology Integration</h5>
+<ul>
+<li>"Create a Desmos activity that lets students explore Advanced Functions, Vectors, Limits dynamically."</li>
+<li>"Design a spreadsheet investigation that helps students discover patterns in Advanced Functions, Vectors, Limits."</li>
+<li>"Write a project where students use graphing technology to analyze real data using Advanced Functions, Vectors, Limits."</li>
+</ul>
+</div>
+</div>
+<div class="inner-content" style="margin-top: 20px;">
+<h4>⚠️ Important Considerations</h4>
+<div class="highlight-section" style="border-left-color: #e17055;">
+<h5>Mathematical Accuracy</h5>
+<ul>
+<li><strong>Always verify AI outputs:</strong> AI can make mathematical errors, especially with multi-step problems</li>
+<li><strong>Check solutions step-by-step:</strong> Verify each step before using problems with students</li>
+<li><strong>Watch for notation errors:</strong> AI may use inconsistent or incorrect mathematical notation</li>
+<li><strong>Test with edge cases:</strong> Check if AI-generated problems work with boundary conditions</li>
+</ul>
+</div>
+<div class="highlight-section" style="border-left-color: #fdcb6e;">
+<h5>Pedagogical Considerations</h5>
+<ul>
+<li><strong>Use AI as a starting point:</strong> Refine and adapt outputs for your specific students</li>
+<li><strong>Maintain your expertise:</strong> You understand your students better than any AI</li>
+<li><strong>Model critical evaluation:</strong> Show students how you evaluate AI-generated content</li>
+<li><strong>Preserve productive struggle:</strong> Don't let AI remove the valuable learning from challenge</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- AI for Students Tab -->
+<div class="tab-content" id="ai-students">
+<div class="content-card" style="background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);">
+<h3>🧒 AI for Students</h3>
+<p>Responsible AI integration for Pre-Calculus mathematical learning</p>
+<div class="inner-content">
+<h4>📋 Usage Guidelines</h4>
+<div class="highlight-section" style="border-left-color: #0984e3;">
+<h5>Expectations for High School Students</h5>
+<ul>
+<li><strong>AI use must align with academic integrity policies</strong></li>
+<li><strong>Your teacher will specify when AI use is permitted</strong> - ask if unclear</li>
+<li><strong>AI is a tool for learning, not a shortcut around learning</strong></li>
+<li><strong>You are responsible for verifying any AI output you use</strong></li>
+<li><strong>College and careers expect strong foundational skills</strong> - develop them now</li>
+</ul>
+</div>
+</div>
+<div class="inner-content" style="margin-top: 20px;">
+<h4>✅ Productive Uses of AI (When Permitted)</h4>
+<div class="highlight-section">
+<h5>After Attempting Problems Independently</h5>
+<ul>
+<li><strong>Compare solution methods:</strong> See if there's a more elegant approach than yours</li>
+<li><strong>Debug your work:</strong> "I got this answer but the book says this - where did I go wrong?"</li>
+<li><strong>Deepen understanding:</strong> "Explain WHY this formula works, not just how to use it"</li>
+<li><strong>Connect concepts:</strong> "How does Advanced Functions, Vectors, Limits relate to what I learned in previous units?"</li>
+<li><strong>Explore extensions:</strong> "What if this were a 3D problem instead of 2D?"</li>
+</ul>
+</div>
+<div class="highlight-section">
+<h5>Study and Practice</h5>
+<ul>
+<li>Generate additional practice problems at your level</li>
+<li>Create study guides for upcoming assessments</li>
+<li>Get multiple explanations of difficult concepts</li>
+<li>Review prerequisite skills you're shaky on</li>
+<li>Prepare for class discussions by exploring topics ahead</li>
+</ul>
+</div>
+</div>
+<div class="inner-content" style="margin-top: 20px;">
+<h4>🔍 Mathematical Verification Skills</h4>
+<div class="highlight-section">
+<h5>Always Verify AI Solutions</h5>
+<ul>
+<li><strong>Check boundary conditions:</strong> Does the solution work at extremes?</li>
+<li><strong>Verify graphically:</strong> Graph equations and solutions to check visually</li>
+<li><strong>Substitute back:</strong> Put answers back into original equations</li>
+<li><strong>Dimensional analysis:</strong> Do units work out correctly?</li>
+<li><strong>Reasonableness check:</strong> Does the answer make sense in context?</li>
+</ul>
+</div>
+<div class="highlight-section" style="border-left-color: #e74c3c;">
+<h5>Common AI Errors in Pre-Calculus</h5>
+<ul>
+<li>Incorrect handling of negative exponents and radicals</li>
+<li>Errors in multi-step algebraic manipulation</li>
+<li>Wrong interpretation of function notation</li>
+<li>Mistakes with domain and range restrictions</li>
+<li>Oversimplification of word problem contexts</li>
+<li>Incorrect graphical interpretations</li>
+</ul>
+</div>
+</div>
+<div class="inner-content" style="margin-top: 20px;">
+<h4>🚫 The Irreplaceable Value of Your Work</h4>
+<div class="highlight-section" style="border-left-color: #e74c3c;">
+<h5>Why Process Matters More Than Answers</h5>
+<ul>
+<li><strong>Tests assess YOUR knowledge:</strong> AI won't be there on the SAT, ACT, or final exam</li>
+<li><strong>College professors expect fluency:</strong> You can't use AI during lectures or office hours</li>
+<li><strong>Careers require understanding:</strong> Engineers, analysts, and scientists must actually understand math</li>
+<li><strong>Problem-solving transfers:</strong> The skills you build solving math problems apply everywhere</li>
+<li><strong>Showing YOUR work builds YOUR brain:</strong> There's no shortcut to mathematical maturity</li>
+</ul>
+</div>
+</div>
+<div class="inner-content" style="margin-top: 20px;">
+<h4>🛠️ Recommended Mathematical Tools</h4>
+<div class="highlight-section">
+<h5>For Learning &amp; Verification</h5>
+<ul>
+<li><strong>Desmos:</strong> Powerful graphing calculator with activity builder</li>
+<li><strong>GeoGebra:</strong> Dynamic geometry and CAS capabilities</li>
+<li><strong>Wolfram Alpha:</strong> Computational verification and step-by-step solutions</li>
+<li><strong>Symbolab:</strong> Step-by-step equation solving</li>
+<li><strong>Khan Academy:</strong> Comprehensive video library and practice</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
         function showTab(tabName) {
             const tabContents = document.getElementsByClassName('tab-content');
             for (let i = 0; i < tabContents.length; i++) tabContents[i].classList.remove('active');
@@ -763,5 +715,5 @@
             window.scrollTo({top: 200, behavior: 'smooth'});
         }
     </script>
-</body>
+<footer><p class="cc-license"><a href="https://rcooper2005.github.io/K-12-Math-Teacher-Resources/precalculus-hub.html">Pre-Calculus Resources</a> © 2026 by <a href="https://orcid.org/0009-0007-1358-960X">Dr. Rebecca A. Cooper</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International</a> <img alt="" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="max-width: 1em; max-height: 1em; margin-left: .2em;"/><img alt="" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="max-width: 1em; max-height: 1em; margin-left: .2em;"/><img alt="" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="max-width: 1em; max-height: 1em; margin-left: .2em;"/></p></footer></body>
 </html>

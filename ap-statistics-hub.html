@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AP Statistics Resources - Complete Teacher Hub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AP Statistics Resources - Complete Teacher Hub</title><meta content="AP Statistics teaching hub: experimental design, probability, inference, and regression. College Board-aligned resources covering Units 1-9." name="description"/><meta content="Dr. Rebecca Cooper" name="author"/><meta content="AP Statistics Resources - Complete Teacher Hub | Georgia K-12 Teacher Resources" property="og:title"/><meta content="AP Statistics teaching hub: experimental design, probability, inference, and regression. College Board-aligned resources covering Units 1-9." property="og:description"/><meta content="website" property="og:type"/><meta content="https://rcooper2005.github.io/K-12-Math-Teacher-Resources/ap-statistics-hub.html" property="og:url"/><meta content="Georgia K-12 Teacher Resources" property="og:site_name"/><meta content="summary" name="twitter:card"/><meta content="AP Statistics Resources - Complete Teacher Hub | Georgia K-12 Teacher Resources" name="twitter:title"/><meta content="AP Statistics teaching hub: experimental design, probability, inference, and regression. College Board-aligned resources covering Units 1-9." name="twitter:description"/><link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📐%3C/text%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #9b59b6 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
         .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 30px; padding: 40px; box-shadow: 0 25px 80px rgba(0,0,0,0.4); }
@@ -56,472 +57,436 @@
         li { margin-bottom: 10px; }
         @media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 2em; } .tab-btn { padding: 10px 15px; font-size: 0.9em; } }
     </style>
-</head>
+<style>
+/* CC license footer — added site-wide for consistent attribution */
+footer .cc-license { font-size: 0.85em; color: #666; text-align: center;
+  padding: 1em; margin-top: 2em; border-top: 1px solid #ddd; line-height: 1.7; }
+footer .cc-license a { color: #1a4b8c; }
+footer .cc-license img { vertical-align: middle; }
+</style></head>
 <body>
-    <div class="container">
-        <div style="text-align: center;"><span class="ap-badge">College Board AP Course</span></div>
-        <h1>📊 AP Statistics Resources</h1>
-        <p class="subtitle">Exploring Data • Sampling & Experimentation • Probability • Statistical Inference</p>
-        
-        <div class="tabs">
-            <button class="tab-btn active" onclick="showTab('standards')">📋 CED Units</button>
-            <button class="tab-btn" onclick="showTab('background')">👩‍🏫 Key Concepts</button>
-            <button class="tab-btn" onclick="showTab('lessons')">📚 Lessons</button>
-            <button class="tab-btn" onclick="showTab('assessments')">📝 AP Exam Prep</button>
-            <button class="tab-btn" onclick="showTab('vocabulary')">📖 Vocabulary</button>
-            <button class="tab-btn" onclick="showTab('misconceptions')">❓ Misconceptions</button>
-            <button class="tab-btn" onclick="showTab('resources')">🔗 Resources</button>
-        
-            <button class="tab-btn" onclick="showTab('ai-teachers')">🤖 AI for Teachers</button>
-            <button class="tab-btn" onclick="showTab('ai-students')">🧒 AI for Students</button>
-        </div>
-        
-        <!-- CED Units Tab -->
-        <div id="standards" class="tab-content active">
-            <div class="standard-box">
-                <h3>📐 AP Statistics Course Framework</h3>
-                
-                <div class="standard-item">
-                    <span class="standard-code">Unit 1: Exploring One-Variable Data</span>
-                    <span class="unit-weight">15-23%</span>
-                    <ul>
-                        <li>Categorical data: frequency tables, bar charts, pie charts</li>
-                        <li>Quantitative data: dot plots, histograms, stemplots, boxplots</li>
-                        <li>Describing distributions: shape, center, spread, outliers</li>
-                        <li>Summary statistics: mean, median, SD, IQR, percentiles</li>
-                        <li>Comparing distributions</li>
-                    </ul>
-                </div>
-                
-                <div class="standard-item">
-                    <span class="standard-code">Unit 2: Exploring Two-Variable Data</span>
-                    <span class="unit-weight">5-7%</span>
-                    <ul>
-                        <li>Two-way tables; conditional distributions</li>
-                        <li>Scatterplots; describing bivariate relationships</li>
-                        <li>Correlation coefficient r</li>
-                        <li>Least-squares regression (LSRL)</li>
-                        <li>Residuals and residual plots</li>
-                        <li>Outliers, influential points, leverage</li>
-                    </ul>
-                </div>
-                
-                <div class="standard-item">
-                    <span class="standard-code">Unit 3: Collecting Data</span>
-                    <span class="unit-weight">12-15%</span>
-                    <ul>
-                        <li>Planning a study: observational vs. experimental</li>
-                        <li>Sampling methods: SRS, stratified, cluster, systematic</li>
-                        <li>Sources of bias: selection, response, nonresponse</li>
-                        <li>Experimental design: randomization, replication, control</li>
-                        <li>Blocking and matched pairs</li>
-                        <li>Scope of inference: causation vs. association</li>
-                    </ul>
-                </div>
-                
-                <div class="standard-item">
-                    <span class="standard-code">Unit 4: Probability, Random Variables, and Distributions</span>
-                    <span class="unit-weight">10-20%</span>
-                    <ul>
-                        <li>Probability rules; conditional probability</li>
-                        <li>Independence</li>
-                        <li>Discrete random variables: mean, standard deviation</li>
-                        <li>Binomial distributions</li>
-                        <li>Geometric distributions</li>
-                    </ul>
-                </div>
-                
-                <div class="standard-item">
-                    <span class="standard-code">Unit 5: Sampling Distributions</span>
-                    <span class="unit-weight">7-12%</span>
-                    <ul>
-                        <li>The concept of sampling distribution</li>
-                        <li>Sampling distribution of sample proportion p̂</li>
-                        <li>Sampling distribution of sample mean x̄</li>
-                        <li>Central Limit Theorem</li>
-                    </ul>
-                </div>
-                
-                <div class="standard-item">
-                    <span class="standard-code">Unit 6: Inference for Categorical Data: Proportions</span>
-                    <span class="unit-weight">12-15%</span>
-                    <ul>
-                        <li>Confidence intervals for one proportion</li>
-                        <li>Significance tests for one proportion</li>
-                        <li>Confidence intervals for difference of proportions</li>
-                        <li>Significance tests for difference of proportions</li>
-                    </ul>
-                </div>
-                
-                <div class="standard-item">
-                    <span class="standard-code">Unit 7: Inference for Quantitative Data: Means</span>
-                    <span class="unit-weight">10-18%</span>
-                    <ul>
-                        <li>t-procedures for one mean</li>
-                        <li>t-procedures for difference of means (independent)</li>
-                        <li>Paired t-procedures</li>
-                    </ul>
-                </div>
-                
-                <div class="standard-item">
-                    <span class="standard-code">Unit 8: Inference for Categorical Data: Chi-Square</span>
-                    <span class="unit-weight">2-5%</span>
-                    <ul>
-                        <li>Chi-square goodness of fit test</li>
-                        <li>Chi-square test for independence</li>
-                        <li>Chi-square test for homogeneity</li>
-                    </ul>
-                </div>
-                
-                <div class="standard-item">
-                    <span class="standard-code">Unit 9: Inference for Quantitative Data: Slopes</span>
-                    <span class="unit-weight">2-5%</span>
-                    <ul>
-                        <li>Confidence interval for slope</li>
-                        <li>Significance test for slope</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Key Concepts Tab -->
-        <div id="background" class="tab-content">
-            <div class="content-card">
-                <h3>📊 Statistical Inference Framework</h3>
-                <div class="inner-content">
-                    <div class="highlight-section">
-                        <h5>Confidence Intervals</h5>
-                        <div class="formula-box">Estimate ± (Critical Value) × (Standard Error)</div>
-                        <p>Example for proportion: p̂ ± z*√[p̂(1-p̂)/n]</p>
-                    </div>
-                    <div class="highlight-section">
-                        <h5>Significance Tests (4-Step Process)</h5>
-                        <ol>
-                            <li><strong>State:</strong> H₀ and Hₐ; define parameter</li>
-                            <li><strong>Plan:</strong> Name procedure; check conditions</li>
-                            <li><strong>Do:</strong> Calculate test statistic and p-value</li>
-                            <li><strong>Conclude:</strong> Compare p-value to α; interpret in context</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="content-card" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
-                <h3>📈 Regression</h3>
-                <div class="inner-content">
-                    <div class="highlight-section">
-                        <h5>LSRL: ŷ = a + bx</h5>
-                        <p>b = r(sᵧ/sₓ) and a = ȳ - bx̄</p>
-                        <p><strong>Interpretation:</strong> For each 1-unit increase in x, ŷ changes by b units, on average.</p>
-                    </div>
-                    <div class="highlight-section">
-                        <h5>r² (Coefficient of Determination)</h5>
-                        <p>r² = proportion of variability in y explained by x</p>
-                        <p>"__% of the variation in [y] can be explained by the linear relationship with [x]."</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Lessons Tab -->
-        <div id="lessons" class="tab-content">
-            <div class="lesson-card">
-                <h3>📚 Lesson: Central Limit Theorem</h3>
-                <span class="time-badge">⏱️ 55 minutes</span>
-                <div class="lesson-section">
-                    <h4>The Big Idea</h4>
-                    <p>No matter the shape of the population, the sampling distribution of x̄ becomes approximately Normal as n increases!</p>
-                    <p>For n ≥ 30 (rule of thumb), x̄ ~ N(μ, σ/√n)</p>
-                    <p>This allows us to make inferences about populations using sample means.</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- AP Exam Prep Tab -->
-        <div id="assessments" class="tab-content">
-            <h2 style="color: #3498db; margin-bottom: 20px;">📝 AP Exam Preparation</h2>
-            
-            <div class="assessment-card">
-                <h4>🎯 Exam Structure</h4>
-                <div class="assessment-item">
-                    <p><strong>Section I: Multiple Choice (50%)</strong> - 40 questions, 90 min</p>
-                    <p><strong>Section II: Free Response (50%)</strong> - 6 questions, 90 min</p>
-                    <ul>
-                        <li>5 short-answer questions (12 min each suggested)</li>
-                        <li>1 investigative task (30 min suggested)</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="frq-tip">
-                <h5>📝 FRQ Communication Tips</h5>
-                <ul>
-                    <li>Always use CONTEXT - don't just write "x" and "y"!</li>
-                    <li>For significance tests: Follow the 4-step process</li>
-                    <li>Check and STATE conditions explicitly</li>
-                    <li>Interpretation must be in context of the problem</li>
-                    <li>"There is convincing evidence..." or "There is NOT convincing evidence..."</li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- Vocabulary Tab -->
-        <div id="vocabulary" class="tab-content">
-            <h2 style="color: #3498db; margin-bottom: 20px;">📖 Statistics Vocabulary</h2>
-            <div class="vocab-grid">
-                <div class="vocab-card">
-                    <h4>Parameter</h4>
-                    <p>A number that describes a POPULATION (μ, σ, p)</p>
-                </div>
-                <div class="vocab-card">
-                    <h4>Statistic</h4>
-                    <p>A number that describes a SAMPLE (x̄, s, p̂)</p>
-                </div>
-                <div class="vocab-card">
-                    <h4>Sampling Distribution</h4>
-                    <p>Distribution of a statistic over all possible samples</p>
-                </div>
-                <div class="vocab-card">
-                    <h4>p-value</h4>
-                    <p>Probability of getting observed results (or more extreme) if H₀ is true</p>
-                </div>
-                <div class="vocab-card">
-                    <h4>Confidence Level</h4>
-                    <p>Proportion of intervals that capture the true parameter in repeated sampling</p>
-                </div>
-                <div class="vocab-card">
-                    <h4>Type I Error</h4>
-                    <p>Rejecting H₀ when it's actually true (false positive)</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Misconceptions Tab -->
-        <div id="misconceptions" class="tab-content">
-            <h2 style="color: #3498db; margin-bottom: 20px;">❓ Common Misconceptions</h2>
-            <div class="misconception-box">
-                <h4>❌ "95% confident the true mean is in this interval"</h4>
-                <div class="misconception-content">
-                    <p><strong>Correct:</strong> "We are 95% confident that the interval captures the true mean." The parameter is fixed; the interval varies from sample to sample.</p>
-                </div>
-            </div>
-            <div class="misconception-box">
-                <h4>❌ "p-value is the probability H₀ is true"</h4>
-                <div class="misconception-content">
-                    <p><strong>Correct:</strong> p-value is the probability of observing data this extreme IF H₀ were true. H₀ is either true or false - it doesn't have a probability.</p>
-                </div>
-            </div>
-            <div class="misconception-box">
-                <h4>❌ Correlation implies causation</h4>
-                <div class="misconception-content">
-                    <p><strong>Correct:</strong> Only randomized experiments can establish causation. Observational studies can only show association.</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Resources Tab -->
-        <div id="resources" class="tab-content">
-            <h2 style="color: #3498db; margin-bottom: 20px;">🔗 Resources</h2>
-            <div class="online-resources">
-                <a href="https://www.khanacademy.org/math/ap-statistics" class="resource-link" target="_blank"><strong>Khan Academy AP Statistics</strong></a>
-                <a href="https://apcentral.collegeboard.org/courses/ap-statistics" class="resource-link" target="_blank"><strong>College Board AP Central</strong></a>
-                <a href="https://www.stapplet.com/" class="resource-link" target="_blank"><strong>Statistical Applets</strong></a>
-            </div>
-        </div>
-        <!-- AI for Teachers Tab -->
-        <div id="ai-teachers" class="tab-content">
-
-            <div class="content-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);">
-                <h3>🤖 AI for Teachers</h3>
-                <p>AI tools and resources for enhancing math instruction</p>
-                
-                <div class="inner-content">
-                    <h4>🎯 Lesson Planning & Content Creation</h4>
-                    <div class="highlight-section">
-                        <h5>General AI Assistants</h5>
-                        <ul>
-                            <li><strong>ChatGPT / Claude:</strong> Generate lesson ideas, problem sets, discussion questions, and differentiated activities</li>
-                            <li><strong>MagicSchool AI:</strong> Education-specific tools for rubrics, IEP goals, and lesson planning</li>
-                            <li><strong>Diffit:</strong> Adapt math texts to different reading levels</li>
-                            <li><strong>Curipod:</strong> Create interactive math presentations with real-time student feedback</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="highlight-section">
-                        <h5>Math-Specific AI Tools</h5>
-                        <ul>
-                            <li><strong>Wolfram Alpha:</strong> Computational verification and step-by-step solutions</li>
-                            <li><strong>Photomath / Mathway:</strong> Solution verification and multiple solving methods</li>
-                            <li><strong>GeoGebra:</strong> Dynamic geometry and algebra visualizations</li>
-                            <li><strong>Desmos:</strong> Interactive graphing and exploration activities</li>
-                            <li><strong>Khan Academy / IXL / DeltaMath:</strong> AI-powered adaptive practice platforms</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="inner-content" style="margin-top: 20px;">
-                    <h4>💬 Example Prompts for AP Statistics Teachers</h4>
-                    <div class="highlight-section">
-                        <h5>AP Exam Preparation</h5>
-                        <ul>
-                            <li>"Create AP-style free response questions on Probability, Inference, Regression with scoring guidelines."</li>
-                            <li>"Generate multiple choice questions on Probability, Inference, Regression with plausible distractors based on common errors."</li>
-                            <li>"Design a practice set that mirrors the calculator/non-calculator format of the AP exam."</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="highlight-section">
-                        <h5>Deep Conceptual Understanding</h5>
-                        <ul>
-                            <li>"Create problems that require students to connect Probability, Inference, Regression to multiple units/topics."</li>
-                            <li>"Write questions that assess understanding of Probability, Inference, Regression at the analysis and evaluation levels."</li>
-                            <li>"Design investigations where students explore the limits and edge cases of Probability, Inference, Regression."</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="highlight-section">
-                        <h5>College Readiness</h5>
-                        <ul>
-                            <li>"Create problems similar to what students will encounter in college-level courses."</li>
-                            <li>"Design activities that develop mathematical communication skills expected in higher education."</li>
-                            <li>"Write problems requiring extended reasoning and multi-step justification."</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="inner-content" style="margin-top: 20px;">
-                    <h4>⚠️ Important Considerations</h4>
-                    <div class="highlight-section" style="border-left-color: #e17055;">
-                        <h5>Mathematical Accuracy</h5>
-                        <ul>
-                            <li><strong>Always verify AI outputs:</strong> AI can make mathematical errors, especially with multi-step problems</li>
-                            <li><strong>Check solutions step-by-step:</strong> Verify each step before using problems with students</li>
-                            <li><strong>Watch for notation errors:</strong> AI may use inconsistent or incorrect mathematical notation</li>
-                            <li><strong>Test with edge cases:</strong> Check if AI-generated problems work with boundary conditions</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="highlight-section" style="border-left-color: #fdcb6e;">
-                        <h5>Pedagogical Considerations</h5>
-                        <ul>
-                            <li><strong>Use AI as a starting point:</strong> Refine and adapt outputs for your specific students</li>
-                            <li><strong>Maintain your expertise:</strong> You understand your students better than any AI</li>
-                            <li><strong>Model critical evaluation:</strong> Show students how you evaluate AI-generated content</li>
-                            <li><strong>Preserve productive struggle:</strong> Don't let AI remove the valuable learning from challenge</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        
-        <!-- AI for Students Tab -->
-        <div id="ai-students" class="tab-content">
-
-            <div class="content-card" style="background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);">
-                <h3>🧒 AI for Students</h3>
-                <p>College-level AI literacy for AP Statistics students</p>
-                
-                <div class="inner-content">
-                    <h4>📋 AP-Level Expectations</h4>
-                    <div class="highlight-section" style="border-left-color: #0984e3;">
-                        <h5>Preparing for College-Level Work</h5>
-                        <ul>
-                            <li><strong>Academic integrity is paramount:</strong> AI misuse can result in score cancellation</li>
-                            <li><strong>The AP exam tests YOUR knowledge:</strong> No AI, no notes, no calculator on some sections</li>
-                            <li><strong>College professors have strict AI policies:</strong> Develop skills now that will serve you later</li>
-                            <li><strong>Understanding trumps answer-getting:</strong> Conceptual questions require deep understanding</li>
-                            <li><strong>AI should enhance learning, not replace it</strong></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="inner-content" style="margin-top: 20px;">
-                    <h4>✅ Strategic AI Use for AP Success</h4>
-                    <div class="highlight-section">
-                        <h5>Effective Learning Strategies</h5>
-                        <ul>
-                            <li><strong>Concept clarification:</strong> "Explain the relationship between Probability, Inference, Regression and [related concept]"</li>
-                            <li><strong>Multiple representations:</strong> "Show this concept algebraically, graphically, and numerically"</li>
-                            <li><strong>Connection mapping:</strong> "What prerequisite concepts must I understand before tackling this?"</li>
-                            <li><strong>Error analysis:</strong> "Here's my solution - identify where my reasoning went wrong"</li>
-                            <li><strong>FRQ practice:</strong> Generate AP-style free response questions for practice</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="highlight-section">
-                        <h5>Exam Preparation (Study Phase Only)</h5>
-                        <ul>
-                            <li>Create concept summary sheets for each unit</li>
-                            <li>Generate practice problems with varying difficulty</li>
-                            <li>Identify and practice your weak areas</li>
-                            <li>Review solution strategies for different problem types</li>
-                            <li>Practice explaining your reasoning clearly</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="inner-content" style="margin-top: 20px;">
-                    <h4>🔍 Rigorous Verification for AP Statistics</h4>
-                    <div class="highlight-section">
-                        <h5>Checking Complex Mathematical Work</h5>
-                        <ul>
-                            <li><strong>Symbolic verification:</strong> Use CAS to verify algebraic manipulations</li>
-                            <li><strong>Numerical approximation:</strong> Check symbolic answers with decimal approximations</li>
-                            <li><strong>Graphical confirmation:</strong> Visualize functions and solutions</li>
-                            <li><strong>Limiting behavior:</strong> Check if answers behave correctly as x→0, x→∞, etc.</li>
-                            <li><strong>Special cases:</strong> Verify solutions work for boundary conditions</li>
-                            <li><strong>Cross-reference:</strong> Compare AI output with textbook examples and solutions</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="highlight-section" style="border-left-color: #e74c3c;">
-                        <h5>AI Limitations in Advanced Math</h5>
-                        <ul>
-                            <li>May miss subtle errors in limit arguments</li>
-                            <li>Can struggle with formal proof structure</li>
-                            <li>Sometimes uses techniques not taught in your course</li>
-                            <li>May not format solutions as AP readers expect</li>
-                            <li>Can make errors with special functions and series</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="inner-content" style="margin-top: 20px;">
-                    <h4>🎯 Why Deep Understanding Matters</h4>
-                    <div class="highlight-section" style="border-left-color: #e74c3c;">
-                        <h5>Beyond Getting the Right Answer</h5>
-                        <ul>
-                            <li><strong>AP FRQs require justification:</strong> You must explain your reasoning, not just state answers</li>
-                            <li><strong>Conceptual MCQs test understanding:</strong> Many questions can't be solved by just computing</li>
-                            <li><strong>College courses move fast:</strong> You need genuine fluency, not look-it-up skills</li>
-                            <li><strong>Research and careers require deep knowledge:</strong> You'll need to solve novel problems</li>
-                            <li><strong>Mathematical maturity comes from struggle:</strong> There's no substitute for working through difficulties</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="inner-content" style="margin-top: 20px;">
-                    <h4>🛠️ AP-Level Mathematical Tools</h4>
-                    <div class="highlight-section">
-                        <h5>For Learning & Verification</h5>
-                        <ul>
-                            <li><strong>Desmos:</strong> Advanced graphing and exploration</li>
-                            <li><strong>Wolfram Alpha Pro:</strong> Step-by-step solutions for calculus and statistics</li>
-                            <li><strong>GeoGebra CAS:</strong> Computer algebra system capabilities</li>
-                            <li><strong>StatKey:</strong> Statistical simulations and inference</li>
-                            <li><strong>Khan Academy:</strong> AP-specific courses and practice</li>
-                            <li><strong>College Board AP Classroom:</strong> Official practice and resources</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        
-    </div>
-    
-    <script>
+<div class="container">
+<div style="text-align: center;"><span class="ap-badge">College Board AP Course</span></div>
+<h1>📊 AP Statistics Resources</h1>
+<p class="subtitle">Exploring Data • Sampling &amp; Experimentation • Probability • Statistical Inference</p>
+<div class="tabs">
+<button class="tab-btn active" onclick="showTab('standards')">📋 CED Units</button>
+<button class="tab-btn" onclick="showTab('background')">👩‍🏫 Key Concepts</button>
+<button class="tab-btn" onclick="showTab('lessons')">📚 Lessons</button>
+<button class="tab-btn" onclick="showTab('assessments')">📝 AP Exam Prep</button>
+<button class="tab-btn" onclick="showTab('vocabulary')">📖 Vocabulary</button>
+<button class="tab-btn" onclick="showTab('misconceptions')">❓ Misconceptions</button>
+<button class="tab-btn" onclick="showTab('resources')">🔗 Resources</button>
+<button class="tab-btn" onclick="showTab('ai-teachers')">🤖 AI for Teachers</button>
+<button class="tab-btn" onclick="showTab('ai-students')">🧒 AI for Students</button>
+</div>
+<!-- CED Units Tab -->
+<div class="tab-content active" id="standards">
+<div class="standard-box">
+<h3>📐 AP Statistics Course Framework</h3>
+<div class="standard-item">
+<span class="standard-code">Unit 1: Exploring One-Variable Data</span>
+<span class="unit-weight">15-23%</span>
+<ul>
+<li>Categorical data: frequency tables, bar charts, pie charts</li>
+<li>Quantitative data: dot plots, histograms, stemplots, boxplots</li>
+<li>Describing distributions: shape, center, spread, outliers</li>
+<li>Summary statistics: mean, median, SD, IQR, percentiles</li>
+<li>Comparing distributions</li>
+</ul>
+</div>
+<div class="standard-item">
+<span class="standard-code">Unit 2: Exploring Two-Variable Data</span>
+<span class="unit-weight">5-7%</span>
+<ul>
+<li>Two-way tables; conditional distributions</li>
+<li>Scatterplots; describing bivariate relationships</li>
+<li>Correlation coefficient r</li>
+<li>Least-squares regression (LSRL)</li>
+<li>Residuals and residual plots</li>
+<li>Outliers, influential points, leverage</li>
+</ul>
+</div>
+<div class="standard-item">
+<span class="standard-code">Unit 3: Collecting Data</span>
+<span class="unit-weight">12-15%</span>
+<ul>
+<li>Planning a study: observational vs. experimental</li>
+<li>Sampling methods: SRS, stratified, cluster, systematic</li>
+<li>Sources of bias: selection, response, nonresponse</li>
+<li>Experimental design: randomization, replication, control</li>
+<li>Blocking and matched pairs</li>
+<li>Scope of inference: causation vs. association</li>
+</ul>
+</div>
+<div class="standard-item">
+<span class="standard-code">Unit 4: Probability, Random Variables, and Distributions</span>
+<span class="unit-weight">10-20%</span>
+<ul>
+<li>Probability rules; conditional probability</li>
+<li>Independence</li>
+<li>Discrete random variables: mean, standard deviation</li>
+<li>Binomial distributions</li>
+<li>Geometric distributions</li>
+</ul>
+</div>
+<div class="standard-item">
+<span class="standard-code">Unit 5: Sampling Distributions</span>
+<span class="unit-weight">7-12%</span>
+<ul>
+<li>The concept of sampling distribution</li>
+<li>Sampling distribution of sample proportion p̂</li>
+<li>Sampling distribution of sample mean x̄</li>
+<li>Central Limit Theorem</li>
+</ul>
+</div>
+<div class="standard-item">
+<span class="standard-code">Unit 6: Inference for Categorical Data: Proportions</span>
+<span class="unit-weight">12-15%</span>
+<ul>
+<li>Confidence intervals for one proportion</li>
+<li>Significance tests for one proportion</li>
+<li>Confidence intervals for difference of proportions</li>
+<li>Significance tests for difference of proportions</li>
+</ul>
+</div>
+<div class="standard-item">
+<span class="standard-code">Unit 7: Inference for Quantitative Data: Means</span>
+<span class="unit-weight">10-18%</span>
+<ul>
+<li>t-procedures for one mean</li>
+<li>t-procedures for difference of means (independent)</li>
+<li>Paired t-procedures</li>
+</ul>
+</div>
+<div class="standard-item">
+<span class="standard-code">Unit 8: Inference for Categorical Data: Chi-Square</span>
+<span class="unit-weight">2-5%</span>
+<ul>
+<li>Chi-square goodness of fit test</li>
+<li>Chi-square test for independence</li>
+<li>Chi-square test for homogeneity</li>
+</ul>
+</div>
+<div class="standard-item">
+<span class="standard-code">Unit 9: Inference for Quantitative Data: Slopes</span>
+<span class="unit-weight">2-5%</span>
+<ul>
+<li>Confidence interval for slope</li>
+<li>Significance test for slope</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Key Concepts Tab -->
+<div class="tab-content" id="background">
+<div class="content-card">
+<h3>📊 Statistical Inference Framework</h3>
+<div class="inner-content">
+<div class="highlight-section">
+<h5>Confidence Intervals</h5>
+<div class="formula-box">Estimate ± (Critical Value) × (Standard Error)</div>
+<p>Example for proportion: p̂ ± z*√[p̂(1-p̂)/n]</p>
+</div>
+<div class="highlight-section">
+<h5>Significance Tests (4-Step Process)</h5>
+<ol>
+<li><strong>State:</strong> H₀ and Hₐ; define parameter</li>
+<li><strong>Plan:</strong> Name procedure; check conditions</li>
+<li><strong>Do:</strong> Calculate test statistic and p-value</li>
+<li><strong>Conclude:</strong> Compare p-value to α; interpret in context</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="content-card" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
+<h3>📈 Regression</h3>
+<div class="inner-content">
+<div class="highlight-section">
+<h5>LSRL: ŷ = a + bx</h5>
+<p>b = r(sᵧ/sₓ) and a = ȳ - bx̄</p>
+<p><strong>Interpretation:</strong> For each 1-unit increase in x, ŷ changes by b units, on average.</p>
+</div>
+<div class="highlight-section">
+<h5>r² (Coefficient of Determination)</h5>
+<p>r² = proportion of variability in y explained by x</p>
+<p>"__% of the variation in [y] can be explained by the linear relationship with [x]."</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Lessons Tab -->
+<div class="tab-content" id="lessons">
+<div class="lesson-card">
+<h3>📚 Lesson: Central Limit Theorem</h3>
+<span class="time-badge">⏱️ 55 minutes</span>
+<div class="lesson-section">
+<h4>The Big Idea</h4>
+<p>No matter the shape of the population, the sampling distribution of x̄ becomes approximately Normal as n increases!</p>
+<p>For n ≥ 30 (rule of thumb), x̄ ~ N(μ, σ/√n)</p>
+<p>This allows us to make inferences about populations using sample means.</p>
+</div>
+</div>
+</div>
+<!-- AP Exam Prep Tab -->
+<div class="tab-content" id="assessments">
+<h2 style="color: #3498db; margin-bottom: 20px;">📝 AP Exam Preparation</h2>
+<div class="assessment-card">
+<h4>🎯 Exam Structure</h4>
+<div class="assessment-item">
+<p><strong>Section I: Multiple Choice (50%)</strong> - 40 questions, 90 min</p>
+<p><strong>Section II: Free Response (50%)</strong> - 6 questions, 90 min</p>
+<ul>
+<li>5 short-answer questions (12 min each suggested)</li>
+<li>1 investigative task (30 min suggested)</li>
+</ul>
+</div>
+</div>
+<div class="frq-tip">
+<h5>📝 FRQ Communication Tips</h5>
+<ul>
+<li>Always use CONTEXT - don't just write "x" and "y"!</li>
+<li>For significance tests: Follow the 4-step process</li>
+<li>Check and STATE conditions explicitly</li>
+<li>Interpretation must be in context of the problem</li>
+<li>"There is convincing evidence..." or "There is NOT convincing evidence..."</li>
+</ul>
+</div>
+</div>
+<!-- Vocabulary Tab -->
+<div class="tab-content" id="vocabulary">
+<h2 style="color: #3498db; margin-bottom: 20px;">📖 Statistics Vocabulary</h2>
+<div class="vocab-grid">
+<div class="vocab-card">
+<h4>Parameter</h4>
+<p>A number that describes a POPULATION (μ, σ, p)</p>
+</div>
+<div class="vocab-card">
+<h4>Statistic</h4>
+<p>A number that describes a SAMPLE (x̄, s, p̂)</p>
+</div>
+<div class="vocab-card">
+<h4>Sampling Distribution</h4>
+<p>Distribution of a statistic over all possible samples</p>
+</div>
+<div class="vocab-card">
+<h4>p-value</h4>
+<p>Probability of getting observed results (or more extreme) if H₀ is true</p>
+</div>
+<div class="vocab-card">
+<h4>Confidence Level</h4>
+<p>Proportion of intervals that capture the true parameter in repeated sampling</p>
+</div>
+<div class="vocab-card">
+<h4>Type I Error</h4>
+<p>Rejecting H₀ when it's actually true (false positive)</p>
+</div>
+</div>
+</div>
+<!-- Misconceptions Tab -->
+<div class="tab-content" id="misconceptions">
+<h2 style="color: #3498db; margin-bottom: 20px;">❓ Common Misconceptions</h2>
+<div class="misconception-box">
+<h4>❌ "95% confident the true mean is in this interval"</h4>
+<div class="misconception-content">
+<p><strong>Correct:</strong> "We are 95% confident that the interval captures the true mean." The parameter is fixed; the interval varies from sample to sample.</p>
+</div>
+</div>
+<div class="misconception-box">
+<h4>❌ "p-value is the probability H₀ is true"</h4>
+<div class="misconception-content">
+<p><strong>Correct:</strong> p-value is the probability of observing data this extreme IF H₀ were true. H₀ is either true or false - it doesn't have a probability.</p>
+</div>
+</div>
+<div class="misconception-box">
+<h4>❌ Correlation implies causation</h4>
+<div class="misconception-content">
+<p><strong>Correct:</strong> Only randomized experiments can establish causation. Observational studies can only show association.</p>
+</div>
+</div>
+</div>
+<!-- Resources Tab -->
+<div class="tab-content" id="resources">
+<h2 style="color: #3498db; margin-bottom: 20px;">🔗 Resources</h2>
+<div class="online-resources">
+<a class="resource-link" href="https://www.khanacademy.org/math/ap-statistics" target="_blank"><strong>Khan Academy AP Statistics</strong></a>
+<a class="resource-link" href="https://apcentral.collegeboard.org/courses/ap-statistics" target="_blank"><strong>College Board AP Central</strong></a>
+<a class="resource-link" href="https://www.stapplet.com/" target="_blank"><strong>Statistical Applets</strong></a>
+</div>
+</div>
+<!-- AI for Teachers Tab -->
+<div class="tab-content" id="ai-teachers">
+<div class="content-card" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);">
+<h3>🤖 AI for Teachers</h3>
+<p>AI tools and resources for enhancing math instruction</p>
+<div class="inner-content">
+<h4>🎯 Lesson Planning &amp; Content Creation</h4>
+<div class="highlight-section">
+<h5>General AI Assistants</h5>
+<ul>
+<li><strong>ChatGPT / Claude:</strong> Generate lesson ideas, problem sets, discussion questions, and differentiated activities</li>
+<li><strong>MagicSchool AI:</strong> Education-specific tools for rubrics, IEP goals, and lesson planning</li>
+<li><strong>Diffit:</strong> Adapt math texts to different reading levels</li>
+<li><strong>Curipod:</strong> Create interactive math presentations with real-time student feedback</li>
+</ul>
+</div>
+<div class="highlight-section">
+<h5>Math-Specific AI Tools</h5>
+<ul>
+<li><strong>Wolfram Alpha:</strong> Computational verification and step-by-step solutions</li>
+<li><strong>Photomath / Mathway:</strong> Solution verification and multiple solving methods</li>
+<li><strong>GeoGebra:</strong> Dynamic geometry and algebra visualizations</li>
+<li><strong>Desmos:</strong> Interactive graphing and exploration activities</li>
+<li><strong>Khan Academy / IXL / DeltaMath:</strong> AI-powered adaptive practice platforms</li>
+</ul>
+</div>
+</div>
+<div class="inner-content" style="margin-top: 20px;">
+<h4>💬 Example Prompts for AP Statistics Teachers</h4>
+<div class="highlight-section">
+<h5>AP Exam Preparation</h5>
+<ul>
+<li>"Create AP-style free response questions on Probability, Inference, Regression with scoring guidelines."</li>
+<li>"Generate multiple choice questions on Probability, Inference, Regression with plausible distractors based on common errors."</li>
+<li>"Design a practice set that mirrors the calculator/non-calculator format of the AP exam."</li>
+</ul>
+</div>
+<div class="highlight-section">
+<h5>Deep Conceptual Understanding</h5>
+<ul>
+<li>"Create problems that require students to connect Probability, Inference, Regression to multiple units/topics."</li>
+<li>"Write questions that assess understanding of Probability, Inference, Regression at the analysis and evaluation levels."</li>
+<li>"Design investigations where students explore the limits and edge cases of Probability, Inference, Regression."</li>
+</ul>
+</div>
+<div class="highlight-section">
+<h5>College Readiness</h5>
+<ul>
+<li>"Create problems similar to what students will encounter in college-level courses."</li>
+<li>"Design activities that develop mathematical communication skills expected in higher education."</li>
+<li>"Write problems requiring extended reasoning and multi-step justification."</li>
+</ul>
+</div>
+</div>
+<div class="inner-content" style="margin-top: 20px;">
+<h4>⚠️ Important Considerations</h4>
+<div class="highlight-section" style="border-left-color: #e17055;">
+<h5>Mathematical Accuracy</h5>
+<ul>
+<li><strong>Always verify AI outputs:</strong> AI can make mathematical errors, especially with multi-step problems</li>
+<li><strong>Check solutions step-by-step:</strong> Verify each step before using problems with students</li>
+<li><strong>Watch for notation errors:</strong> AI may use inconsistent or incorrect mathematical notation</li>
+<li><strong>Test with edge cases:</strong> Check if AI-generated problems work with boundary conditions</li>
+</ul>
+</div>
+<div class="highlight-section" style="border-left-color: #fdcb6e;">
+<h5>Pedagogical Considerations</h5>
+<ul>
+<li><strong>Use AI as a starting point:</strong> Refine and adapt outputs for your specific students</li>
+<li><strong>Maintain your expertise:</strong> You understand your students better than any AI</li>
+<li><strong>Model critical evaluation:</strong> Show students how you evaluate AI-generated content</li>
+<li><strong>Preserve productive struggle:</strong> Don't let AI remove the valuable learning from challenge</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- AI for Students Tab -->
+<div class="tab-content" id="ai-students">
+<div class="content-card" style="background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);">
+<h3>🧒 AI for Students</h3>
+<p>College-level AI literacy for AP Statistics students</p>
+<div class="inner-content">
+<h4>📋 AP-Level Expectations</h4>
+<div class="highlight-section" style="border-left-color: #0984e3;">
+<h5>Preparing for College-Level Work</h5>
+<ul>
+<li><strong>Academic integrity is paramount:</strong> AI misuse can result in score cancellation</li>
+<li><strong>The AP exam tests YOUR knowledge:</strong> No AI, no notes, no calculator on some sections</li>
+<li><strong>College professors have strict AI policies:</strong> Develop skills now that will serve you later</li>
+<li><strong>Understanding trumps answer-getting:</strong> Conceptual questions require deep understanding</li>
+<li><strong>AI should enhance learning, not replace it</strong></li>
+</ul>
+</div>
+</div>
+<div class="inner-content" style="margin-top: 20px;">
+<h4>✅ Strategic AI Use for AP Success</h4>
+<div class="highlight-section">
+<h5>Effective Learning Strategies</h5>
+<ul>
+<li><strong>Concept clarification:</strong> "Explain the relationship between Probability, Inference, Regression and [related concept]"</li>
+<li><strong>Multiple representations:</strong> "Show this concept algebraically, graphically, and numerically"</li>
+<li><strong>Connection mapping:</strong> "What prerequisite concepts must I understand before tackling this?"</li>
+<li><strong>Error analysis:</strong> "Here's my solution - identify where my reasoning went wrong"</li>
+<li><strong>FRQ practice:</strong> Generate AP-style free response questions for practice</li>
+</ul>
+</div>
+<div class="highlight-section">
+<h5>Exam Preparation (Study Phase Only)</h5>
+<ul>
+<li>Create concept summary sheets for each unit</li>
+<li>Generate practice problems with varying difficulty</li>
+<li>Identify and practice your weak areas</li>
+<li>Review solution strategies for different problem types</li>
+<li>Practice explaining your reasoning clearly</li>
+</ul>
+</div>
+</div>
+<div class="inner-content" style="margin-top: 20px;">
+<h4>🔍 Rigorous Verification for AP Statistics</h4>
+<div class="highlight-section">
+<h5>Checking Complex Mathematical Work</h5>
+<ul>
+<li><strong>Symbolic verification:</strong> Use CAS to verify algebraic manipulations</li>
+<li><strong>Numerical approximation:</strong> Check symbolic answers with decimal approximations</li>
+<li><strong>Graphical confirmation:</strong> Visualize functions and solutions</li>
+<li><strong>Limiting behavior:</strong> Check if answers behave correctly as x→0, x→∞, etc.</li>
+<li><strong>Special cases:</strong> Verify solutions work for boundary conditions</li>
+<li><strong>Cross-reference:</strong> Compare AI output with textbook examples and solutions</li>
+</ul>
+</div>
+<div class="highlight-section" style="border-left-color: #e74c3c;">
+<h5>AI Limitations in Advanced Math</h5>
+<ul>
+<li>May miss subtle errors in limit arguments</li>
+<li>Can struggle with formal proof structure</li>
+<li>Sometimes uses techniques not taught in your course</li>
+<li>May not format solutions as AP readers expect</li>
+<li>Can make errors with special functions and series</li>
+</ul>
+</div>
+</div>
+<div class="inner-content" style="margin-top: 20px;">
+<h4>🎯 Why Deep Understanding Matters</h4>
+<div class="highlight-section" style="border-left-color: #e74c3c;">
+<h5>Beyond Getting the Right Answer</h5>
+<ul>
+<li><strong>AP FRQs require justification:</strong> You must explain your reasoning, not just state answers</li>
+<li><strong>Conceptual MCQs test understanding:</strong> Many questions can't be solved by just computing</li>
+<li><strong>College courses move fast:</strong> You need genuine fluency, not look-it-up skills</li>
+<li><strong>Research and careers require deep knowledge:</strong> You'll need to solve novel problems</li>
+<li><strong>Mathematical maturity comes from struggle:</strong> There's no substitute for working through difficulties</li>
+</ul>
+</div>
+</div>
+<div class="inner-content" style="margin-top: 20px;">
+<h4>🛠️ AP-Level Mathematical Tools</h4>
+<div class="highlight-section">
+<h5>For Learning &amp; Verification</h5>
+<ul>
+<li><strong>Desmos:</strong> Advanced graphing and exploration</li>
+<li><strong>Wolfram Alpha Pro:</strong> Step-by-step solutions for calculus and statistics</li>
+<li><strong>GeoGebra CAS:</strong> Computer algebra system capabilities</li>
+<li><strong>StatKey:</strong> Statistical simulations and inference</li>
+<li><strong>Khan Academy:</strong> AP-specific courses and practice</li>
+<li><strong>College Board AP Classroom:</strong> Official practice and resources</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
         function showTab(tabName) {
             const tabContents = document.getElementsByClassName('tab-content');
             for (let i = 0; i < tabContents.length; i++) tabContents[i].classList.remove('active');
@@ -531,5 +496,5 @@
             event.target.classList.add('active');
         }
     </script>
-</body>
+<footer><p class="cc-license"><a href="https://rcooper2005.github.io/K-12-Math-Teacher-Resources/ap-statistics-hub.html">AP Statistics Resources</a> © 2026 by <a href="https://orcid.org/0009-0007-1358-960X">Dr. Rebecca A. Cooper</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International</a> <img alt="" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="max-width: 1em; max-height: 1em; margin-left: .2em;"/><img alt="" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="max-width: 1em; max-height: 1em; margin-left: .2em;"/><img alt="" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="max-width: 1em; max-height: 1em; margin-left: .2em;"/></p></footer></body>
 </html>
